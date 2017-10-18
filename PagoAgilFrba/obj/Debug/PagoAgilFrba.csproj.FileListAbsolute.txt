@@ -16,3 +16,12 @@ C:\Users\fari2\Documents\UTN\1_GDD\Aplicacion Desktop\PagoAgilFrba\obj\Debug\Pag
 C:\Users\fari2\Documents\UTN\1_GDD\Aplicacion Desktop\PagoAgilFrba\obj\Debug\PagoAgilFrba.csproj.GenerateResource.Cache
 C:\Users\fari2\Documents\UTN\1_GDD\Aplicacion Desktop\PagoAgilFrba\obj\Debug\PagoAgilFrba.exe
 C:\Users\fari2\Documents\UTN\1_GDD\Aplicacion Desktop\PagoAgilFrba\obj\Debug\PagoAgilFrba.pdb
+C:\Users\fari2\Documents\UTN\1_GDD\TP Pago Facil Frba 1.0 - 2C 2017\TP_GDD_PAGOAGIL_EQ24\PagoAgilFrba\bin\Debug\PagoAgilFrba.exe.config
+C:\Users\fari2\Documents\UTN\1_GDD\TP Pago Facil Frba 1.0 - 2C 2017\TP_GDD_PAGOAGIL_EQ24\PagoAgilFrba\obj\Debug\PagoAgilFrba.exe
+C:\Users\fari2\Documents\UTN\1_GDD\TP Pago Facil Frba 1.0 - 2C 2017\TP_GDD_PAGOAGIL_EQ24\PagoAgilFrba\obj\Debug\PagoAgilFrba.pdb
+C:\Users\fari2\Documents\UTN\1_GDD\TP Pago Facil Frba 1.0 - 2C 2017\TP_GDD_PAGOAGIL_EQ24\PagoAgilFrba\bin\Debug\PagoAgilFrba.exe
+C:\Users\fari2\Documents\UTN\1_GDD\TP Pago Facil Frba 1.0 - 2C 2017\TP_GDD_PAGOAGIL_EQ24\PagoAgilFrba\bin\Debug\PagoAgilFrba.pdb
+C:\Users\fari2\Documents\UTN\1_GDD\TP Pago Facil Frba 1.0 - 2C 2017\TP_GDD_PAGOAGIL_EQ24\PagoAgilFrba\obj\Debug\PagoAgilFrba.csprojResolveAssemblyReference.cache
+C:\Users\fari2\Documents\UTN\1_GDD\TP Pago Facil Frba 1.0 - 2C 2017\TP_GDD_PAGOAGIL_EQ24\PagoAgilFrba\obj\Debug\PagoAgilFrba.Login.resources
+C:\Users\fari2\Documents\UTN\1_GDD\TP Pago Facil Frba 1.0 - 2C 2017\TP_GDD_PAGOAGIL_EQ24\PagoAgilFrba\obj\Debug\PagoAgilFrba.Properties.Resources.resources
+C:\Users\fari2\Documents\UTN\1_GDD\TP Pago Facil Frba 1.0 - 2C 2017\TP_GDD_PAGOAGIL_EQ24\PagoAgilFrba\obj\Debug\PagoAgilFrba.csproj.GenerateResource.Cache

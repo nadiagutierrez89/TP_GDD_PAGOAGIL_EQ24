@@ -28,7 +28,7 @@ namespace PagoAgilFrba
         {
             Usuario miUsuario = DAOusuario.getUsuario(login_tb_usuario.Text);
             if (miUsuario != null && miUsuario.pass == login_tb_pass.Text)
-            { MessageBox.Show("Bienvenido"); }
+            { MessageBox.Show("Bienvenido " + login_tb_usuario.Text + "!"); }
             else
             { MessageBox.Show("Usuario o contraseña invalida"); }
         }
