@@ -28,26 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.login_tb_usuario = new System.Windows.Forms.TextBox();
-            this.login_tb_pass = new System.Windows.Forms.TextBox();
             this.login_btn_ingresar = new System.Windows.Forms.Button();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.login_tb_pass = new System.Windows.Forms.TextBox();
+            this.login_lab_usuario = new System.Windows.Forms.Label();
+            this.login_lab_pass = new System.Windows.Forms.Label();
+            this.login_lab_bienvenidos = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // login_tb_usuario
             // 
-            this.login_tb_usuario.Location = new System.Drawing.Point(73, 148);
+            this.login_tb_usuario.Location = new System.Drawing.Point(73, 130);
             this.login_tb_usuario.Name = "login_tb_usuario";
             this.login_tb_usuario.Size = new System.Drawing.Size(100, 20);
             this.login_tb_usuario.TabIndex = 0;
-            this.login_tb_usuario.Text = "Usuario";
-            // 
-            // login_tb_pass
-            // 
-            this.login_tb_pass.Location = new System.Drawing.Point(73, 188);
-            this.login_tb_pass.Name = "login_tb_pass";
-            this.login_tb_pass.Size = new System.Drawing.Size(100, 20);
-            this.login_tb_pass.TabIndex = 1;
-            this.login_tb_pass.Text = "Password";
             // 
             // login_btn_ingresar
             // 
@@ -60,13 +56,55 @@
             this.login_btn_ingresar.UseVisualStyleBackColor = true;
             this.login_btn_ingresar.Click += new System.EventHandler(this.login_btn_ingresar_Click);
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // login_tb_pass
+            // 
+            this.login_tb_pass.Location = new System.Drawing.Point(73, 175);
+            this.login_tb_pass.Name = "login_tb_pass";
+            this.login_tb_pass.Size = new System.Drawing.Size(100, 20);
+            this.login_tb_pass.TabIndex = 5;
+            // 
+            // login_lab_usuario
+            // 
+            this.login_lab_usuario.AutoSize = true;
+            this.login_lab_usuario.Location = new System.Drawing.Point(73, 111);
+            this.login_lab_usuario.Name = "login_lab_usuario";
+            this.login_lab_usuario.Size = new System.Drawing.Size(46, 13);
+            this.login_lab_usuario.TabIndex = 6;
+            this.login_lab_usuario.Text = "Usuario:";
+            // 
+            // login_lab_pass
+            // 
+            this.login_lab_pass.AutoSize = true;
+            this.login_lab_pass.Location = new System.Drawing.Point(73, 156);
+            this.login_lab_pass.Name = "login_lab_pass";
+            this.login_lab_pass.Size = new System.Drawing.Size(56, 13);
+            this.login_lab_pass.TabIndex = 7;
+            this.login_lab_pass.Text = "Password:";
+            // 
+            // login_lab_bienvenidos
+            // 
+            this.login_lab_bienvenidos.AutoSize = true;
+            this.login_lab_bienvenidos.Location = new System.Drawing.Point(70, 48);
+            this.login_lab_bienvenidos.Name = "login_lab_bienvenidos";
+            this.login_lab_bienvenidos.Size = new System.Drawing.Size(156, 13);
+            this.login_lab_bienvenidos.TabIndex = 8;
+            this.login_lab_bienvenidos.Text = "Bienvenidos a Pago Agil FRBA ";
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(287, 261);
-            this.Controls.Add(this.login_btn_ingresar);
+            this.Controls.Add(this.login_lab_bienvenidos);
+            this.Controls.Add(this.login_lab_pass);
+            this.Controls.Add(this.login_lab_usuario);
             this.Controls.Add(this.login_tb_pass);
+            this.Controls.Add(this.login_btn_ingresar);
             this.Controls.Add(this.login_tb_usuario);
             this.Name = "Login";
             this.Text = "Login";
@@ -79,8 +117,12 @@
         #endregion
 
         private System.Windows.Forms.TextBox login_tb_usuario;
-        private System.Windows.Forms.TextBox login_tb_pass;
         private System.Windows.Forms.Button login_btn_ingresar;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.TextBox login_tb_pass;
+        private System.Windows.Forms.Label login_lab_usuario;
+        private System.Windows.Forms.Label login_lab_pass;
+        private System.Windows.Forms.Label login_lab_bienvenidos;
 
     }
 }
