@@ -19,6 +19,7 @@ namespace PagoAgilFrba.AbmCliente
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
+
         }
 
         private void ABMCliente_tb_mail_TextChanged(object sender, EventArgs e)
