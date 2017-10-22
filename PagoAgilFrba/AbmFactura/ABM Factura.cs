@@ -16,5 +16,15 @@ namespace PagoAgilFrba.AbmFactura
         {
             InitializeComponent();
         }
+
+        private void abmfactura_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void abmfactura_lab_monto_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
