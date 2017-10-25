@@ -78,11 +78,11 @@
     <Compile Include="AbmFactura\ABM Factura.Designer.cs">
       <DependentUpon>ABM Factura.cs</DependentUpon>
     </Compile>
-    <Compile Include="AbmRol\Form1.cs">
+    <Compile Include="AbmRol\ABMRol.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AbmRol\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="AbmRol\ABMRol.Designer.cs">
+      <DependentUpon>ABMRol.cs</DependentUpon>
     </Compile>
     <Compile Include="AbmSucursal\ABMSucursal.cs">
       <SubType>Form</SubType>
@@ -130,6 +130,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AbmFactura\ABM Factura.resx">
       <DependentUpon>ABM Factura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AbmRol\ABMRol.resx">
+      <DependentUpon>ABMRol.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AbmSucursal\ABMSucursal.resx">
       <DependentUpon>ABMSucursal.cs</DependentUpon>
