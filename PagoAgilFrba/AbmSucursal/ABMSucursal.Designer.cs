@@ -34,6 +34,8 @@
             this.abmsucursal_tb_nombre = new System.Windows.Forms.TextBox();
             this.abmsucursal_tb_direccion = new System.Windows.Forms.TextBox();
             this.abmsucursal_tb_cp = new System.Windows.Forms.TextBox();
+            this.abmsucursal_chb_baja = new System.Windows.Forms.CheckBox();
+            this.abmsucursal_but_aceptar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // abmsucursal_lab_nombre
@@ -85,11 +87,32 @@
             this.abmsucursal_tb_cp.Size = new System.Drawing.Size(100, 20);
             this.abmsucursal_tb_cp.TabIndex = 5;
             // 
+            // abmsucursal_chb_baja
+            // 
+            this.abmsucursal_chb_baja.AutoSize = true;
+            this.abmsucursal_chb_baja.Location = new System.Drawing.Point(25, 187);
+            this.abmsucursal_chb_baja.Name = "abmsucursal_chb_baja";
+            this.abmsucursal_chb_baja.Size = new System.Drawing.Size(80, 17);
+            this.abmsucursal_chb_baja.TabIndex = 10;
+            this.abmsucursal_chb_baja.Text = "Inhabilitada";
+            this.abmsucursal_chb_baja.UseVisualStyleBackColor = true;
+            // 
+            // abmsucursal_but_aceptar
+            // 
+            this.abmsucursal_but_aceptar.Location = new System.Drawing.Point(25, 220);
+            this.abmsucursal_but_aceptar.Name = "abmsucursal_but_aceptar";
+            this.abmsucursal_but_aceptar.Size = new System.Drawing.Size(75, 23);
+            this.abmsucursal_but_aceptar.TabIndex = 11;
+            this.abmsucursal_but_aceptar.Text = "Aceptar";
+            this.abmsucursal_but_aceptar.UseVisualStyleBackColor = true;
+            // 
             // ABMSucursal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.abmsucursal_but_aceptar);
+            this.Controls.Add(this.abmsucursal_chb_baja);
             this.Controls.Add(this.abmsucursal_tb_cp);
             this.Controls.Add(this.abmsucursal_tb_direccion);
             this.Controls.Add(this.abmsucursal_tb_nombre);
@@ -112,5 +135,7 @@
         private System.Windows.Forms.TextBox abmsucursal_tb_nombre;
         private System.Windows.Forms.TextBox abmsucursal_tb_direccion;
         private System.Windows.Forms.TextBox abmsucursal_tb_cp;
+        private System.Windows.Forms.CheckBox abmsucursal_chb_baja;
+        private System.Windows.Forms.Button abmsucursal_but_aceptar;
     }
 }

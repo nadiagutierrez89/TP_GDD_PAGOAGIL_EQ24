@@ -46,6 +46,7 @@
             this.abmfactura_tb_items = new System.Windows.Forms.TextBox();
             this.abmfactura_tb_monto = new System.Windows.Forms.TextBox();
             this.abmfactura_tb_cantidad = new System.Windows.Forms.TextBox();
+            this.abmfactura_but_aceptar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // abmcliente_lab_cliente
@@ -198,11 +199,21 @@
             this.abmfactura_tb_cantidad.Size = new System.Drawing.Size(62, 20);
             this.abmfactura_tb_cantidad.TabIndex = 17;
             // 
+            // abmfactura_but_aceptar
+            // 
+            this.abmfactura_but_aceptar.Location = new System.Drawing.Point(180, 277);
+            this.abmfactura_but_aceptar.Name = "abmfactura_but_aceptar";
+            this.abmfactura_but_aceptar.Size = new System.Drawing.Size(75, 23);
+            this.abmfactura_but_aceptar.TabIndex = 18;
+            this.abmfactura_but_aceptar.Text = "Aceptar";
+            this.abmfactura_but_aceptar.UseVisualStyleBackColor = true;
+            // 
             // abmfactura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 281);
+            this.ClientSize = new System.Drawing.Size(267, 312);
+            this.Controls.Add(this.abmfactura_but_aceptar);
             this.Controls.Add(this.abmfactura_tb_cantidad);
             this.Controls.Add(this.abmfactura_tb_monto);
             this.Controls.Add(this.abmfactura_tb_items);
@@ -249,5 +260,6 @@
         private System.Windows.Forms.TextBox abmfactura_tb_items;
         private System.Windows.Forms.TextBox abmfactura_tb_monto;
         private System.Windows.Forms.TextBox abmfactura_tb_cantidad;
+        private System.Windows.Forms.Button abmfactura_but_aceptar;
     }
 }

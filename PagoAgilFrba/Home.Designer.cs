@@ -46,7 +46,7 @@
             this.home_but_abmcliente.Name = "home_but_abmcliente";
             this.home_but_abmcliente.Size = new System.Drawing.Size(75, 23);
             this.home_but_abmcliente.TabIndex = 0;
-            this.home_but_abmcliente.Text = "ABM Cliente";
+            this.home_but_abmcliente.Text = "Clientes";
             this.home_but_abmcliente.UseVisualStyleBackColor = true;
             // 
             // home_but_abmempresa
@@ -55,7 +55,7 @@
             this.home_but_abmempresa.Name = "home_but_abmempresa";
             this.home_but_abmempresa.Size = new System.Drawing.Size(85, 23);
             this.home_but_abmempresa.TabIndex = 1;
-            this.home_but_abmempresa.Text = "ABM Empresa";
+            this.home_but_abmempresa.Text = "Empresas";
             this.home_but_abmempresa.UseVisualStyleBackColor = true;
             // 
             // home_but_abmfactura
@@ -73,7 +73,7 @@
             this.home_but_abmsucursal.Name = "home_but_abmsucursal";
             this.home_but_abmsucursal.Size = new System.Drawing.Size(85, 23);
             this.home_but_abmsucursal.TabIndex = 3;
-            this.home_but_abmsucursal.Text = "ABM Sucursal";
+            this.home_but_abmsucursal.Text = "Sucursales";
             this.home_but_abmsucursal.UseVisualStyleBackColor = true;
             // 
             // home_but_ambrol
@@ -82,7 +82,7 @@
             this.home_but_ambrol.Name = "home_but_ambrol";
             this.home_but_ambrol.Size = new System.Drawing.Size(75, 23);
             this.home_but_ambrol.TabIndex = 4;
-            this.home_but_ambrol.Text = "ABM Rol";
+            this.home_but_ambrol.Text = "Roles";
             this.home_but_ambrol.UseVisualStyleBackColor = true;
             // 
             // home_but_regusuario

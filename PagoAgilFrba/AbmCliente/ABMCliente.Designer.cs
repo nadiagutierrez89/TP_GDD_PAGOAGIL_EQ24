@@ -52,6 +52,8 @@
             this.abmcliente_lab_localidad = new System.Windows.Forms.Label();
             this.abmcliente_lab_codPostal = new System.Windows.Forms.Label();
             this.abmcliente_lab_telefono = new System.Windows.Forms.Label();
+            this.abmcliente_chb_baja = new System.Windows.Forms.CheckBox();
+            this.abmcliente_but_aceptar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // abmcliente_tb_nombre
@@ -129,7 +131,6 @@
             this.abmcliente_tb_cp.Name = "abmcliente_tb_cp";
             this.abmcliente_tb_cp.Size = new System.Drawing.Size(66, 20);
             this.abmcliente_tb_cp.TabIndex = 9;
-            this.abmcliente_tb_cp.Text = "C.P.";
             this.abmcliente_tb_cp.TextChanged += new System.EventHandler(this.abmcliente_tb_cp_TextChanged);
             // 
             // abmcliente_tb_localidad
@@ -258,11 +259,32 @@
             this.abmcliente_lab_telefono.TabIndex = 23;
             this.abmcliente_lab_telefono.Text = "Teléfono";
             // 
-            // Form1
+            // abmcliente_chb_baja
+            // 
+            this.abmcliente_chb_baja.AutoSize = true;
+            this.abmcliente_chb_baja.Location = new System.Drawing.Point(15, 282);
+            this.abmcliente_chb_baja.Name = "abmcliente_chb_baja";
+            this.abmcliente_chb_baja.Size = new System.Drawing.Size(81, 17);
+            this.abmcliente_chb_baja.TabIndex = 24;
+            this.abmcliente_chb_baja.Text = "Dar de baja";
+            this.abmcliente_chb_baja.UseVisualStyleBackColor = true;
+            // 
+            // abmcliente_but_aceptar
+            // 
+            this.abmcliente_but_aceptar.Location = new System.Drawing.Point(181, 279);
+            this.abmcliente_but_aceptar.Name = "abmcliente_but_aceptar";
+            this.abmcliente_but_aceptar.Size = new System.Drawing.Size(75, 23);
+            this.abmcliente_but_aceptar.TabIndex = 26;
+            this.abmcliente_but_aceptar.Text = "Aceptar";
+            this.abmcliente_but_aceptar.UseVisualStyleBackColor = true;
+            // 
+            // ABMCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(265, 287);
+            this.ClientSize = new System.Drawing.Size(265, 309);
+            this.Controls.Add(this.abmcliente_but_aceptar);
+            this.Controls.Add(this.abmcliente_chb_baja);
             this.Controls.Add(this.abmcliente_lab_telefono);
             this.Controls.Add(this.abmcliente_lab_codPostal);
             this.Controls.Add(this.abmcliente_lab_localidad);
@@ -287,7 +309,7 @@
             this.Controls.Add(this.abmcliente_tb_dni);
             this.Controls.Add(this.abmcliente_tb_apellido);
             this.Controls.Add(this.abmcliente_tb_nombre);
-            this.Name = "Form1";
+            this.Name = "ABMCliente";
             this.Text = "AMB Cliente";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -320,5 +342,7 @@
         private System.Windows.Forms.Label abmcliente_lab_localidad;
         private System.Windows.Forms.Label abmcliente_lab_codPostal;
         private System.Windows.Forms.Label abmcliente_lab_telefono;
+        private System.Windows.Forms.CheckBox abmcliente_chb_baja;
+        private System.Windows.Forms.Button abmcliente_but_aceptar;
     }
 }

@@ -36,6 +36,8 @@
             this.abmempresa_lab_direccion = new System.Windows.Forms.Label();
             this.ambempresa_cb_rubro = new System.Windows.Forms.ComboBox();
             this.ambempresa_lab_rubro = new System.Windows.Forms.Label();
+            this.abmempresa_chb_baja = new System.Windows.Forms.CheckBox();
+            this.abmempresa_but_aceptar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // abmEmpresa_tb_nombre
@@ -108,11 +110,32 @@
             this.ambempresa_lab_rubro.TabIndex = 8;
             this.ambempresa_lab_rubro.Text = "Rubro";
             // 
-            // Form1
+            // abmempresa_chb_baja
+            // 
+            this.abmempresa_chb_baja.AutoSize = true;
+            this.abmempresa_chb_baja.Location = new System.Drawing.Point(12, 218);
+            this.abmempresa_chb_baja.Name = "abmempresa_chb_baja";
+            this.abmempresa_chb_baja.Size = new System.Drawing.Size(80, 17);
+            this.abmempresa_chb_baja.TabIndex = 9;
+            this.abmempresa_chb_baja.Text = "Inhabilitada";
+            this.abmempresa_chb_baja.UseVisualStyleBackColor = true;
+            // 
+            // abmempresa_but_aceptar
+            // 
+            this.abmempresa_but_aceptar.Location = new System.Drawing.Point(180, 218);
+            this.abmempresa_but_aceptar.Name = "abmempresa_but_aceptar";
+            this.abmempresa_but_aceptar.Size = new System.Drawing.Size(75, 23);
+            this.abmempresa_but_aceptar.TabIndex = 12;
+            this.abmempresa_but_aceptar.Text = "Aceptar";
+            this.abmempresa_but_aceptar.UseVisualStyleBackColor = true;
+            // 
+            // ABMEmpresa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.abmempresa_but_aceptar);
+            this.Controls.Add(this.abmempresa_chb_baja);
             this.Controls.Add(this.ambempresa_lab_rubro);
             this.Controls.Add(this.ambempresa_cb_rubro);
             this.Controls.Add(this.abmempresa_lab_direccion);
@@ -121,7 +144,7 @@
             this.Controls.Add(this.abmempresa_mtb_cuit);
             this.Controls.Add(this.abmempresa_tb_direccion);
             this.Controls.Add(this.abmEmpresa_tb_nombre);
-            this.Name = "Form1";
+            this.Name = "ABMEmpresa";
             this.Text = "ABM Empresa";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
@@ -139,5 +162,7 @@
         private System.Windows.Forms.Label abmempresa_lab_direccion;
         private System.Windows.Forms.ComboBox ambempresa_cb_rubro;
         private System.Windows.Forms.Label ambempresa_lab_rubro;
+        private System.Windows.Forms.CheckBox abmempresa_chb_baja;
+        private System.Windows.Forms.Button abmempresa_but_aceptar;
     }
 }

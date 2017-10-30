@@ -76,6 +76,7 @@
             this.login_lab_usuario.Size = new System.Drawing.Size(46, 13);
             this.login_lab_usuario.TabIndex = 6;
             this.login_lab_usuario.Text = "Usuario:";
+            this.login_lab_usuario.Click += new System.EventHandler(this.login_lab_usuario_Click);
             // 
             // login_lab_pass
             // 
@@ -89,7 +90,8 @@
             // login_lab_bienvenidos
             // 
             this.login_lab_bienvenidos.AutoSize = true;
-            this.login_lab_bienvenidos.Location = new System.Drawing.Point(70, 48);
+            this.login_lab_bienvenidos.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.login_lab_bienvenidos.Location = new System.Drawing.Point(53, 50);
             this.login_lab_bienvenidos.Name = "login_lab_bienvenidos";
             this.login_lab_bienvenidos.Size = new System.Drawing.Size(156, 13);
             this.login_lab_bienvenidos.TabIndex = 8;

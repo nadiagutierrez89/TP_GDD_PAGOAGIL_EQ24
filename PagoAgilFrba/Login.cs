@@ -32,5 +32,10 @@ namespace PagoAgilFrba
             else
             { MessageBox.Show("Usuario o contraseña invalida"); }
         }
+
+        private void login_lab_usuario_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
