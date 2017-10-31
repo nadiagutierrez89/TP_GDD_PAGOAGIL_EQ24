@@ -51,10 +51,11 @@ IF OBJECT_ID('MARGINADOS.Rol') IS NOT NULL
 IF OBJECT_ID('MARGINADOS.Funcionalidad') IS NOT NULL
 	DROP TABLE MARGINADOS.Funcionalidad;	
 
-USE GD2C2017;
+
 /******************************************************************************/
 -- Creamos el esquema
 /******************************************************************************/
+USE GD2C2017;
 
 IF NOT EXISTS (SELECT schema_name FROM   information_schema.SCHEMATA WHERE  schema_name = 'MARGINADOS')
     EXEC('CREATE SCHEMA MARGINADOS');
@@ -67,7 +68,7 @@ GO
 -- --> Funcionalidad <-- --
 CREATE TABLE MARGINADOS.Funcionalidad
 ( 
-     cod_funcionalidad numeric(3, 0) NOT NULL PRIMARY KEY, 
+     cod_funcionalidad numeric(3, 0) IDENTITY NOT NULL PRIMARY KEY, 
      nombre_func nvarchar(50) 
 )
 
@@ -108,8 +109,7 @@ CREATE TABLE MARGINADOS.RolUsuario
 -- --> Sucursal <-- --
 CREATE TABLE MARGINADOS.Sucursal 
 ( 
-     cod_sucursal numeric(4, 0) IDENTITY PRIMARY KEY,
-     codigo_postal numeric(18,0) NOT NULL UNIQUE, 
+     codigo_postal_suc numeric(18,0) NOT NULL PRIMARY KEY, 
      nombre_suc nvarchar(50) NOT NULL,	 
 	 direccion_suc nvarchar(50) NOT NULL,	   
      habilitado bit
@@ -119,8 +119,8 @@ CREATE TABLE MARGINADOS.Sucursal
 CREATE TABLE MARGINADOS.UsuarioSucursal
 ( 
      cod_user NUMERIC(18, 0) FOREIGN KEY REFERENCES MARGINADOS.Usuario(cod_user), 
-     cod_sucursal NUMERIC(4, 0) FOREIGN KEY REFERENCES MARGINADOS.Sucursal(cod_sucursal),
-	 CONSTRAINT sinDuplicadosUsuarioSucursal UNIQUE(cod_user,cod_sucursal) 
+     codigo_postal_suc NUMERIC(18, 0) FOREIGN KEY REFERENCES MARGINADOS.Sucursal(codigo_postal_suc),
+	 CONSTRAINT sinDuplicadosUsuarioSucursal UNIQUE(cod_user,codigo_postal_suc) 
 )
 
 -- --> Cliente <-- --
@@ -129,7 +129,7 @@ CREATE TABLE MARGINADOS.UsuarioSucursal
      dni_clie numeric(18, 0) NOT NULL PRIMARY KEY, 
      nombre_clie nvarchar(255) NOT NULL,
 	 apellido_clie nvarchar(255) NOT NULL,
-	 mail_clie nvarchar(255) NOT NULL UNIQUE,	   
+	 mail_clie nvarchar(255) NOT NULL,	   
      telefeno_clie nvarchar(20) NOT NULL,
 	 calle_clie nvarchar(100) NOT NULL,
 	 nro_piso_clie char(2) NOT NULL,
@@ -143,7 +143,7 @@ CREATE TABLE MARGINADOS.UsuarioSucursal
 -- --> Rubro <-- --
 CREATE TABLE MARGINADOS.Rubro
 ( 
-     cod_rubro numeric(3, 0) IDENTITY PRIMARY KEY, 
+     cod_rubro numeric(18, 0) IDENTITY PRIMARY KEY, 
      descripcion_rubro nvarchar(50) 
 )
 
@@ -154,7 +154,7 @@ CREATE TABLE MARGINADOS.Rubro
      nombre_empresa nvarchar(255) NOT NULL,
 	 cuit_empresa nvarchar(50) NOT NULL UNIQUE,
 	 direccion_empresa nvarchar(255) NOT NULL ,	   
-     cod_rubro numeric(3, 0) NOT NULL FOREIGN KEY REFERENCES MARGINADOS.Rubro(cod_rubro),
+     cod_rubro numeric(18, 0) NOT NULL FOREIGN KEY REFERENCES MARGINADOS.Rubro(cod_rubro),
 	 habilitado bit
 )
 
@@ -184,3 +184,107 @@ CREATE TABLE MARGINADOS.FacturaItem
      CONSTRAINT idFactEmpr FOREIGN KEY (nro_factura,cod_empresa) REFERENCES MARGINADOS.Factura(nro_factura,cod_empresa)
 )
 
+/******************************************************************************/
+-- Creamos las tablas
+/******************************************************************************/
+
+-- --> Funcionalidad <-- --
+INSERT INTO MARGINADOS.Funcionalidad (nombre_func) 
+VALUES      ('Login y Seguridad'), 
+            ('AMB de Rol'), 
+            ('Registro de Usuario'), 
+            ('ABM de Cliente'), 
+            ('ABM de Empresa'), 
+            ('ABM de Sucursal'), 
+            ('ABM Facturas'), 
+            ('Registro de Pago de Facturas'), 
+            ('Rendición de Facturas cobradas'),
+			('Devoluciones'), 
+            ('Listado Estadistico')
+GO
+
+-- --> Rol <-- --
+INSERT INTO MARGINADOS.Rol (nombre_rol, habilitado) 
+VALUES      ('Administrador',1), 
+            ('Cobrador',1)
+GO
+
+-- --> RolFuncionalidad <-- --
+INSERT INTO MARGINADOS.RolFuncionalidad (cod_funcionalidad, cod_rol)
+VALUES 
+	(1,1),(2,1),(3,1),(4,1),(5,1),(6,1),(7,1),(8,1),(9,1),(10,1),(11,1),
+	(1,2),(2,2),(3,2),(4,2),(5,2),(6,2),(7,2),(8,2),(9,2),(11,2)
+GO
+
+-- --> Usuario <-- --
+INSERT INTO MARGINADOS.Usuario(username, pass,habilitado,nro_intentos)
+VALUES 
+	('admin','w23e',1,0),
+	('cobrador','cobrador',1,0)
+GO
+
+-- --> RolUsuario <-- --
+INSERT INTO MARGINADOS.RolUsuario(cod_user, cod_rol)
+VALUES 
+	(1,1), -- admin es administrador
+	(1,2), -- y tambien admin es cobrador
+	(2,2)
+GO
+
+-- --> Sucursal <-- --
+INSERT INTO MARGINADOS.Sucursal (codigo_postal_suc, nombre_suc, direccion_suc, habilitado) 
+	SELECT distinct Sucursal_Codigo_Postal, Sucursal_Nombre,Sucursal_Dirección, 1
+		FROM gd_esquema.Maestra where Sucursal_Nombre is not null
+GO
+
+-- --> UsuarioSucursal <-- --
+INSERT INTO MARGINADOS.UsuarioSucursal(cod_user, codigo_postal_suc)
+VALUES 
+	(1,7210),
+	(2,7210)
+GO
+
+-- --> Cliente <-- --
+INSERT INTO MARGINADOS.Cliente (
+		 dni_clie,
+		 nombre_clie,
+		 apellido_clie,
+		 mail_clie,
+		 telefeno_clie,
+		 calle_clie,
+		 nro_piso_clie,
+		 depto_clie,
+		 localidad_clie,
+		 cod_postal_clie,
+		 fecha_nac_clie,
+		 fecha_baja) 
+	SELECT distinct 
+		[Cliente-Dni],
+		[Cliente-Nombre], 
+		[Cliente-Apellido],
+		[Cliente_Mail],
+		'-',
+		[Cliente_Direccion],
+		'-',
+		'-',
+		'-',
+		[Cliente_Codigo_Postal],
+		[Cliente-Fecha_Nac],
+		null
+from [gd_esquema].[Maestra]
+GO
+
+UPDATE MARGINADOS.Cliente   
+SET MARGINADOS.Cliente.mail_clie  = ' ' + MARGINADOS.Cliente.mail_clie
+WHERE MARGINADOS.Cliente.dni_clie in (31294365,2592862)
+GO
+
+
+ALTER TABLE MARGINADOS.Cliente
+ADD CONSTRAINT email_sinDuplicados UNIQUE (mail_clie);   
+GO
+
+-- --> Rubro <-- --
+INSERT INTO MARGINADOS.Rubro (descripcion_rubro) 
+	SELECT distinct Rubro_Descripcion FROM gd_esquema.Maestra
+GO
