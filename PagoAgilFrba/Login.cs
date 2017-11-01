@@ -29,7 +29,6 @@ namespace PagoAgilFrba
                SHA256Managed hasher = new SHA256Managed();
                byte[] bytesDeHasheo = hasher.ComputeHash(encoderHash.GetBytes(login_tb_pass.Text));
                String password = transformarHasheoaString(bytesDeHasheo);
-               MessageBox.Show(password);
                 if( miUsuario.pass == password)
                     {
                         MessageBox.Show("Bienvenido " + login_tb_usuario.Text + "!"); }

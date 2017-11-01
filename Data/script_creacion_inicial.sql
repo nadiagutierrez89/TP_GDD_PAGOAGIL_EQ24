@@ -1,4 +1,4 @@
-USE GD2C2017;
+﻿USE GD2C2017;
 /******************************************************************************/
 -- Borramos todas las tablas
 /******************************************************************************/
@@ -92,7 +92,7 @@ CREATE TABLE MARGINADOS.RolFuncionalidad
 CREATE TABLE MARGINADOS.Usuario 
 ( 
      username nvarchar(20) NOT NULL UNIQUE, 
-     pass nvarchar(20), --password
+     pass nvarchar(64), --password
 	 cod_user numeric(18, 0) IDENTITY PRIMARY KEY,
 	 habilitado bit,	   
      nro_intentos numeric(1, 0)
@@ -184,43 +184,6 @@ CREATE TABLE MARGINADOS.FacturaItem
      CONSTRAINT idFactEmpr FOREIGN KEY (nro_factura,cod_empresa) REFERENCES MARGINADOS.Factura(nro_factura,cod_empresa)
 )
 
--- --> Rendicion <-- --
-CREATE TABLE MARGINADOS.Rendicion 
-(
-     cod_rendicion numeric(18,0) IDENTITY(1,1) NOT NULL,
-     fecha_rendicion datetime NOT NULL,
-     cant_facturas_rendidas numeric(3, 0) NOT NULL,
-	 importe_comision numeric(9, 2) NOT NULL,
-	 cod_empresa numeric(18, 0) NOT NULL,
-	 porcentaje_comision char(3) NOT NULL,
-	 importe_total_comision numeric(9, 2) NOT NULL,
-	 item_pago_numero char(4),
-	 PRIMARY KEY(cod_rendicion), 
-     FOREIGN KEY (cod_empresa) REFERENCES MARGINADOS.Empresa(cod_empresa)
-)
-
--- --> Motivo Devolucion <-- --
-CREATE TABLE MARGINADOS.Motivo_devolucion
-(
-     cod_motivoDevolucion char(2) NOT NULL,
-     descripcion varchar(50)
-	 PRIMARY KEY(cod_motivoDevolucion), 
-)
--- --> Devolucion <-- --
-CREATE TABLE MARGINADOS.Devolucion 
-(
-     cod_devolucion char(8)  NOT NULL,
-     username nvarchar(20),
-     nro_factura numeric(18, 0),
-	 cod_empresa numeric(18, 0) NOT NULL,
-	 cod_motivoDevolucion char(8),
-	 fecha_devolucion datetime,
-	 PRIMARY KEY(cod_devolucion), 
-     FOREIGN KEY (cod_motivoDevolucion) REFERENCES MARGINADOS.Motivo_devolucion(cod_motivoDevolucion)
-)
-
-
-
 /******************************************************************************/
 -- Creamos las tablas
 /******************************************************************************/
@@ -256,8 +219,8 @@ GO
 -- --> Usuario <-- --
 INSERT INTO MARGINADOS.Usuario(username, pass,habilitado,nro_intentos)
 VALUES 
-	('admin','w23e',1,0),
-	('cobrador','cobrador',1,0)
+	('admin',CONVERT(nvarchar(64),HashBytes('SHA2_256', 'w23e'),2),1,0),
+	('cobrador',CONVERT(nvarchar(64),HashBytes('SHA2_256', 'cobrador'),2),1,0)
 GO
 
 -- --> RolUsuario <-- --
