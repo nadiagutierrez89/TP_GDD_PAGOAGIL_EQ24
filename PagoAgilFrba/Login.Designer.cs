@@ -40,14 +40,14 @@
             // 
             // login_tb_usuario
             // 
-            this.login_tb_usuario.Location = new System.Drawing.Point(73, 130);
+            this.login_tb_usuario.Location = new System.Drawing.Point(81, 89);
             this.login_tb_usuario.Name = "login_tb_usuario";
             this.login_tb_usuario.Size = new System.Drawing.Size(100, 20);
             this.login_tb_usuario.TabIndex = 0;
             // 
             // login_btn_ingresar
             // 
-            this.login_btn_ingresar.Location = new System.Drawing.Point(134, 215);
+            this.login_btn_ingresar.Location = new System.Drawing.Point(94, 178);
             this.login_btn_ingresar.Name = "login_btn_ingresar";
             this.login_btn_ingresar.Size = new System.Drawing.Size(75, 23);
             this.login_btn_ingresar.TabIndex = 2;
@@ -63,7 +63,7 @@
             // 
             // login_tb_pass
             // 
-            this.login_tb_pass.Location = new System.Drawing.Point(73, 175);
+            this.login_tb_pass.Location = new System.Drawing.Point(81, 134);
             this.login_tb_pass.Name = "login_tb_pass";
             this.login_tb_pass.Size = new System.Drawing.Size(100, 20);
             this.login_tb_pass.TabIndex = 5;
@@ -71,7 +71,7 @@
             // login_lab_usuario
             // 
             this.login_lab_usuario.AutoSize = true;
-            this.login_lab_usuario.Location = new System.Drawing.Point(73, 111);
+            this.login_lab_usuario.Location = new System.Drawing.Point(81, 70);
             this.login_lab_usuario.Name = "login_lab_usuario";
             this.login_lab_usuario.Size = new System.Drawing.Size(46, 13);
             this.login_lab_usuario.TabIndex = 6;
@@ -81,7 +81,7 @@
             // login_lab_pass
             // 
             this.login_lab_pass.AutoSize = true;
-            this.login_lab_pass.Location = new System.Drawing.Point(73, 156);
+            this.login_lab_pass.Location = new System.Drawing.Point(81, 115);
             this.login_lab_pass.Name = "login_lab_pass";
             this.login_lab_pass.Size = new System.Drawing.Size(56, 13);
             this.login_lab_pass.TabIndex = 7;
@@ -90,10 +90,12 @@
             // login_lab_bienvenidos
             // 
             this.login_lab_bienvenidos.AutoSize = true;
+            this.login_lab_bienvenidos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.login_lab_bienvenidos.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.login_lab_bienvenidos.Location = new System.Drawing.Point(53, 50);
+            this.login_lab_bienvenidos.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.login_lab_bienvenidos.Location = new System.Drawing.Point(12, 27);
             this.login_lab_bienvenidos.Name = "login_lab_bienvenidos";
-            this.login_lab_bienvenidos.Size = new System.Drawing.Size(156, 13);
+            this.login_lab_bienvenidos.Size = new System.Drawing.Size(242, 18);
             this.login_lab_bienvenidos.TabIndex = 8;
             this.login_lab_bienvenidos.Text = "Bienvenidos a Pago Agil FRBA ";
             // 
@@ -101,7 +103,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(287, 261);
+            this.ClientSize = new System.Drawing.Size(265, 236);
             this.Controls.Add(this.login_lab_bienvenidos);
             this.Controls.Add(this.login_lab_pass);
             this.Controls.Add(this.login_lab_usuario);
@@ -114,6 +116,10 @@
             this.ResumeLayout(false);
             this.PerformLayout();
 
+        }
+
+        private void Form1_Load(object sender, System.EventArgs e)
+        {
         }
 
         #endregion
