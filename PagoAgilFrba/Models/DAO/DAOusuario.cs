@@ -26,6 +26,8 @@ namespace PagoAgilFrba.Models.DAO
                 {
                     miUsuario.username = (string)lector["username"];
                     miUsuario.pass = (string)lector["pass"];
+                    miUsuario.habilitado = (bool)lector["habilitado"];
+                    miUsuario.nro_intentos = (decimal)lector["nro_intentos"];
 
                 }
             }

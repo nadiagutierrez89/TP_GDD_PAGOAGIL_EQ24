@@ -15,6 +15,7 @@ namespace PagoAgilFrba
 {
     public partial class Login : Form
     {
+        public Usuario usuarioLogueado;
         public Login()
         {
             InitializeComponent();
@@ -31,12 +32,27 @@ namespace PagoAgilFrba
                String password = transformarHasheoaString(bytesDeHasheo);
                 if( miUsuario.pass == password)
                     {
-                        MessageBox.Show("Bienvenido " + login_tb_usuario.Text + "!"); }
-                else
-                 { MessageBox.Show("Contraseña invalida","Error!", MessageBoxButtons.OK);
+                        if (!miUsuario.habilitado)
+                            MessageBox.Show("Usuario inactivo para acceder al sistema", "Error!");
+                        else
+                        {
+                            MessageBox.Show("Bienvenido " + login_tb_usuario.Text + "!"); 
+                        miUsuario.ReiniciarFallidos();
+
+                        // Paso al form Principal (requiere user siempre)
+                        this.usuarioLogueado = miUsuario;
+                        this.Visible = false;
+                        Home inicio = new Home(usuarioLogueado);
+                        inicio.ShowDialog();
+                        
+                        }
+                    }
+                    else
+                 { MessageBox.Show("Contraseña incorrectos","Error!", MessageBoxButtons.OK);
+                 miUsuario.ActualizarFallidos();
                             login_tb_pass.Text = ""; }
             }
-           else{ MessageBox.Show("Usuario invalido","Error!", MessageBoxButtons.OK);
+           else{ MessageBox.Show("Usuario o contraseña incorrectos","Error!", MessageBoxButtons.OK);
                             login_tb_pass.Text = ""; }
         }
 

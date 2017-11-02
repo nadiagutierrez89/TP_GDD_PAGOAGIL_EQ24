@@ -126,6 +126,7 @@
     <Compile Include="AbmSucursal\Sucursal.Designer.cs">
       <DependentUpon>Sucursal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\DAO\DAORol.cs" />
     <Compile Include="SeleccionRolLogin.cs">
       <SubType>Form</SubType>
     </Compile>

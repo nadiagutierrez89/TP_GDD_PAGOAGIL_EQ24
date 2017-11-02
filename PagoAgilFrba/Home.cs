@@ -12,9 +12,12 @@ namespace PagoAgilFrba
 {
     public partial class Home : Form
     {
-        public Home()
+        private Models.BO.Usuario usuarioLogueado;
+
+        public Home(Models.BO.Usuario usuarioLogueado)
         {
-            InitializeComponent();
+            InitializeComponent(); 
+            this.usuarioLogueado = usuarioLogueado;
         }
     }
 }
