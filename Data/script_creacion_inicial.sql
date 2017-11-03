@@ -11,6 +11,30 @@ IF OBJECT_ID('MARGINADOS.FacturaItem') IS NOT NULL
 IF OBJECT_ID('MARGINADOS.Factura') IS NOT NULL
 	DROP TABLE MARGINADOS.Factura;
 
+-- --> PagoMedioDePago <-- --
+IF OBJECT_ID('MARGINADOS.PagoMedioDePago') IS NOT NULL
+	DROP TABLE MARGINADOS.PagoMedioDePago;
+
+-- --> Pago <-- --
+IF OBJECT_ID('MARGINADOS.Pago') IS NOT NULL
+	DROP TABLE MARGINADOS.Pago;
+
+-- --> MedioDePago <-- --
+IF OBJECT_ID('MARGINADOS.MedioDePago') IS NOT NULL
+	DROP TABLE MARGINADOS.MedioDePago;
+
+-- --> Rendicion <-- --
+IF OBJECT_ID('MARGINADOS.Rendicion') IS NOT NULL
+	DROP TABLE MARGINADOS.Rendicion;
+
+-- --> Devolucion <-- --
+IF OBJECT_ID('MARGINADOS.Devolucion') IS NOT NULL
+	DROP TABLE MARGINADOS.Devolucion;
+-- --> Motivo_devolucion <-- --
+
+IF OBJECT_ID('MARGINADOS.Motivo_devolucion') IS NOT NULL
+	DROP TABLE MARGINADOS.Motivo_devolucion;
+
 -- --> Empresa <-- --
 IF OBJECT_ID('MARGINADOS.Empresa') IS NOT NULL
 	DROP TABLE MARGINADOS.Empresa;
@@ -158,35 +182,10 @@ CREATE TABLE MARGINADOS.Rubro
 	 habilitado bit
 )
 
--- --> Factura <-- --
-  CREATE TABLE MARGINADOS.Factura 
-( 
-     nro_factura numeric(18, 0) NOT NULL, 
-     cod_empresa numeric(18, 0) FOREIGN KEY REFERENCES MARGINADOS.Empresa(cod_empresa),
-	 dni_cliente numeric(18, 0) FOREIGN KEY REFERENCES MARGINADOS.Cliente(dni_clie),
-	 fecha_alta_fac datetime NOT NULL,	   
-     fecha_vto_fac datetime NOT NULL,
-	 Importe_total_fac numeric(18,2) NOT NULL,
-	 --cod_pago, falta ver que hacemos con los pagos
-	 --cod_rendicion falta ver que hacemos con las rendiciones
-	 PRIMARY KEY(nro_factura,cod_empresa) 
-)
-
--- --> FacturaItem <-- --
-CREATE TABLE MARGINADOS.FacturaItem  
-(
-     nro_item numeric(18,0) IDENTITY(1,1) NOT NULL,
-     nro_factura numeric(18, 0) NOT NULL,
-     cod_empresa numeric(18, 0) NOT NULL,
-	 monto_item numeric(18, 2),
-	 cantidad_item numeric(18, 0),
-	 PRIMARY KEY(nro_item,nro_factura,cod_empresa), 
-     CONSTRAINT idFactEmpr FOREIGN KEY (nro_factura,cod_empresa) REFERENCES MARGINADOS.Factura(nro_factura,cod_empresa)
-)
 --- --> Rendicion <-- --
 CREATE TABLE MARGINADOS.Rendicion 
 (
-     cod_rendicion numeric(18,0) IDENTITY(1,1) NOT NULL,
+     nro_rendicion numeric(18,0) IDENTITY(1,1) NOT NULL,
      fecha_rendicion datetime NOT NULL,
      cant_facturas_rendidas numeric(3, 0) NOT NULL,
 	 importe_comision numeric(9, 2) NOT NULL,
@@ -194,7 +193,7 @@ CREATE TABLE MARGINADOS.Rendicion
 	 porcentaje_comision char(3) NOT NULL,
 	 importe_total_comision numeric(9, 2) NOT NULL,
 	 item_pago_numero char(4),
-	 PRIMARY KEY(cod_rendicion), 
+	 PRIMARY KEY(nro_rendicion), 
      FOREIGN KEY (cod_empresa) REFERENCES MARGINADOS.Empresa(cod_empresa)
 )
 
@@ -216,6 +215,66 @@ CREATE TABLE MARGINADOS.Devolucion
 	 fecha_devolucion datetime,
 	 PRIMARY KEY(cod_devolucion), 
      FOREIGN KEY (cod_motivoDevolucion) REFERENCES MARGINADOS.Motivo_devolucion(cod_motivoDevolucion)
+)
+
+-- --> MedioDePago <-- --
+CREATE TABLE MARGINADOS.MedioDePago 
+( 
+     cod_medioDePago numeric(3, 0) IDENTITY NOT NULL PRIMARY KEY, 
+     descripcion_MP nvarchar(50) NOT NULL
+)
+
+--- --> Pago <-- --
+CREATE TABLE MARGINADOS.Pago 
+(
+     nro_pago numeric(18,0) NOT NULL IDENTITY(1,1),
+     fecha_pago datetime NOT NULL,
+     dni_cliente numeric(18, 0) NOT NULL,
+	 importe_total_pago numeric(18, 2) NOT NULL,
+	 codigo_postal_suc numeric(18, 0) NOT NULL,
+	 cod_user numeric(18,0) NOT NULL,
+	 PRIMARY KEY(nro_pago), 
+     FOREIGN KEY (dni_cliente) REFERENCES MARGINADOS.Cliente(dni_clie),
+	 FOREIGN KEY (codigo_postal_suc) REFERENCES MARGINADOS.Sucursal(codigo_postal_suc)
+)
+
+--- --> PagoMedioDePago <-- --
+CREATE TABLE MARGINADOS.PagoMedioDePago 
+(
+     nro_pago numeric(18,0) NOT NULL,
+     cod_pago_MP numeric(3,0) NOT NULL,
+     importe numeric(18, 2) NOT NULL,
+     FOREIGN KEY (nro_pago) REFERENCES MARGINADOS.Pago(nro_pago),
+	 FOREIGN KEY (cod_pago_MP) REFERENCES MARGINADOS.MedioDePago(cod_medioDePago)
+)
+
+/*Habilitamos el insertado explicito de valores en la columna de tipo identity para mantener los valores antiguos del campo ID*/
+SET IDENTITY_INSERT MARGINADOS.Pago ON
+
+-- --> Factura <-- --
+  CREATE TABLE MARGINADOS.Factura 
+( 
+     nro_factura numeric(18, 0) NOT NULL, 
+     cod_empresa numeric(18, 0) FOREIGN KEY REFERENCES MARGINADOS.Empresa(cod_empresa),
+	 dni_cliente numeric(18, 0) FOREIGN KEY REFERENCES MARGINADOS.Cliente(dni_clie),
+	 fecha_alta_fac datetime NOT NULL,	   
+     fecha_vto_fac datetime NOT NULL,
+	 Importe_total_fac numeric(18,2) NOT NULL,
+	 nro_pago numeric(18, 0) FOREIGN KEY REFERENCES MARGINADOS.Pago (nro_pago),
+	 nro_rendicion numeric(18, 0) FOREIGN KEY REFERENCES MARGINADOS.Rendicion (nro_rendicion),
+	 PRIMARY KEY(nro_factura,cod_empresa) 
+)
+
+-- --> FacturaItem <-- --
+CREATE TABLE MARGINADOS.FacturaItem  
+(
+     cod_empresa numeric(18, 0) NOT NULL,
+	 nro_factura numeric(18, 0) NOT NULL,
+     nro_item numeric(18,0) NOT NULL,
+	 monto_item numeric(18, 2),
+	 cantidad_item numeric(18, 0),
+	 PRIMARY KEY(nro_item,nro_factura,cod_empresa), 
+     CONSTRAINT idFactEmpr FOREIGN KEY (nro_factura,cod_empresa) REFERENCES MARGINADOS.Factura(nro_factura,cod_empresa)
 )
 
 /******************************************************************************/
@@ -321,4 +380,50 @@ GO
 -- --> Rubro <-- --
 INSERT INTO MARGINADOS.Rubro (descripcion_rubro) 
 	SELECT distinct Rubro_Descripcion FROM gd_esquema.Maestra
+GO
+
+-- --> Empresa <-- --
+INSERT INTO MARGINADOS.Empresa (nombre_empresa,cuit_empresa,direccion_empresa,cod_rubro,habilitado) 
+	SELECT distinct [Empresa_Nombre],[Empresa_Cuit],[Empresa_Direccion],[Empresa_Rubro],1 from gd_esquema.Maestra
+GO
+
+-- --> MedioDePago <-- --
+INSERT INTO MARGINADOS.MedioDePago (descripcion_MP) 
+	SELECT distinct [FormaPagoDescripcion] from gd_esquema.Maestra
+		where FormaPagoDescripcion is not null
+GO
+
+-- --> Pago <-- --
+INSERT INTO MARGINADOS.Pago (nro_pago,fecha_pago,dni_cliente,importe_total_pago,codigo_postal_suc,cod_user) 
+	SELECT distinct pago_nro, Pago_Fecha, [Cliente-Dni], Total, Sucursal_Codigo_Postal, 1 from gd_esquema.Maestra
+		where pago_nro is not null
+GO
+/*Deshabilitamos el insertado explicito de valores en la columna de tipo identity*/
+SET IDENTITY_INSERT MARGINADOS.Pago OFF
+
+-- --> PagoMedioDePago  <-- --
+INSERT INTO MARGINADOS.PagoMedioDePago (nro_pago,cod_pago_MP,importe) 
+	SELECT distinct m.pago_nro, p.cod_medioDePago, m.Total from gd_esquema.Maestra m
+		inner join MARGINADOS.MedioDePago p on m.FormaPagoDescripcion = p.descripcion_MP
+		where m.pago_nro is not null
+GO
+
+-- --> Factura  <-- --
+INSERT INTO MARGINADOS.Factura(nro_factura,cod_empresa,dni_cliente,fecha_alta_fac,fecha_vto_fac,Importe_total_fac,nro_pago,nro_rendicion) 
+	SELECT distinct m.[Nro_Factura], e.cod_empresa, m.[Cliente-Dni], m.[Factura_Fecha], m.[Factura_Fecha_Vencimiento], m.[Factura_Total], null, null
+		from gd_esquema.Maestra m inner join MARGINADOS.Empresa e on m.Empresa_Cuit = e.cuit_empresa
+		where [Nro_Factura] is not null
+GO
+
+-- --> FacturaItem  <-- --
+INSERT INTO MARGINADOS.FacturaItem (cod_empresa,nro_factura,nro_item,monto_item,cantidad_item) 
+select 
+	e.cod_empresa,
+	m.[Nro_Factura],	
+	ROW_NUMBER() OVER(PARTITION BY [Nro_Factura],e.cod_empresa ORDER BY [ItemFactura_Monto] ) AS Row,
+	m.[ItemFactura_Monto],
+	m.[ItemFactura_Cantidad]
+from [gd_esquema].[Maestra] m inner join MARGINADOS.Empresa e on m.Empresa_Cuit = e.cuit_empresa
+where m.[ItemFactura_Monto] is not null and m.Pago_nro is null and m.Rendicion_Nro is null	
+order by 1,2
 GO
