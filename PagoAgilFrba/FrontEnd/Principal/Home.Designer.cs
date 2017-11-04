@@ -50,6 +50,7 @@
             this.home_but_abmcliente.TabIndex = 0;
             this.home_but_abmcliente.Text = "ABM de Cliente";
             this.home_but_abmcliente.UseVisualStyleBackColor = true;
+            this.home_but_abmcliente.Click += new System.EventHandler(this.home_but_abmcliente_Click);
             // 
             // home_but_abmempresa
             // 

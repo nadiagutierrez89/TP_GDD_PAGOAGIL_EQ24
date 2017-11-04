@@ -60,70 +60,70 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AbmCliente\ABMCliente.cs">
+    <Compile Include="FrontEnd\AbmCliente\ABMCliente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AbmCliente\ABMCliente.Designer.cs">
+    <Compile Include="FrontEnd\AbmCliente\ABMCliente.Designer.cs">
       <DependentUpon>ABMCliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="AbmCliente\Clientes.cs">
+    <Compile Include="FrontEnd\AbmCliente\Clientes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AbmCliente\Clientes.Designer.cs">
+    <Compile Include="FrontEnd\AbmCliente\Clientes.Designer.cs">
       <DependentUpon>Clientes.cs</DependentUpon>
     </Compile>
-    <Compile Include="AbmEmpresa\ABMEmpresa.cs">
+    <Compile Include="FrontEnd\AbmEmpresa\ABMEmpresa.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AbmEmpresa\ABMEmpresa.Designer.cs">
+    <Compile Include="FrontEnd\AbmEmpresa\ABMEmpresa.Designer.cs">
       <DependentUpon>ABMEmpresa.cs</DependentUpon>
     </Compile>
-    <Compile Include="AbmEmpresa\Empresa.cs">
+    <Compile Include="FrontEnd\AbmEmpresa\Empresa.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AbmEmpresa\Empresa.Designer.cs">
+    <Compile Include="FrontEnd\AbmEmpresa\Empresa.Designer.cs">
       <DependentUpon>Empresa.cs</DependentUpon>
     </Compile>
-    <Compile Include="AbmFactura\ABM Factura.cs">
+    <Compile Include="FrontEnd\AbmFactura\ABM Factura.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AbmFactura\ABM Factura.Designer.cs">
+    <Compile Include="FrontEnd\AbmFactura\ABM Factura.Designer.cs">
       <DependentUpon>ABM Factura.cs</DependentUpon>
     </Compile>
-    <Compile Include="AbmFactura\Factura.cs">
+    <Compile Include="FrontEnd\AbmFactura\Factura.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AbmFactura\Factura.Designer.cs">
+    <Compile Include="FrontEnd\AbmFactura\Factura.Designer.cs">
       <DependentUpon>Factura.cs</DependentUpon>
     </Compile>
-    <Compile Include="AbmFactura\DevoluciónFacturas.cs">
+    <Compile Include="FrontEnd\AbmFactura\DevoluciónFacturas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AbmFactura\DevoluciónFacturas.Designer.cs">
+    <Compile Include="FrontEnd\AbmFactura\DevoluciónFacturas.Designer.cs">
       <DependentUpon>DevoluciónFacturas.cs</DependentUpon>
     </Compile>
-    <Compile Include="AbmRol\ABMRol.cs">
+    <Compile Include="FrontEnd\AbmRol\ABMRol.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AbmRol\ABMRol.Designer.cs">
+    <Compile Include="FrontEnd\AbmRol\ABMRol.Designer.cs">
       <DependentUpon>ABMRol.cs</DependentUpon>
     </Compile>
-    <Compile Include="AbmRol\Roles.cs">
+    <Compile Include="FrontEnd\AbmRol\Roles.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AbmRol\Roles.Designer.cs">
+    <Compile Include="FrontEnd\AbmRol\Roles.Designer.cs">
       <DependentUpon>Roles.cs</DependentUpon>
     </Compile>
-    <Compile Include="AbmSucursal\ABMSucursal.cs">
+    <Compile Include="FrontEnd\AbmSucursal\ABMSucursal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AbmSucursal\ABMSucursal.Designer.cs">
+    <Compile Include="FrontEnd\AbmSucursal\ABMSucursal.Designer.cs">
       <DependentUpon>ABMSucursal.cs</DependentUpon>
     </Compile>
-    <Compile Include="AbmSucursal\Sucursal.cs">
+    <Compile Include="FrontEnd\AbmSucursal\Sucursal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AbmSucursal\Sucursal.Designer.cs">
+    <Compile Include="FrontEnd\AbmSucursal\Sucursal.Designer.cs">
       <DependentUpon>Sucursal.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\BO\Funcionalidad.cs" />
@@ -133,28 +133,28 @@
     <Compile Include="Models\DAO\DAORol.cs" />
     <Compile Include="Models\DAO\DAORolFuncionalidad.cs" />
     <Compile Include="Models\DAO\DAOSocursal.cs" />
-    <Compile Include="SeleccionRolLogin.cs">
+    <Compile Include="Principal\SeleccionRolLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SeleccionRolLogin.Designer.cs">
+    <Compile Include="Principal\SeleccionRolLogin.Designer.cs">
       <DependentUpon>SeleccionRolLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Home.cs">
+    <Compile Include="Principal\Home.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Home.Designer.cs">
+    <Compile Include="Principal\Home.Designer.cs">
       <DependentUpon>Home.cs</DependentUpon>
     </Compile>
-    <Compile Include="Login.cs">
+    <Compile Include="Principal\Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Login.Designer.cs">
+    <Compile Include="Principal\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="ListadoEstadistico\Listado Estadistico.cs">
+    <Compile Include="FrontEnd\ListadoEstadistico\Listado Estadistico.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ListadoEstadistico\Listado Estadistico.Designer.cs">
+    <Compile Include="FrontEnd\ListadoEstadistico\Listado Estadistico.Designer.cs">
       <DependentUpon>Listado Estadistico.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\BO\Usuario.cs" />
@@ -162,58 +162,58 @@
     <Compile Include="Models\DataBase\DBAcess.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RegistroPago\RegistroPago.cs">
+    <Compile Include="FrontEnd\RegistroPago\RegistroPago.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RegistroPago\RegistroPago.Designer.cs">
+    <Compile Include="FrontEnd\RegistroPago\RegistroPago.Designer.cs">
       <DependentUpon>RegistroPago.cs</DependentUpon>
     </Compile>
-    <Compile Include="Rendicion\Rendicion.cs">
+    <Compile Include="FrontEnd\Rendicion\Rendicion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Rendicion\Rendicion.Designer.cs">
+    <Compile Include="FrontEnd\Rendicion\Rendicion.Designer.cs">
       <DependentUpon>Rendicion.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AbmCliente\ABMCliente.resx">
+    <EmbeddedResource Include="FrontEnd\AbmCliente\ABMCliente.resx">
       <DependentUpon>ABMCliente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AbmCliente\Clientes.resx">
+    <EmbeddedResource Include="FrontEnd\AbmCliente\Clientes.resx">
       <DependentUpon>Clientes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AbmEmpresa\ABMEmpresa.resx">
+    <EmbeddedResource Include="FrontEnd\AbmEmpresa\ABMEmpresa.resx">
       <DependentUpon>ABMEmpresa.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AbmEmpresa\Empresa.resx">
+    <EmbeddedResource Include="FrontEnd\AbmEmpresa\Empresa.resx">
       <DependentUpon>Empresa.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AbmFactura\ABM Factura.resx">
+    <EmbeddedResource Include="FrontEnd\AbmFactura\ABM Factura.resx">
       <DependentUpon>ABM Factura.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AbmFactura\DevoluciónFacturas.resx">
+    <EmbeddedResource Include="FrontEnd\AbmFactura\DevoluciónFacturas.resx">
       <DependentUpon>DevoluciónFacturas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AbmFactura\Factura.resx">
+    <EmbeddedResource Include="FrontEnd\AbmFactura\Factura.resx">
       <DependentUpon>Factura.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AbmRol\ABMRol.resx">
+    <EmbeddedResource Include="FrontEnd\AbmRol\ABMRol.resx">
       <DependentUpon>ABMRol.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AbmRol\Roles.resx">
+    <EmbeddedResource Include="FrontEnd\AbmRol\Roles.resx">
       <DependentUpon>Roles.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AbmSucursal\ABMSucursal.resx">
+    <EmbeddedResource Include="FrontEnd\AbmSucursal\ABMSucursal.resx">
       <DependentUpon>ABMSucursal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AbmSucursal\Sucursal.resx">
+    <EmbeddedResource Include="FrontEnd\AbmSucursal\Sucursal.resx">
       <DependentUpon>Sucursal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Home.resx">
+    <EmbeddedResource Include="Principal\Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ListadoEstadistico\Listado Estadistico.resx">
+    <EmbeddedResource Include="FrontEnd\ListadoEstadistico\Listado Estadistico.resx">
       <DependentUpon>Listado Estadistico.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Login.resx">
+    <EmbeddedResource Include="Principal\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -225,13 +225,13 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="RegistroPago\RegistroPago.resx">
+    <EmbeddedResource Include="FrontEnd\RegistroPago\RegistroPago.resx">
       <DependentUpon>RegistroPago.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Rendicion\Rendicion.resx">
+    <EmbeddedResource Include="FrontEnd\Rendicion\Rendicion.resx">
       <DependentUpon>Rendicion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SeleccionRolLogin.resx">
+    <EmbeddedResource Include="Principal\SeleccionRolLogin.resx">
       <DependentUpon>SeleccionRolLogin.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
