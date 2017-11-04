@@ -1,4 +1,4 @@
-﻿namespace PagoAgilFrba.AbmSucursal
+﻿namespace PagoAgilFrba.FrontEnd.AbmSucursal
 {
     partial class Sucursal
     {

@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PagoAgilFrba.AbmEmpresa
+namespace PagoAgilFrba.FrontEnd.AbmEmpresa
 {
     public partial class ABMEmpresa : Form
     {

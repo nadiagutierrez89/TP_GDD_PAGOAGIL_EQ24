@@ -1,4 +1,6 @@
-﻿using System;
+﻿using PagoAgilFrba.FrontEnd.AbmCliente;
+using PagoAgilFrba.Models.BO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,11 +10,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PagoAgilFrba
+namespace PagoAgilFrba.FrontEnd.Principal
 {
     public partial class Home : Form
     {
-        private Models.BO.Usuario usuarioLogueado;
+        private Usuario usuarioLogueado;
 
         public Home(Models.BO.Usuario usuarioLogueado)
         {
@@ -58,6 +60,10 @@ namespace PagoAgilFrba
 
         private void home_but_abmcliente_Click(object sender, EventArgs e)
         {
+            this.Hide();
+            Clientes winformClientes = new Clientes(usuarioLogueado);
+            winformClientes.ShowDialog();
+            this.Show();
 
         }
 

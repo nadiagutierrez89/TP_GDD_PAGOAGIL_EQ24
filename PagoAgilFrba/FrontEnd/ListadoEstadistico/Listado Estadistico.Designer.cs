@@ -1,4 +1,4 @@
-﻿namespace PagoAgilFrba.ListadoEstadistico
+﻿namespace PagoAgilFrba.FrontEnd.ListadoEstadistico
 {
     partial class Form1
     {

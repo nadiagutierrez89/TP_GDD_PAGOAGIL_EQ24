@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PagoAgilFrba.AbmRol
+namespace PagoAgilFrba.FrontEnd.AbmRol
 {
     public partial class Roles : Form
     {

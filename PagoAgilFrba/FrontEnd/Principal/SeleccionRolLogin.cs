@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PagoAgilFrba
+namespace PagoAgilFrba.FrontEnd.Principal
 {
     public partial class SeleccionRolLogin : Form
     {

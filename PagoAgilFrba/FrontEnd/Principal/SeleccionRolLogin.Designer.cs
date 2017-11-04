@@ -1,4 +1,4 @@
-﻿namespace PagoAgilFrba
+﻿namespace PagoAgilFrba.FrontEnd.Principal
 {
     partial class SeleccionRolLogin
     {

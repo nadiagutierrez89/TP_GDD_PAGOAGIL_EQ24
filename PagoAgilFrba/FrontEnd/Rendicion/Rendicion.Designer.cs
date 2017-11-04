@@ -1,4 +1,4 @@
-﻿namespace PagoAgilFrba.Rendicion
+﻿namespace PagoAgilFrba.FrontEnd.Rendicion
 {
     partial class Rendicion
     {

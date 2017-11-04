@@ -1,4 +1,4 @@
-﻿namespace PagoAgilFrba.RegistroPago
+﻿namespace PagoAgilFrba.FrontEnd.RegistroPago
 {
     partial class RegistroPago
     {

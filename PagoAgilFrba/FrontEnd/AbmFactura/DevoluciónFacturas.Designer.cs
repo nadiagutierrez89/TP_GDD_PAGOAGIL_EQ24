@@ -1,4 +1,4 @@
-﻿namespace PagoAgilFrba.AbmFactura
+﻿namespace PagoAgilFrba.FrontEnd.AbmFactura
 {
     partial class DevoluciónFacturas
     {

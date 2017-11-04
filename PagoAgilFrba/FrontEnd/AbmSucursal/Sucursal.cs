@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PagoAgilFrba.AbmSucursal
+namespace PagoAgilFrba.FrontEnd.AbmSucursal
 {
     public partial class Sucursal : Form
     {

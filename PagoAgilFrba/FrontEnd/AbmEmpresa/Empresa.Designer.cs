@@ -1,4 +1,4 @@
-﻿namespace PagoAgilFrba.AbmEmpresa
+﻿namespace PagoAgilFrba.FrontEnd.AbmEmpresa
 {
     partial class Empresa
     {

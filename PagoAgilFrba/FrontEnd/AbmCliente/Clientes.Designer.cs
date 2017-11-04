@@ -1,4 +1,4 @@
-﻿namespace PagoAgilFrba.AbmCliente
+﻿namespace PagoAgilFrba.FrontEnd.AbmCliente
 {
     partial class Clientes
     {

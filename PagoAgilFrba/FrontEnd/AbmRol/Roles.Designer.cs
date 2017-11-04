@@ -1,4 +1,4 @@
-﻿namespace PagoAgilFrba.AbmRol
+﻿namespace PagoAgilFrba.FrontEnd.AbmRol
 {
     partial class Roles
     {

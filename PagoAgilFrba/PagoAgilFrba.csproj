@@ -133,22 +133,22 @@
     <Compile Include="Models\DAO\DAORol.cs" />
     <Compile Include="Models\DAO\DAORolFuncionalidad.cs" />
     <Compile Include="Models\DAO\DAOSocursal.cs" />
-    <Compile Include="Principal\SeleccionRolLogin.cs">
+    <Compile Include="FrontEnd\Principal\SeleccionRolLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Principal\SeleccionRolLogin.Designer.cs">
+    <Compile Include="FrontEnd\Principal\SeleccionRolLogin.Designer.cs">
       <DependentUpon>SeleccionRolLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Principal\Home.cs">
+    <Compile Include="FrontEnd\Principal\Home.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Principal\Home.Designer.cs">
+    <Compile Include="FrontEnd\Principal\Home.Designer.cs">
       <DependentUpon>Home.cs</DependentUpon>
     </Compile>
-    <Compile Include="Principal\Login.cs">
+    <Compile Include="FrontEnd\Principal\Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Principal\Login.Designer.cs">
+    <Compile Include="FrontEnd\Principal\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
     <Compile Include="FrontEnd\ListadoEstadistico\Listado Estadistico.cs">
@@ -207,13 +207,13 @@
     <EmbeddedResource Include="FrontEnd\AbmSucursal\Sucursal.resx">
       <DependentUpon>Sucursal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Principal\Home.resx">
+    <EmbeddedResource Include="FrontEnd\Principal\Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrontEnd\ListadoEstadistico\Listado Estadistico.resx">
       <DependentUpon>Listado Estadistico.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Principal\Login.resx">
+    <EmbeddedResource Include="FrontEnd\Principal\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -231,7 +231,7 @@
     <EmbeddedResource Include="FrontEnd\Rendicion\Rendicion.resx">
       <DependentUpon>Rendicion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Principal\SeleccionRolLogin.resx">
+    <EmbeddedResource Include="FrontEnd\Principal\SeleccionRolLogin.resx">
       <DependentUpon>SeleccionRolLogin.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">

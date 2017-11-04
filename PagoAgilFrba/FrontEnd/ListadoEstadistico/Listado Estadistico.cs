@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PagoAgilFrba.ListadoEstadistico
+namespace PagoAgilFrba.FrontEnd.ListadoEstadistico
 {
     public partial class Form1 : Form
     {
