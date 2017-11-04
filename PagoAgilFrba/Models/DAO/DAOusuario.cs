@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace PagoAgilFrba.Models.DAO
 {
-    class DAOusuario
+    class DAOUsuario
     {
         public static Usuario getUsuario(string username)
         {
@@ -24,6 +24,7 @@ namespace PagoAgilFrba.Models.DAO
             {
                 while (lector.Read())
                 {
+                    miUsuario.cod_user = (decimal)lector["cod_user"];
                     miUsuario.username = (string)lector["username"];
                     miUsuario.pass = (string)lector["pass"];
                     miUsuario.habilitado = (bool)lector["habilitado"];
@@ -31,6 +32,8 @@ namespace PagoAgilFrba.Models.DAO
 
                 }
             }
+
+            miUsuario.roles = Rol.rolesDe(miUsuario.cod_user);
 
             return miUsuario;
         }

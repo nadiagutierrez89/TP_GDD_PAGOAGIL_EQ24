@@ -291,7 +291,7 @@ GO
 INSERT INTO MARGINADOS.RolFuncionalidad (cod_funcionalidad, cod_rol)
   VALUES 
   (1, 1), (2, 1), (3, 1), (4, 1), (5, 1), (6, 1), (7, 1), (8, 1), (9, 1), (10, 1), (11, 1),
-  (1, 2), (2, 2), (3, 2), (4, 2), (5, 2), (6, 2), (7, 2), (8, 2), (9, 2), (11, 2)
+  (1, 2), (3, 2), (4, 2), (5, 2), (6, 2), (7, 2), (8, 2), (9, 2)
 GO
 
 -- --> Usuario <-- --
@@ -508,4 +508,39 @@ INSERT INTO MARGINADOS.MotivoDevolucion (descripcion)
   ('Factura erronea'),
   ('Solicitud del cliente'),
   ('Monto incorrecto')
+GO
+
+/******************************************************************************/
+--- Triggers stored procedures
+/******************************************************************************/
+
+IF OBJECT_ID('MARGINADOS.sp_rolesDe') IS NOT NULL
+	DROP PROCEDURE MARGINADOS.sp_rolesDe;
+GO
+
+CREATE PROCEDURE MARGINADOS.sp_rolesDe (@cod_user numeric(18, 0))
+AS
+BEGIN 
+	SELECT ru.cod_user, r.cod_rol, r.nombre_rol
+	  FROM MARGINADOS.RolUsuario ru 
+	  inner join MARGINADOS.Rol r
+	  on r.cod_rol = ru.cod_rol
+	  and r.habilitado = 1
+	  and ru.cod_user = @cod_user
+END
+GO
+
+IF OBJECT_ID('MARGINADOS.sp_funcionalidadesDe') IS NOT NULL
+	DROP PROCEDURE MARGINADOS.sp_funcionalidadesDe;
+GO
+
+CREATE PROCEDURE MARGINADOS.sp_funcionalidadesDe (@cod_rol numeric(18, 0))
+AS
+BEGIN 
+	SELECT rf.cod_rol, f.cod_funcionalidad, f.nombre_func
+	  FROM MARGINADOS.RolFuncionalidad rf 
+	  inner join MARGINADOS.Funcionalidad f
+	  on f.cod_funcionalidad = rf.cod_funcionalidad
+	  and rf.cod_rol = @cod_rol
+END
 GO

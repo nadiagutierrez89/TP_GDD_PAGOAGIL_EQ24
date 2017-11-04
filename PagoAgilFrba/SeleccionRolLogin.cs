@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PagoAgilFrba.Models.BO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,12 +13,38 @@ namespace PagoAgilFrba
 {
     public partial class SeleccionRolLogin : Form
     {
+        private Models.BO.Usuario usuarioLogueado;
+
         public SeleccionRolLogin()
         {
             InitializeComponent();
         }
 
+        public SeleccionRolLogin(Models.BO.Usuario usuarioLogueado) : this()
+        {
+
+            this.usuarioLogueado = usuarioLogueado;
+            this.lbl_bienvenido.Text = this.lbl_bienvenido.Text + usuarioLogueado.username + "!!!";
+            List<Rol> list = usuarioLogueado.roles;
+            this.seleccionRol_cb_roles.DataSource = list;
+            this.seleccionRol_cb_roles.ValueMember = "cod_rol";
+            this.seleccionRol_cb_roles.DisplayMember = "nombre";
+        }
+
         private void seleccionRol_lab_roles_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            usuarioLogueado.rolActual = (Rol)seleccionRol_cb_roles.SelectedItem;
+            usuarioLogueado.rolActual.cargarFuncionalidades();
+            this.Close();
+
+        }
+
+        private void lbl_bienvenido_Click(object sender, EventArgs e)
         {
 
         }

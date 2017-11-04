@@ -126,7 +126,11 @@
     <Compile Include="AbmSucursal\Sucursal.Designer.cs">
       <DependentUpon>Sucursal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\BO\Funcionalidad.cs" />
+    <Compile Include="Models\BO\Rol.cs" />
+    <Compile Include="Models\DAO\DAOFuncionalidad.cs" />
     <Compile Include="Models\DAO\DAORol.cs" />
+    <Compile Include="Models\DAO\DAORolFuncionalidad.cs" />
     <Compile Include="SeleccionRolLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -152,7 +156,7 @@
       <DependentUpon>Listado Estadistico.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\BO\Usuario.cs" />
-    <Compile Include="Models\DAO\DAOusuario.cs" />
+    <Compile Include="Models\DAO\DAOUsuario.cs" />
     <Compile Include="Models\DataBase\DBAcess.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
