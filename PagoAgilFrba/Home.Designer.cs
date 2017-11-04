@@ -38,11 +38,13 @@
             this.home_but_rendirf = new System.Windows.Forms.Button();
             this.home_but_devolverf = new System.Windows.Forms.Button();
             this.home_but_estadisticas = new System.Windows.Forms.Button();
+            this.lbl_rol = new System.Windows.Forms.Label();
+            this.lbl_socursal = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // home_but_abmcliente
             // 
-            this.home_but_abmcliente.Location = new System.Drawing.Point(49, 20);
+            this.home_but_abmcliente.Location = new System.Drawing.Point(50, 72);
             this.home_but_abmcliente.Name = "home_but_abmcliente";
             this.home_but_abmcliente.Size = new System.Drawing.Size(108, 38);
             this.home_but_abmcliente.TabIndex = 0;
@@ -51,7 +53,7 @@
             // 
             // home_but_abmempresa
             // 
-            this.home_but_abmempresa.Location = new System.Drawing.Point(188, 20);
+            this.home_but_abmempresa.Location = new System.Drawing.Point(189, 72);
             this.home_but_abmempresa.Name = "home_but_abmempresa";
             this.home_but_abmempresa.Size = new System.Drawing.Size(108, 38);
             this.home_but_abmempresa.TabIndex = 1;
@@ -60,7 +62,7 @@
             // 
             // home_but_abmfactura
             // 
-            this.home_but_abmfactura.Location = new System.Drawing.Point(49, 75);
+            this.home_but_abmfactura.Location = new System.Drawing.Point(50, 127);
             this.home_but_abmfactura.Name = "home_but_abmfactura";
             this.home_but_abmfactura.Size = new System.Drawing.Size(108, 38);
             this.home_but_abmfactura.TabIndex = 2;
@@ -70,7 +72,7 @@
             // 
             // home_but_abmsucursal
             // 
-            this.home_but_abmsucursal.Location = new System.Drawing.Point(188, 75);
+            this.home_but_abmsucursal.Location = new System.Drawing.Point(189, 127);
             this.home_but_abmsucursal.Name = "home_but_abmsucursal";
             this.home_but_abmsucursal.Size = new System.Drawing.Size(108, 38);
             this.home_but_abmsucursal.TabIndex = 3;
@@ -79,7 +81,7 @@
             // 
             // home_but_ambrol
             // 
-            this.home_but_ambrol.Location = new System.Drawing.Point(188, 232);
+            this.home_but_ambrol.Location = new System.Drawing.Point(189, 284);
             this.home_but_ambrol.Name = "home_but_ambrol";
             this.home_but_ambrol.Size = new System.Drawing.Size(108, 38);
             this.home_but_ambrol.TabIndex = 4;
@@ -89,7 +91,7 @@
             // 
             // home_but_regusuario
             // 
-            this.home_but_regusuario.Location = new System.Drawing.Point(50, 235);
+            this.home_but_regusuario.Location = new System.Drawing.Point(51, 287);
             this.home_but_regusuario.Name = "home_but_regusuario";
             this.home_but_regusuario.Size = new System.Drawing.Size(108, 38);
             this.home_but_regusuario.TabIndex = 5;
@@ -98,7 +100,7 @@
             // 
             // home_but_regpagf
             // 
-            this.home_but_regpagf.Location = new System.Drawing.Point(48, 128);
+            this.home_but_regpagf.Location = new System.Drawing.Point(49, 180);
             this.home_but_regpagf.Name = "home_but_regpagf";
             this.home_but_regpagf.Size = new System.Drawing.Size(108, 38);
             this.home_but_regpagf.TabIndex = 6;
@@ -107,7 +109,7 @@
             // 
             // home_but_rendirf
             // 
-            this.home_but_rendirf.Location = new System.Drawing.Point(50, 182);
+            this.home_but_rendirf.Location = new System.Drawing.Point(51, 234);
             this.home_but_rendirf.Name = "home_but_rendirf";
             this.home_but_rendirf.Size = new System.Drawing.Size(108, 38);
             this.home_but_rendirf.TabIndex = 7;
@@ -116,7 +118,7 @@
             // 
             // home_but_devolverf
             // 
-            this.home_but_devolverf.Location = new System.Drawing.Point(187, 182);
+            this.home_but_devolverf.Location = new System.Drawing.Point(188, 234);
             this.home_but_devolverf.Name = "home_but_devolverf";
             this.home_but_devolverf.Size = new System.Drawing.Size(108, 38);
             this.home_but_devolverf.TabIndex = 8;
@@ -125,7 +127,7 @@
             // 
             // home_but_estadisticas
             // 
-            this.home_but_estadisticas.Location = new System.Drawing.Point(188, 129);
+            this.home_but_estadisticas.Location = new System.Drawing.Point(189, 181);
             this.home_but_estadisticas.Name = "home_but_estadisticas";
             this.home_but_estadisticas.Size = new System.Drawing.Size(108, 38);
             this.home_but_estadisticas.TabIndex = 9;
@@ -133,11 +135,34 @@
             this.home_but_estadisticas.UseVisualStyleBackColor = true;
             this.home_but_estadisticas.Click += new System.EventHandler(this.home_but_estadisticas_Click);
             // 
+            // lbl_rol
+            // 
+            this.lbl_rol.AutoSize = true;
+            this.lbl_rol.Location = new System.Drawing.Point(13, 13);
+            this.lbl_rol.Name = "lbl_rol";
+            this.lbl_rol.Size = new System.Drawing.Size(35, 13);
+            this.lbl_rol.TabIndex = 10;
+            this.lbl_rol.Text = "label1";
+            this.lbl_rol.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lbl_rol.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // lbl_socursal
+            // 
+            this.lbl_socursal.AutoSize = true;
+            this.lbl_socursal.Location = new System.Drawing.Point(12, 35);
+            this.lbl_socursal.Name = "lbl_socursal";
+            this.lbl_socursal.Size = new System.Drawing.Size(35, 13);
+            this.lbl_socursal.TabIndex = 11;
+            this.lbl_socursal.Text = "label2";
+            this.lbl_socursal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(350, 289);
+            this.ClientSize = new System.Drawing.Size(350, 353);
+            this.Controls.Add(this.lbl_socursal);
+            this.Controls.Add(this.lbl_rol);
             this.Controls.Add(this.home_but_estadisticas);
             this.Controls.Add(this.home_but_devolverf);
             this.Controls.Add(this.home_but_rendirf);
@@ -151,6 +176,7 @@
             this.Name = "Home";
             this.Text = "Home";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -166,5 +192,7 @@
         private System.Windows.Forms.Button home_but_rendirf;
         private System.Windows.Forms.Button home_but_devolverf;
         private System.Windows.Forms.Button home_but_estadisticas;
+        private System.Windows.Forms.Label lbl_rol;
+        private System.Windows.Forms.Label lbl_socursal;
     }
 }

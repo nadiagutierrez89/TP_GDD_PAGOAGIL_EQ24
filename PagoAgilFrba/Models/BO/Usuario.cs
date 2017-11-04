@@ -15,9 +15,11 @@ namespace PagoAgilFrba.Models.BO
         public string username { get; set; }
         public string pass { get; set; }
         private List<Rol> _roles;
+        private List<Sucursal> _sucursales;
         public bool habilitado { get; set; }
         public decimal nro_intentos { get; set; }
         private Rol _rolActual;
+        private Sucursal _socursalActual;
 
         public Usuario()
         {
@@ -39,6 +41,18 @@ namespace PagoAgilFrba.Models.BO
         {
             get { return _rolActual; }
             set { _rolActual = value; }
+        }
+
+        public List<Sucursal> sucursales
+        {
+            get { return _sucursales; }
+            set { _sucursales = value; }
+        }
+
+        public Sucursal socursalActual
+        {
+            get { return _socursalActual; }
+            set { _socursalActual = value; }
         }
 
         internal void ReiniciarFallidos()

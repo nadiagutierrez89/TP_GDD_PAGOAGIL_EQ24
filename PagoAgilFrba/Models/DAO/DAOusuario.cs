@@ -34,6 +34,7 @@ namespace PagoAgilFrba.Models.DAO
             }
 
             miUsuario.roles = Rol.rolesDe(miUsuario.cod_user);
+            miUsuario.sucursales = Sucursal.sucursalesDe(miUsuario.cod_user);
 
             return miUsuario;
         }

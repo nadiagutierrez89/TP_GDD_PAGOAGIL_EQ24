@@ -18,7 +18,8 @@ namespace PagoAgilFrba
         {
             InitializeComponent();
             this.usuarioLogueado = usuarioLogueado;
-
+            this.lbl_socursal.Text = this.usuarioLogueado.socursalActual.nombre;
+            this.lbl_rol.Text = this.usuarioLogueado.rolActual.nombre;
 
             this.usuarioLogueado = usuarioLogueado;
             foreach (Control boton in this.Controls)
@@ -46,6 +47,11 @@ namespace PagoAgilFrba
         }
 
         private void home_but_ambrol_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }

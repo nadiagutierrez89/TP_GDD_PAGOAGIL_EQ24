@@ -36,7 +36,7 @@ namespace PagoAgilFrba.Models.DAO
         public static List<Rol> buscarRoles()
         {
             List<Rol> roles = new List<Rol>();
-            SqlDataReader lector = DBAcess.GetDataReader("SELECT R.cod_rol,R.nombre_rol,R.habilitado MARGINADOS.Rol R", "T", new List<SqlParameter>());
+            SqlDataReader lector = DBAcess.GetDataReader("SELECT R.cod_rol,R.nombre_rol,R.habilitado FROM MARGINADOS.Rol R", "T", new List<SqlParameter>());
             if (lector.HasRows)
             {
                 while (lector.Read())
