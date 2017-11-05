@@ -544,3 +544,28 @@ BEGIN
 	  and rf.cod_rol = @cod_rol
 END
 GO
+
+--- Actualiza Intentos fallidos ---
+IF Object_id('MARGINADOS.sp_ActualizaIntentos') IS NOT NULL 
+      DROP PROCEDURE MARGINADOS.sp_ActualizaIntentos; 
+  GO
+
+  CREATE PROCEDURE MARGINADOS.sp_ActualizaIntentos (@intentos_login NUMERIC(18, 0), 
+                                           @nombre         VARCHAR(25)) 
+AS 
+  BEGIN 
+      IF( @intentos_login = 3 ) 
+        BEGIN 
+            UPDATE MARGINADOS.USUARIO 
+            SET    habilitado = 0, 
+                   nro_intentos = @intentos_login 
+            WHERE  username = @nombre 
+        END 
+      ELSE 
+        BEGIN 
+            UPDATE MARGINADOS.USUARIO 
+            SET    nro_intentos = @intentos_login 
+            WHERE  username = @nombre 
+        END 
+  END
+  GO

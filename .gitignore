@@ -196,3 +196,7 @@ FakesAssemblies/
 *.opt
 /PagoAgilFrba/bin/Debug/
 /PagoAgilFrba/obj/
+*.suo
+*.cache
+*.user
+PagoAgilFrba/obj/Debug/PagoAgilFrba.csproj.FileListAbsolute.txt
