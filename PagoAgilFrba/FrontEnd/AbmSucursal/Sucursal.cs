@@ -16,5 +16,10 @@ namespace PagoAgilFrba.FrontEnd.AbmSucursal
         {
             InitializeComponent();
         }
+
+        private void sucursales_dgv_listado_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

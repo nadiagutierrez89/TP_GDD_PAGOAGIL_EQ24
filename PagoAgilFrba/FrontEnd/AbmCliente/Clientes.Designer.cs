@@ -38,7 +38,8 @@
             this.cliente_but_buscar = new System.Windows.Forms.Button();
             this.cliente_but_modificar = new System.Windows.Forms.Button();
             this.cliente_but_baja = new System.Windows.Forms.Button();
-            this.cliente_tab_clientes = new System.Windows.Forms.TableLayoutPanel();
+            this.clientes_dgv_listado = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.clientes_dgv_listado)).BeginInit();
             this.SuspendLayout();
             // 
             // clientes_but_alta
@@ -126,33 +127,20 @@
             this.cliente_but_baja.Text = "Baja";
             this.cliente_but_baja.UseVisualStyleBackColor = true;
             // 
-            // cliente_tab_clientes
+            // clientes_dgv_listado
             // 
-            this.cliente_tab_clientes.ColumnCount = 3;
-            this.cliente_tab_clientes.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.cliente_tab_clientes.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.cliente_tab_clientes.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 83F));
-            this.cliente_tab_clientes.Location = new System.Drawing.Point(12, 77);
-            this.cliente_tab_clientes.Name = "cliente_tab_clientes";
-            this.cliente_tab_clientes.RowCount = 9;
-            this.cliente_tab_clientes.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.cliente_tab_clientes.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.cliente_tab_clientes.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.cliente_tab_clientes.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.cliente_tab_clientes.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.cliente_tab_clientes.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.cliente_tab_clientes.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.cliente_tab_clientes.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.cliente_tab_clientes.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.cliente_tab_clientes.Size = new System.Drawing.Size(260, 181);
-            this.cliente_tab_clientes.TabIndex = 28;
+            this.clientes_dgv_listado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.clientes_dgv_listado.Location = new System.Drawing.Point(16, 69);
+            this.clientes_dgv_listado.Name = "clientes_dgv_listado";
+            this.clientes_dgv_listado.Size = new System.Drawing.Size(256, 180);
+            this.clientes_dgv_listado.TabIndex = 28;
             // 
             // Clientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(376, 261);
-            this.Controls.Add(this.cliente_tab_clientes);
+            this.Controls.Add(this.clientes_dgv_listado);
             this.Controls.Add(this.cliente_but_baja);
             this.Controls.Add(this.cliente_but_modificar);
             this.Controls.Add(this.cliente_but_buscar);
@@ -165,6 +153,7 @@
             this.Controls.Add(this.clientes_but_alta);
             this.Name = "Clientes";
             this.Text = "Clientes";
+            ((System.ComponentModel.ISupportInitialize)(this.clientes_dgv_listado)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -182,6 +171,6 @@
         private System.Windows.Forms.Button cliente_but_buscar;
         private System.Windows.Forms.Button cliente_but_modificar;
         private System.Windows.Forms.Button cliente_but_baja;
-        private System.Windows.Forms.TableLayoutPanel cliente_tab_clientes;
+        private System.Windows.Forms.DataGridView clientes_dgv_listado;
     }
 }

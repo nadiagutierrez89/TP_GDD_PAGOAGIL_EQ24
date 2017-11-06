@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.facturas_tab_factura = new System.Windows.Forms.TableLayoutPanel();
             this.facturas_but_modificar = new System.Windows.Forms.Button();
             this.facturas_but_buscar = new System.Windows.Forms.Button();
             this.facturas_but_alta = new System.Windows.Forms.Button();
@@ -38,29 +37,9 @@
             this.facturas_lab_empresa = new System.Windows.Forms.Label();
             this.facturas_lab_numero = new System.Windows.Forms.Label();
             this.facturas_lab_rendida = new System.Windows.Forms.Label();
+            this.factura_dgv_listado = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.factura_dgv_listado)).BeginInit();
             this.SuspendLayout();
-            // 
-            // facturas_tab_factura
-            // 
-            this.facturas_tab_factura.ColumnCount = 4;
-            this.facturas_tab_factura.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 47.15026F));
-            this.facturas_tab_factura.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 52.84974F));
-            this.facturas_tab_factura.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 54F));
-            this.facturas_tab_factura.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 49F));
-            this.facturas_tab_factura.Location = new System.Drawing.Point(10, 68);
-            this.facturas_tab_factura.Name = "facturas_tab_factura";
-            this.facturas_tab_factura.RowCount = 9;
-            this.facturas_tab_factura.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.facturas_tab_factura.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.facturas_tab_factura.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.facturas_tab_factura.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.facturas_tab_factura.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 21F));
-            this.facturas_tab_factura.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 19F));
-            this.facturas_tab_factura.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.facturas_tab_factura.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.facturas_tab_factura.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.facturas_tab_factura.Size = new System.Drawing.Size(289, 182);
-            this.facturas_tab_factura.TabIndex = 49;
             // 
             // facturas_but_modificar
             // 
@@ -138,23 +117,32 @@
             this.facturas_lab_rendida.TabIndex = 55;
             this.facturas_lab_rendida.Text = "Rendida:";
             // 
+            // factura_dgv_listado
+            // 
+            this.factura_dgv_listado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.factura_dgv_listado.Location = new System.Drawing.Point(10, 69);
+            this.factura_dgv_listado.Name = "factura_dgv_listado";
+            this.factura_dgv_listado.Size = new System.Drawing.Size(292, 198);
+            this.factura_dgv_listado.TabIndex = 56;
+            // 
             // Factura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(397, 279);
+            this.Controls.Add(this.factura_dgv_listado);
             this.Controls.Add(this.facturas_lab_rendida);
             this.Controls.Add(this.facturas_lab_numero);
             this.Controls.Add(this.facturas_lab_empresa);
             this.Controls.Add(this.facturas_lab_pagada);
             this.Controls.Add(this.facturas_tb_empresa);
             this.Controls.Add(this.facturas_tb_numero);
-            this.Controls.Add(this.facturas_tab_factura);
             this.Controls.Add(this.facturas_but_modificar);
             this.Controls.Add(this.facturas_but_buscar);
             this.Controls.Add(this.facturas_but_alta);
             this.Name = "Factura";
             this.Text = "Facturas";
+            ((System.ComponentModel.ISupportInitialize)(this.factura_dgv_listado)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -162,7 +150,6 @@
 
         #endregion
 
-        private System.Windows.Forms.TableLayoutPanel facturas_tab_factura;
         private System.Windows.Forms.Button facturas_but_modificar;
         private System.Windows.Forms.Button facturas_but_buscar;
         private System.Windows.Forms.Button facturas_but_alta;
@@ -172,5 +159,6 @@
         private System.Windows.Forms.Label facturas_lab_empresa;
         private System.Windows.Forms.Label facturas_lab_numero;
         private System.Windows.Forms.Label facturas_lab_rendida;
+        private System.Windows.Forms.DataGridView factura_dgv_listado;
     }
 }

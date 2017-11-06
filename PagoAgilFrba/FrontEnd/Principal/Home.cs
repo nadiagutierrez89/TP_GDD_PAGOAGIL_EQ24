@@ -1,4 +1,5 @@
 ﻿using PagoAgilFrba.FrontEnd.AbmCliente;
+using PagoAgilFrba.FrontEnd.ListadoEstadistico;
 using PagoAgilFrba.Models.BO;
 using System;
 using System.Collections.Generic;
@@ -45,7 +46,10 @@ namespace PagoAgilFrba.FrontEnd.Principal
 
         private void home_but_estadisticas_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            listadoEstadistico winformClientes = new listadoEstadistico(usuarioLogueado);
+            winformClientes.ShowDialog();
+            this.Show();
         }
 
         private void home_but_ambrol_Click(object sender, EventArgs e)
