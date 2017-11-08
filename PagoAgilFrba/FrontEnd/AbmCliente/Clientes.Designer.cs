@@ -33,12 +33,13 @@
             this.cliente_lab_apellido = new System.Windows.Forms.Label();
             this.cliente_lab_nombre = new System.Windows.Forms.Label();
             this.cliente_tb_dni = new System.Windows.Forms.TextBox();
-            this.cliente_tb_apellido = new System.Windows.Forms.TextBox();
-            this.cliente_tb_nombre = new System.Windows.Forms.TextBox();
+            this.apellido_clie = new System.Windows.Forms.TextBox();
+            this.nombre_clie = new System.Windows.Forms.TextBox();
             this.cliente_but_buscar = new System.Windows.Forms.Button();
             this.cliente_but_modificar = new System.Windows.Forms.Button();
             this.cliente_but_baja = new System.Windows.Forms.Button();
-            this.cliente_tab_clientes = new System.Windows.Forms.TableLayoutPanel();
+            this.dgv_clientes = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_clientes)).BeginInit();
             this.SuspendLayout();
             // 
             // clientes_but_alta
@@ -85,19 +86,19 @@
             this.cliente_tb_dni.Size = new System.Drawing.Size(79, 20);
             this.cliente_tb_dni.TabIndex = 17;
             // 
-            // cliente_tb_apellido
+            // apellido_clie
             // 
-            this.cliente_tb_apellido.Location = new System.Drawing.Point(109, 42);
-            this.cliente_tb_apellido.Name = "cliente_tb_apellido";
-            this.cliente_tb_apellido.Size = new System.Drawing.Size(78, 20);
-            this.cliente_tb_apellido.TabIndex = 16;
+            this.apellido_clie.Location = new System.Drawing.Point(109, 42);
+            this.apellido_clie.Name = "apellido_clie";
+            this.apellido_clie.Size = new System.Drawing.Size(78, 20);
+            this.apellido_clie.TabIndex = 16;
             // 
-            // cliente_tb_nombre
+            // nombre_clie
             // 
-            this.cliente_tb_nombre.Location = new System.Drawing.Point(16, 42);
-            this.cliente_tb_nombre.Name = "cliente_tb_nombre";
-            this.cliente_tb_nombre.Size = new System.Drawing.Size(87, 20);
-            this.cliente_tb_nombre.TabIndex = 15;
+            this.nombre_clie.Location = new System.Drawing.Point(16, 42);
+            this.nombre_clie.Name = "nombre_clie";
+            this.nombre_clie.Size = new System.Drawing.Size(87, 20);
+            this.nombre_clie.TabIndex = 15;
             // 
             // cliente_but_buscar
             // 
@@ -107,6 +108,7 @@
             this.cliente_but_buscar.TabIndex = 21;
             this.cliente_but_buscar.Text = "Buscar";
             this.cliente_but_buscar.UseVisualStyleBackColor = true;
+            this.cliente_but_buscar.Click += new System.EventHandler(this.cliente_but_buscar_Click);
             // 
             // cliente_but_modificar
             // 
@@ -126,33 +128,20 @@
             this.cliente_but_baja.Text = "Baja";
             this.cliente_but_baja.UseVisualStyleBackColor = true;
             // 
-            // cliente_tab_clientes
+            // dgv_clientes
             // 
-            this.cliente_tab_clientes.ColumnCount = 3;
-            this.cliente_tab_clientes.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.cliente_tab_clientes.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.cliente_tab_clientes.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 83F));
-            this.cliente_tab_clientes.Location = new System.Drawing.Point(12, 77);
-            this.cliente_tab_clientes.Name = "cliente_tab_clientes";
-            this.cliente_tab_clientes.RowCount = 9;
-            this.cliente_tab_clientes.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.cliente_tab_clientes.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.cliente_tab_clientes.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.cliente_tab_clientes.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.cliente_tab_clientes.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.cliente_tab_clientes.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.cliente_tab_clientes.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.cliente_tab_clientes.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.cliente_tab_clientes.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.cliente_tab_clientes.Size = new System.Drawing.Size(260, 181);
-            this.cliente_tab_clientes.TabIndex = 28;
+            this.dgv_clientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_clientes.Location = new System.Drawing.Point(16, 83);
+            this.dgv_clientes.Name = "dgv_clientes";
+            this.dgv_clientes.Size = new System.Drawing.Size(256, 155);
+            this.dgv_clientes.TabIndex = 28;
             // 
             // Clientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(376, 261);
-            this.Controls.Add(this.cliente_tab_clientes);
+            this.Controls.Add(this.dgv_clientes);
             this.Controls.Add(this.cliente_but_baja);
             this.Controls.Add(this.cliente_but_modificar);
             this.Controls.Add(this.cliente_but_buscar);
@@ -160,11 +149,12 @@
             this.Controls.Add(this.cliente_lab_apellido);
             this.Controls.Add(this.cliente_lab_nombre);
             this.Controls.Add(this.cliente_tb_dni);
-            this.Controls.Add(this.cliente_tb_apellido);
-            this.Controls.Add(this.cliente_tb_nombre);
+            this.Controls.Add(this.apellido_clie);
+            this.Controls.Add(this.nombre_clie);
             this.Controls.Add(this.clientes_but_alta);
             this.Name = "Clientes";
             this.Text = "Clientes";
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_clientes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -177,11 +167,11 @@
         private System.Windows.Forms.Label cliente_lab_apellido;
         private System.Windows.Forms.Label cliente_lab_nombre;
         private System.Windows.Forms.TextBox cliente_tb_dni;
-        private System.Windows.Forms.TextBox cliente_tb_apellido;
-        private System.Windows.Forms.TextBox cliente_tb_nombre;
+        private System.Windows.Forms.TextBox apellido_clie;
+        private System.Windows.Forms.TextBox nombre_clie;
         private System.Windows.Forms.Button cliente_but_buscar;
         private System.Windows.Forms.Button cliente_but_modificar;
         private System.Windows.Forms.Button cliente_but_baja;
-        private System.Windows.Forms.TableLayoutPanel cliente_tab_clientes;
+        private System.Windows.Forms.DataGridView dgv_clientes;
     }
 }
