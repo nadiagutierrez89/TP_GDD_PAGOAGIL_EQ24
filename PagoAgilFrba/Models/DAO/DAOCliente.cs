@@ -33,11 +33,15 @@ namespace PagoAgilFrba.Models.DAO
                     unCliente.localidad = (string)lector["localidad_clie"];
                     unCliente.cod_postal = (string)lector["cod_postal_clie"];
                     unCliente.fecha_nac = (DateTime)lector["fecha_nac_clie"];
-                    Verificar que sea valor nulll
-                    if (lector["fecha_nac_clie"] != DBNull.Value)
+                    if (lector["fecha_baja"] == DBNull.Value)
+                    {
+                        unCliente.fecha_baja = null;
+                    }
+                    else
                     {
                         unCliente.fecha_baja = (DateTime)lector["fecha_baja"];
                     }
+                    
 
                     misClientes.Add(unCliente);
                 }

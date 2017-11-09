@@ -126,9 +126,11 @@
     <Compile Include="FrontEnd\AbmSucursal\Sucursal.Designer.cs">
       <DependentUpon>Sucursal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\BO\Cliente.cs" />
     <Compile Include="Models\BO\Funcionalidad.cs" />
     <Compile Include="Models\BO\Rol.cs" />
     <Compile Include="Models\BO\Sucursal.cs" />
+    <Compile Include="Models\DAO\DAOCliente.cs" />
     <Compile Include="Models\DAO\DAOListadoEstadistico.cs" />
     <Compile Include="Models\DAO\DAOFuncionalidad.cs" />
     <Compile Include="Models\DAO\DAORol.cs" />

@@ -20,6 +20,49 @@ namespace PagoAgilFrba.FrontEnd.AbmCliente
             InitializeComponent();
         }
 
+        private void mi_dgv_Load(object sender, EventArgs e)
+        {
+            cargarGrilla(dgv_clientes);
+        }
+
+        private void cargarGrilla(DataGridView un_dgv)
+        {
+            un_dgv.AutoGenerateColumns = false;
+            un_dgv.MultiSelect = false;
+
+            DataGridViewTextBoxColumn col_dni_clie = new DataGridViewTextBoxColumn();
+            col_dni_clie.DataPropertyName = "dni";
+            col_dni_clie.HeaderText = "DNI";
+            col_dni_clie.Width = 60;
+            DataGridViewTextBoxColumn col_nombre_clie = new DataGridViewTextBoxColumn();
+            col_nombre_clie.DataPropertyName = "nombre";
+            col_nombre_clie.HeaderText = "Nombre";
+            col_nombre_clie.Width = 120;
+            DataGridViewTextBoxColumn col_apellido_clie = new DataGridViewTextBoxColumn();
+            col_apellido_clie.DataPropertyName = "apellido";
+            col_apellido_clie.HeaderText = "Apellido";
+            col_apellido_clie.Width = 120;
+            DataGridViewTextBoxColumn col_mail_clie = new DataGridViewTextBoxColumn();
+            col_mail_clie.DataPropertyName = "mail";
+            col_mail_clie.HeaderText = "Mail";
+            col_mail_clie.Width = 120;
+            DataGridViewTextBoxColumn col_fecha_nac_clie = new DataGridViewTextBoxColumn();
+            col_fecha_nac_clie.DataPropertyName = "fecha_nac";
+            col_fecha_nac_clie.HeaderText = "Nacimiento";
+            col_mail_clie.Width = 120;
+            DataGridViewTextBoxColumn col_fecha_baja = new DataGridViewTextBoxColumn();
+            col_fecha_baja.DataPropertyName = "fecha_baja";
+            col_fecha_baja.HeaderText = "Fecha baja";
+            col_fecha_baja.Width = 120;
+
+            un_dgv.Columns.Add(col_dni_clie);
+            un_dgv.Columns.Add(col_nombre_clie);
+            un_dgv.Columns.Add(col_apellido_clie);
+            un_dgv.Columns.Add(col_mail_clie);
+            un_dgv.Columns.Add(col_fecha_nac_clie);
+            un_dgv.Columns.Add(col_fecha_baja);
+        }
+
         public Clientes(Models.BO.Usuario usuarioLogueado) : this()
         {
             this.usuarioLogueado = usuarioLogueado;

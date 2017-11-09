@@ -38,6 +38,6 @@ namespace PagoAgilFrba.Models.BO
 
         public DateTime fecha_nac { get; set; }
 
-        public DateTime fecha_baja { get; set; }
+        public DateTime ? fecha_baja { get; set; }
     }
 }
