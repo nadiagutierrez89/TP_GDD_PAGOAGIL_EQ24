@@ -67,7 +67,7 @@ namespace PagoAgilFrba.Models.BO
             List<SqlParameter> paramList = new List<SqlParameter>();
             paramList.Add(new SqlParameter("@intentos_login", nro_intentos + 1));
             paramList.Add(new SqlParameter("@nombre", username));
-            DBAcess.ExecStoredProcedure("MARGINADOS.ActualizaIntentos", paramList);
+            DBAcess.ExecStoredProcedure("MARGINADOS.sp_ActualizaIntentos", paramList);
           }
 
         internal bool FuncionalidadValida(string nombreFuncionalidad)

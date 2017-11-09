@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.empresa_tab_empresas = new System.Windows.Forms.TableLayoutPanel();
             this.empresa_but_baja = new System.Windows.Forms.Button();
             this.empresa_but_modificar = new System.Windows.Forms.Button();
             this.empresa_but_buscar = new System.Windows.Forms.Button();
@@ -39,28 +38,9 @@
             this.empresa_but_alta = new System.Windows.Forms.Button();
             this.empresa_mtb_cuit = new System.Windows.Forms.MaskedTextBox();
             this.empresa_cb_rubro = new System.Windows.Forms.ComboBox();
+            this.empresa_dgv_listado = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.empresa_dgv_listado)).BeginInit();
             this.SuspendLayout();
-            // 
-            // empresa_tab_empresas
-            // 
-            this.empresa_tab_empresas.ColumnCount = 3;
-            this.empresa_tab_empresas.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 47.15026F));
-            this.empresa_tab_empresas.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 52.84974F));
-            this.empresa_tab_empresas.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 94F));
-            this.empresa_tab_empresas.Location = new System.Drawing.Point(8, 69);
-            this.empresa_tab_empresas.Name = "empresa_tab_empresas";
-            this.empresa_tab_empresas.RowCount = 9;
-            this.empresa_tab_empresas.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.empresa_tab_empresas.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.empresa_tab_empresas.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.empresa_tab_empresas.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.empresa_tab_empresas.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.empresa_tab_empresas.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.empresa_tab_empresas.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.empresa_tab_empresas.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.empresa_tab_empresas.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.empresa_tab_empresas.Size = new System.Drawing.Size(288, 181);
-            this.empresa_tab_empresas.TabIndex = 39;
             // 
             // empresa_but_baja
             // 
@@ -149,14 +129,22 @@
             this.empresa_cb_rubro.Size = new System.Drawing.Size(85, 21);
             this.empresa_cb_rubro.TabIndex = 8;
             // 
+            // empresa_dgv_listado
+            // 
+            this.empresa_dgv_listado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.empresa_dgv_listado.Location = new System.Drawing.Point(11, 61);
+            this.empresa_dgv_listado.Name = "empresa_dgv_listado";
+            this.empresa_dgv_listado.Size = new System.Drawing.Size(343, 200);
+            this.empresa_dgv_listado.TabIndex = 41;
+            // 
             // Empresa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(366, 302);
+            this.Controls.Add(this.empresa_dgv_listado);
             this.Controls.Add(this.empresa_cb_rubro);
             this.Controls.Add(this.empresa_mtb_cuit);
-            this.Controls.Add(this.empresa_tab_empresas);
             this.Controls.Add(this.empresa_but_baja);
             this.Controls.Add(this.empresa_but_modificar);
             this.Controls.Add(this.empresa_but_buscar);
@@ -167,6 +155,7 @@
             this.Controls.Add(this.empresa_but_alta);
             this.Name = "Empresa";
             this.Text = "Empresas";
+            ((System.ComponentModel.ISupportInitialize)(this.empresa_dgv_listado)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -174,7 +163,6 @@
 
         #endregion
 
-        private System.Windows.Forms.TableLayoutPanel empresa_tab_empresas;
         private System.Windows.Forms.Button empresa_but_baja;
         private System.Windows.Forms.Button empresa_but_modificar;
         private System.Windows.Forms.Button empresa_but_buscar;
@@ -185,5 +173,6 @@
         private System.Windows.Forms.Button empresa_but_alta;
         private System.Windows.Forms.MaskedTextBox empresa_mtb_cuit;
         private System.Windows.Forms.ComboBox empresa_cb_rubro;
+        private System.Windows.Forms.DataGridView empresa_dgv_listado;
     }
 }

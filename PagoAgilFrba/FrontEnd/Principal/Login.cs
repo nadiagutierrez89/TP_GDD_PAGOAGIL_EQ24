@@ -34,7 +34,7 @@ namespace PagoAgilFrba.FrontEnd.Principal
                 if (miUsuario.pass == password)
                 {
                     if (!miUsuario.habilitado)
-                        MessageBox.Show("Usuario inactivo para acceder al sistema", "Error!");
+                        MessageBox.Show("Usuario inactivo para acceder al sistema, contactese con el Administrador", "Error!");
                     else
                     {
 

@@ -38,8 +38,13 @@
             this.cliente_but_buscar = new System.Windows.Forms.Button();
             this.cliente_but_modificar = new System.Windows.Forms.Button();
             this.cliente_but_baja = new System.Windows.Forms.Button();
+<<<<<<< HEAD
             this.dgv_clientes = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_clientes)).BeginInit();
+=======
+            this.clientes_dgv_listado = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.clientes_dgv_listado)).BeginInit();
+>>>>>>> d2bd5f409f79a2499f8c22af29ecc82e25a2f098
             this.SuspendLayout();
             // 
             // clientes_but_alta
@@ -128,6 +133,7 @@
             this.cliente_but_baja.Text = "Baja";
             this.cliente_but_baja.UseVisualStyleBackColor = true;
             // 
+<<<<<<< HEAD
             // dgv_clientes
             // 
             this.dgv_clientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -135,13 +141,26 @@
             this.dgv_clientes.Name = "dgv_clientes";
             this.dgv_clientes.Size = new System.Drawing.Size(256, 155);
             this.dgv_clientes.TabIndex = 28;
+=======
+            // clientes_dgv_listado
+            // 
+            this.clientes_dgv_listado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.clientes_dgv_listado.Location = new System.Drawing.Point(16, 69);
+            this.clientes_dgv_listado.Name = "clientes_dgv_listado";
+            this.clientes_dgv_listado.Size = new System.Drawing.Size(256, 180);
+            this.clientes_dgv_listado.TabIndex = 28;
+>>>>>>> d2bd5f409f79a2499f8c22af29ecc82e25a2f098
             // 
             // Clientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(376, 261);
+<<<<<<< HEAD
             this.Controls.Add(this.dgv_clientes);
+=======
+            this.Controls.Add(this.clientes_dgv_listado);
+>>>>>>> d2bd5f409f79a2499f8c22af29ecc82e25a2f098
             this.Controls.Add(this.cliente_but_baja);
             this.Controls.Add(this.cliente_but_modificar);
             this.Controls.Add(this.cliente_but_buscar);
@@ -154,7 +173,11 @@
             this.Controls.Add(this.clientes_but_alta);
             this.Name = "Clientes";
             this.Text = "Clientes";
+<<<<<<< HEAD
             ((System.ComponentModel.ISupportInitialize)(this.dgv_clientes)).EndInit();
+=======
+            ((System.ComponentModel.ISupportInitialize)(this.clientes_dgv_listado)).EndInit();
+>>>>>>> d2bd5f409f79a2499f8c22af29ecc82e25a2f098
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -172,6 +195,10 @@
         private System.Windows.Forms.Button cliente_but_buscar;
         private System.Windows.Forms.Button cliente_but_modificar;
         private System.Windows.Forms.Button cliente_but_baja;
+<<<<<<< HEAD
         private System.Windows.Forms.DataGridView dgv_clientes;
+=======
+        private System.Windows.Forms.DataGridView clientes_dgv_listado;
+>>>>>>> d2bd5f409f79a2499f8c22af29ecc82e25a2f098
     }
 }

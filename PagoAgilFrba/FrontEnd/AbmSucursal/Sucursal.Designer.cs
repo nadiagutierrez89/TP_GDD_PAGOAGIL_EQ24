@@ -34,11 +34,15 @@
             this.sucursal_lab_cp = new System.Windows.Forms.Label();
             this.sucursal_lab_direccion = new System.Windows.Forms.Label();
             this.sucursal_lab_nombre = new System.Windows.Forms.Label();
-            this.sucursal_tab_empresas = new System.Windows.Forms.TableLayoutPanel();
             this.sucursal_but_baja = new System.Windows.Forms.Button();
             this.sucursal_but_modificar = new System.Windows.Forms.Button();
             this.sucursal_but_buscar = new System.Windows.Forms.Button();
             this.sucursal_but_alta = new System.Windows.Forms.Button();
+            this.sucursales_dgv_listado = new System.Windows.Forms.DataGridView();
+            this.NombreSucursal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CodigoPostal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.sucursales_dgv_listado)).BeginInit();
             this.SuspendLayout();
             // 
             // sucursal_tb_cp
@@ -87,27 +91,6 @@
             this.sucursal_lab_nombre.TabIndex = 6;
             this.sucursal_lab_nombre.Text = "Nombre Sucursal:";
             // 
-            // sucursal_tab_empresas
-            // 
-            this.sucursal_tab_empresas.ColumnCount = 3;
-            this.sucursal_tab_empresas.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 47.15026F));
-            this.sucursal_tab_empresas.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 52.84974F));
-            this.sucursal_tab_empresas.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 56F));
-            this.sucursal_tab_empresas.Location = new System.Drawing.Point(16, 68);
-            this.sucursal_tab_empresas.Name = "sucursal_tab_empresas";
-            this.sucursal_tab_empresas.RowCount = 9;
-            this.sucursal_tab_empresas.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.sucursal_tab_empresas.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.sucursal_tab_empresas.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.sucursal_tab_empresas.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.sucursal_tab_empresas.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.sucursal_tab_empresas.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.sucursal_tab_empresas.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.sucursal_tab_empresas.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.sucursal_tab_empresas.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.sucursal_tab_empresas.Size = new System.Drawing.Size(262, 181);
-            this.sucursal_tab_empresas.TabIndex = 44;
-            // 
             // sucursal_but_baja
             // 
             this.sucursal_but_baja.Location = new System.Drawing.Point(295, 158);
@@ -144,12 +127,47 @@
             this.sucursal_but_alta.Text = "Alta";
             this.sucursal_but_alta.UseVisualStyleBackColor = true;
             // 
+            // sucursales_dgv_listado
+            // 
+            this.sucursales_dgv_listado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.sucursales_dgv_listado.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.NombreSucursal,
+            this.Direccion,
+            this.CodigoPostal});
+            this.sucursales_dgv_listado.Location = new System.Drawing.Point(13, 65);
+            this.sucursales_dgv_listado.Name = "sucursales_dgv_listado";
+            this.sucursales_dgv_listado.Size = new System.Drawing.Size(265, 188);
+            this.sucursales_dgv_listado.TabIndex = 44;
+            this.sucursales_dgv_listado.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.sucursales_dgv_listado_CellContentClick);
+            // 
+            // NombreSucursal
+            // 
+            this.NombreSucursal.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.NombreSucursal.HeaderText = "Nombre";
+            this.NombreSucursal.MinimumWidth = 4;
+            this.NombreSucursal.Name = "NombreSucursal";
+            this.NombreSucursal.Width = 69;
+            // 
+            // Direccion
+            // 
+            this.Direccion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Direccion.HeaderText = "Dirección";
+            this.Direccion.Name = "Direccion";
+            this.Direccion.Width = 77;
+            // 
+            // CodigoPostal
+            // 
+            this.CodigoPostal.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.CodigoPostal.HeaderText = "C.P.";
+            this.CodigoPostal.Name = "CodigoPostal";
+            this.CodigoPostal.Width = 52;
+            // 
             // Sucursal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(385, 265);
-            this.Controls.Add(this.sucursal_tab_empresas);
+            this.Controls.Add(this.sucursales_dgv_listado);
             this.Controls.Add(this.sucursal_but_baja);
             this.Controls.Add(this.sucursal_but_modificar);
             this.Controls.Add(this.sucursal_but_buscar);
@@ -162,6 +180,7 @@
             this.Controls.Add(this.sucursal_lab_nombre);
             this.Name = "Sucursal";
             this.Text = "Sucursales";
+            ((System.ComponentModel.ISupportInitialize)(this.sucursales_dgv_listado)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -175,10 +194,13 @@
         private System.Windows.Forms.Label sucursal_lab_cp;
         private System.Windows.Forms.Label sucursal_lab_direccion;
         private System.Windows.Forms.Label sucursal_lab_nombre;
-        private System.Windows.Forms.TableLayoutPanel sucursal_tab_empresas;
         private System.Windows.Forms.Button sucursal_but_baja;
         private System.Windows.Forms.Button sucursal_but_modificar;
         private System.Windows.Forms.Button sucursal_but_buscar;
         private System.Windows.Forms.Button sucursal_but_alta;
+        private System.Windows.Forms.DataGridView sucursales_dgv_listado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NombreSucursal;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Direccion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CodigoPostal;
     }
 }

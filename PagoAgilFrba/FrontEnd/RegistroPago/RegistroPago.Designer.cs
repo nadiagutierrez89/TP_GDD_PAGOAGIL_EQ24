@@ -40,11 +40,12 @@
             this.registropago_tb_empresa = new System.Windows.Forms.ComboBox();
             this.registropago_tb_dni = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.registropago_tab_facturasPagar = new System.Windows.Forms.TableLayoutPanel();
             this.registropago_lab_total = new System.Windows.Forms.Label();
             this.registropago_but_agregar = new System.Windows.Forms.Button();
             this.registropago_but_pagar = new System.Windows.Forms.Button();
             this.registropago_tb_total = new System.Windows.Forms.TextBox();
+            this.registroPago_dgv_listado = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.registroPago_dgv_listado)).BeginInit();
             this.SuspendLayout();
             // 
             // registropago_lab_numeroF
@@ -145,31 +146,6 @@
             this.textBox1.Size = new System.Drawing.Size(53, 20);
             this.textBox1.TabIndex = 18;
             // 
-            // registropago_tab_facturasPagar
-            // 
-            this.registropago_tab_facturasPagar.ColumnCount = 7;
-            this.registropago_tab_facturasPagar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 53.28467F));
-            this.registropago_tab_facturasPagar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 46.71533F));
-            this.registropago_tab_facturasPagar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 92F));
-            this.registropago_tab_facturasPagar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 76F));
-            this.registropago_tab_facturasPagar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 74F));
-            this.registropago_tab_facturasPagar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 59F));
-            this.registropago_tab_facturasPagar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 52F));
-            this.registropago_tab_facturasPagar.Location = new System.Drawing.Point(15, 81);
-            this.registropago_tab_facturasPagar.Name = "registropago_tab_facturasPagar";
-            this.registropago_tab_facturasPagar.RowCount = 9;
-            this.registropago_tab_facturasPagar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.registropago_tab_facturasPagar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.registropago_tab_facturasPagar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.registropago_tab_facturasPagar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.registropago_tab_facturasPagar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.registropago_tab_facturasPagar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.registropago_tab_facturasPagar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.registropago_tab_facturasPagar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.registropago_tab_facturasPagar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.registropago_tab_facturasPagar.Size = new System.Drawing.Size(489, 183);
-            this.registropago_tab_facturasPagar.TabIndex = 19;
-            // 
             // registropago_lab_total
             // 
             this.registropago_lab_total.AutoSize = true;
@@ -205,16 +181,24 @@
             this.registropago_tb_total.Size = new System.Drawing.Size(53, 20);
             this.registropago_tb_total.TabIndex = 23;
             // 
+            // registroPago_dgv_listado
+            // 
+            this.registroPago_dgv_listado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.registroPago_dgv_listado.Location = new System.Drawing.Point(18, 81);
+            this.registroPago_dgv_listado.Name = "registroPago_dgv_listado";
+            this.registroPago_dgv_listado.Size = new System.Drawing.Size(503, 181);
+            this.registroPago_dgv_listado.TabIndex = 24;
+            // 
             // RegistroPago
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(608, 302);
+            this.Controls.Add(this.registroPago_dgv_listado);
             this.Controls.Add(this.registropago_tb_total);
             this.Controls.Add(this.registropago_but_pagar);
             this.Controls.Add(this.registropago_but_agregar);
             this.Controls.Add(this.registropago_lab_total);
-            this.Controls.Add(this.registropago_tab_facturasPagar);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.registropago_mtb_fecvto);
             this.Controls.Add(this.registropago_tb_nrofac);
@@ -229,6 +213,7 @@
             this.Controls.Add(this.registropago_lab_numeroF);
             this.Name = "RegistroPago";
             this.Text = "Registrar Pago";
+            ((System.ComponentModel.ISupportInitialize)(this.registroPago_dgv_listado)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -248,10 +233,10 @@
         private System.Windows.Forms.ComboBox registropago_tb_empresa;
         private System.Windows.Forms.TextBox registropago_tb_dni;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TableLayoutPanel registropago_tab_facturasPagar;
         private System.Windows.Forms.Label registropago_lab_total;
         private System.Windows.Forms.Button registropago_but_agregar;
         private System.Windows.Forms.Button registropago_but_pagar;
         private System.Windows.Forms.TextBox registropago_tb_total;
+        private System.Windows.Forms.DataGridView registroPago_dgv_listado;
     }
 }
