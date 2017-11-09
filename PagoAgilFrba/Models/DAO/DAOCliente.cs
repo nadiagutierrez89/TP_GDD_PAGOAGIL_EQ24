@@ -11,7 +11,7 @@ namespace PagoAgilFrba.Models.DAO
 {
     class DAOCliente
     {
-        internal static List<Cliente> getClienteQueCumplenCon(string filtro)
+        internal static List<Cliente> getClientesQueCumplenCon(string filtro)
         {
             List<Cliente> misClientes = new List<Cliente>();
             List<SqlParameter> paramList = new List<SqlParameter>();
@@ -128,7 +128,7 @@ namespace PagoAgilFrba.Models.DAO
 
         internal static bool existeClienteSegun(string campo, string valor)
         {
-            List<Cliente> clie_lis= getClienteQueCumplenCon(campo + " = " + valor);
+            List<Cliente> clie_lis= getClientesQueCumplenCon(campo + " = " + valor);
             return clie_lis.Count > 0;
         }
     }

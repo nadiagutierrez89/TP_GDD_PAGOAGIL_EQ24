@@ -60,6 +60,7 @@
             this.home_but_abmempresa.TabIndex = 1;
             this.home_but_abmempresa.Text = "ABM de Empresa";
             this.home_but_abmempresa.UseVisualStyleBackColor = true;
+            this.home_but_abmempresa.Click += new System.EventHandler(this.home_but_abmempresa_Click);
             // 
             // home_but_abmfactura
             // 

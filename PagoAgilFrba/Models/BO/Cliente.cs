@@ -11,7 +11,7 @@ namespace PagoAgilFrba.Models.BO
     {
         internal static List<Cliente> buscarClientes(string filtro)
         {
-            List<Cliente> misClientes = DAOCliente.getClienteQueCumplenCon(filtro);
+            List<Cliente> misClientes = DAOCliente.getClientesQueCumplenCon(filtro);
             return misClientes; //.FindAll(c => c.fecha_baja.ha);
         }
 

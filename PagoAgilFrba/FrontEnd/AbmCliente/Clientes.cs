@@ -106,7 +106,6 @@ namespace PagoAgilFrba.FrontEnd.AbmCliente
             {
                 MessageBox.Show("Seleccione algun elemento", "Error!", MessageBoxButtons.OK);
             }
-
         }
 
         private void clientes_but_alta_Click(object sender, EventArgs e)

@@ -1,4 +1,5 @@
 ﻿using PagoAgilFrba.FrontEnd.AbmCliente;
+using PagoAgilFrba.FrontEnd.AbmEmpresa;
 using PagoAgilFrba.FrontEnd.ListadoEstadistico;
 using PagoAgilFrba.Models.BO;
 using System;
@@ -65,10 +66,18 @@ namespace PagoAgilFrba.FrontEnd.Principal
         private void home_but_abmcliente_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Clientes winformClientes = new Clientes(usuarioLogueado);
-            winformClientes.ShowDialog();
+            Clientes winform = new Clientes(usuarioLogueado);
+            winform.ShowDialog();
             this.Show();
 
+        }
+
+        private void home_but_abmempresa_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Empresas winform = new Empresas(usuarioLogueado);
+            winform.ShowDialog();
+            this.Show();
         }
 
     }

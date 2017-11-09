@@ -1,6 +1,6 @@
 ﻿namespace PagoAgilFrba.FrontEnd.AbmEmpresa
 {
-    partial class Empresa
+    partial class Empresas
     {
         /// <summary>
         /// Required designer variable.
@@ -28,46 +28,38 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.empresa_but_baja = new System.Windows.Forms.Button();
             this.empresa_but_modificar = new System.Windows.Forms.Button();
             this.empresa_but_buscar = new System.Windows.Forms.Button();
             this.empresa_lab_rubro = new System.Windows.Forms.Label();
             this.emrpesa_lab_cuit = new System.Windows.Forms.Label();
             this.empresa_lab_nombre = new System.Windows.Forms.Label();
-            this.empresa_tb_nombre = new System.Windows.Forms.TextBox();
+            this.nombre_empresa = new System.Windows.Forms.TextBox();
             this.empresa_but_alta = new System.Windows.Forms.Button();
-            this.empresa_mtb_cuit = new System.Windows.Forms.MaskedTextBox();
-            this.empresa_cb_rubro = new System.Windows.Forms.ComboBox();
+            this.cuit_empresa = new System.Windows.Forms.MaskedTextBox();
+            this.cod_rubro = new System.Windows.Forms.ComboBox();
             this.empresa_dgv_listado = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.empresa_dgv_listado)).BeginInit();
             this.SuspendLayout();
             // 
-            // empresa_but_baja
-            // 
-            this.empresa_but_baja.Location = new System.Drawing.Point(209, 267);
-            this.empresa_but_baja.Name = "empresa_but_baja";
-            this.empresa_but_baja.Size = new System.Drawing.Size(75, 23);
-            this.empresa_but_baja.TabIndex = 38;
-            this.empresa_but_baja.Text = "Baja";
-            this.empresa_but_baja.UseVisualStyleBackColor = true;
-            // 
             // empresa_but_modificar
             // 
-            this.empresa_but_modificar.Location = new System.Drawing.Point(116, 267);
+            this.empresa_but_modificar.Location = new System.Drawing.Point(564, 267);
             this.empresa_but_modificar.Name = "empresa_but_modificar";
             this.empresa_but_modificar.Size = new System.Drawing.Size(75, 23);
             this.empresa_but_modificar.TabIndex = 37;
             this.empresa_but_modificar.Text = "Modificar";
             this.empresa_but_modificar.UseVisualStyleBackColor = true;
+            this.empresa_but_modificar.Click += new System.EventHandler(this.empresa_but_modificar_Click);
             // 
             // empresa_but_buscar
             // 
-            this.empresa_but_buscar.Location = new System.Drawing.Point(309, 32);
+            this.empresa_but_buscar.Location = new System.Drawing.Point(300, 31);
             this.empresa_but_buscar.Name = "empresa_but_buscar";
             this.empresa_but_buscar.Size = new System.Drawing.Size(54, 23);
             this.empresa_but_buscar.TabIndex = 36;
             this.empresa_but_buscar.Text = "Buscar";
             this.empresa_but_buscar.UseVisualStyleBackColor = true;
+            this.empresa_but_buscar.Click += new System.EventHandler(this.empresa_but_buscar_Click);
             // 
             // empresa_lab_rubro
             // 
@@ -96,64 +88,64 @@
             this.empresa_lab_nombre.TabIndex = 33;
             this.empresa_lab_nombre.Text = "Nombre:";
             // 
-            // empresa_tb_nombre
+            // nombre_empresa
             // 
-            this.empresa_tb_nombre.Location = new System.Drawing.Point(12, 34);
-            this.empresa_tb_nombre.Name = "empresa_tb_nombre";
-            this.empresa_tb_nombre.Size = new System.Drawing.Size(82, 20);
-            this.empresa_tb_nombre.TabIndex = 30;
+            this.nombre_empresa.Location = new System.Drawing.Point(12, 34);
+            this.nombre_empresa.Name = "nombre_empresa";
+            this.nombre_empresa.Size = new System.Drawing.Size(82, 20);
+            this.nombre_empresa.TabIndex = 30;
             // 
             // empresa_but_alta
             // 
-            this.empresa_but_alta.Location = new System.Drawing.Point(19, 267);
+            this.empresa_but_alta.Location = new System.Drawing.Point(483, 267);
             this.empresa_but_alta.Name = "empresa_but_alta";
             this.empresa_but_alta.Size = new System.Drawing.Size(75, 23);
             this.empresa_but_alta.TabIndex = 29;
             this.empresa_but_alta.Text = "Alta";
             this.empresa_but_alta.UseVisualStyleBackColor = true;
+            this.empresa_but_alta.Click += new System.EventHandler(this.empresa_but_alta_Click);
             // 
-            // empresa_mtb_cuit
+            // cuit_empresa
             // 
-            this.empresa_mtb_cuit.AllowDrop = true;
-            this.empresa_mtb_cuit.Location = new System.Drawing.Point(100, 34);
-            this.empresa_mtb_cuit.Mask = "00-00000000-00";
-            this.empresa_mtb_cuit.Name = "empresa_mtb_cuit";
-            this.empresa_mtb_cuit.Size = new System.Drawing.Size(100, 20);
-            this.empresa_mtb_cuit.TabIndex = 40;
+            this.cuit_empresa.AllowDrop = true;
+            this.cuit_empresa.Location = new System.Drawing.Point(100, 34);
+            this.cuit_empresa.Mask = "00-00000000-00";
+            this.cuit_empresa.Name = "cuit_empresa";
+            this.cuit_empresa.Size = new System.Drawing.Size(100, 20);
+            this.cuit_empresa.TabIndex = 40;
             // 
-            // empresa_cb_rubro
+            // cod_rubro
             // 
-            this.empresa_cb_rubro.FormattingEnabled = true;
-            this.empresa_cb_rubro.Location = new System.Drawing.Point(209, 33);
-            this.empresa_cb_rubro.Name = "empresa_cb_rubro";
-            this.empresa_cb_rubro.Size = new System.Drawing.Size(85, 21);
-            this.empresa_cb_rubro.TabIndex = 8;
+            this.cod_rubro.FormattingEnabled = true;
+            this.cod_rubro.Location = new System.Drawing.Point(209, 33);
+            this.cod_rubro.Name = "cod_rubro";
+            this.cod_rubro.Size = new System.Drawing.Size(85, 21);
+            this.cod_rubro.TabIndex = 8;
             // 
             // empresa_dgv_listado
             // 
             this.empresa_dgv_listado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.empresa_dgv_listado.Location = new System.Drawing.Point(11, 61);
             this.empresa_dgv_listado.Name = "empresa_dgv_listado";
-            this.empresa_dgv_listado.Size = new System.Drawing.Size(343, 200);
+            this.empresa_dgv_listado.Size = new System.Drawing.Size(629, 200);
             this.empresa_dgv_listado.TabIndex = 41;
             // 
-            // Empresa
+            // Empresas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(366, 302);
+            this.ClientSize = new System.Drawing.Size(686, 302);
             this.Controls.Add(this.empresa_dgv_listado);
-            this.Controls.Add(this.empresa_cb_rubro);
-            this.Controls.Add(this.empresa_mtb_cuit);
-            this.Controls.Add(this.empresa_but_baja);
+            this.Controls.Add(this.cod_rubro);
+            this.Controls.Add(this.cuit_empresa);
             this.Controls.Add(this.empresa_but_modificar);
             this.Controls.Add(this.empresa_but_buscar);
             this.Controls.Add(this.empresa_lab_rubro);
             this.Controls.Add(this.emrpesa_lab_cuit);
             this.Controls.Add(this.empresa_lab_nombre);
-            this.Controls.Add(this.empresa_tb_nombre);
+            this.Controls.Add(this.nombre_empresa);
             this.Controls.Add(this.empresa_but_alta);
-            this.Name = "Empresa";
+            this.Name = "Empresas";
             this.Text = "Empresas";
             ((System.ComponentModel.ISupportInitialize)(this.empresa_dgv_listado)).EndInit();
             this.ResumeLayout(false);
@@ -163,16 +155,15 @@
 
         #endregion
 
-        private System.Windows.Forms.Button empresa_but_baja;
         private System.Windows.Forms.Button empresa_but_modificar;
         private System.Windows.Forms.Button empresa_but_buscar;
         private System.Windows.Forms.Label empresa_lab_rubro;
         private System.Windows.Forms.Label emrpesa_lab_cuit;
         private System.Windows.Forms.Label empresa_lab_nombre;
-        private System.Windows.Forms.TextBox empresa_tb_nombre;
+        private System.Windows.Forms.TextBox nombre_empresa;
         private System.Windows.Forms.Button empresa_but_alta;
-        private System.Windows.Forms.MaskedTextBox empresa_mtb_cuit;
-        private System.Windows.Forms.ComboBox empresa_cb_rubro;
+        private System.Windows.Forms.MaskedTextBox cuit_empresa;
+        private System.Windows.Forms.ComboBox cod_rubro;
         private System.Windows.Forms.DataGridView empresa_dgv_listado;
     }
 }

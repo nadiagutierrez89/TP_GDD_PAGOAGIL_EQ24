@@ -14,7 +14,7 @@ namespace PagoAgilFrba.FrontEnd.AbmCliente
 {
     public partial class ABMCliente : Form
     {
-        private Models.BO.Cliente clienteSeleted;
+        private Cliente clienteSeleted;
 
         public ABMCliente()
         {
