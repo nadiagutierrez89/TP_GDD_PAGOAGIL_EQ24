@@ -49,5 +49,87 @@ namespace PagoAgilFrba.Models.DAO
             return misClientes;
         }
 
+
+        internal static int guardar(Cliente cliente)
+        {
+            string noQuery = "";
+
+            List<SqlParameter> ListaParametros = new List<SqlParameter>();
+            ListaParametros.Add(new SqlParameter("@dni_clie", cliente.dni));
+            ListaParametros.Add(new SqlParameter("@nombre_clie", cliente.nombre));
+            ListaParametros.Add(new SqlParameter("@apellido_clie", cliente.apellido));
+            ListaParametros.Add(new SqlParameter("@mail_clie", cliente.mail));
+            ListaParametros.Add(new SqlParameter("@telefeno_clie", cliente.telefono));
+            ListaParametros.Add(new SqlParameter("@calle_clie", cliente.calle));
+            ListaParametros.Add(new SqlParameter("@nro_piso_clie", cliente.nro_piso));
+            ListaParametros.Add(new SqlParameter("@depto_clie", cliente.depto));
+            ListaParametros.Add(new SqlParameter("@localidad_clie", cliente.localidad));
+            ListaParametros.Add(new SqlParameter("@cod_postal_clie", cliente.cod_postal));
+            ListaParametros.Add(new SqlParameter("@fecha_nac_clie", cliente.fecha_nac));
+
+
+            if (cliente.fecha_baja == null)
+            {
+                ListaParametros.Add(new SqlParameter("@fecha_baja", DBNull.Value));
+            }
+            else
+            {
+                ListaParametros.Add(new SqlParameter("@fecha_baja", cliente.fecha_baja));
+            }
+
+            if (existeClienteSegun("dni_clie", cliente.dni.ToString()))
+            {
+                noQuery = "UPDATE MARGINADOS.Cliente " +
+                       "SET nombre_clie = @nombre_clie " +
+                          ",apellido_clie = @apellido_clie " +
+                          ",mail_clie = @mail_clie " +
+                          ",telefeno_clie = @telefeno_clie " +
+                          ",calle_clie = @calle_clie " +
+                          ",nro_piso_clie = @nro_piso_clie " +
+                          ",depto_clie = @depto_clie " +
+                          ",localidad_clie = @localidad_clie " +
+                          ",cod_postal_clie = @cod_postal_clie " + 
+                          ",fecha_nac_clie = @fecha_nac_clie " +
+                          ",fecha_baja = @fecha_baja " +                     
+                     "WHERE dni_clie = @dni_clie ";
+            }
+            else
+            {
+                noQuery = "INSERT INTO MARGINADOS.Cliente " +
+               "(dni_clie " +
+               ",nombre_clie " +
+               ",apellido_clie " +
+               ",mail_clie " +
+               ",telefeno_clie " +
+               ",calle_clie " +
+               ",nro_piso_clie " +
+               ",depto_clie " +
+               ",localidad_clie " +
+               ",cod_postal_clie " +
+               ",fecha_nac_clie " +
+               ",fecha_baja ) " +
+         "VALUES " +
+               "(@dni_clie " +
+               ",@nombre_clie " +
+               ",@apellido_clie " +
+               ",@mail_clie " +
+               ",@telefeno_clie " +
+               ",@calle_clie " +
+               ",@nro_piso_clie " +
+               ",@depto_clie " +
+               ",@localidad_clie " +
+               ",@cod_postal_clie " +
+               ",@fecha_nac_clie " +
+               ",@fecha_baja ) ";
+
+            }
+            return DBAcess.WriteInBase(noQuery, "T", ListaParametros);
+        }
+
+        internal static bool existeClienteSegun(string campo, string valor)
+        {
+            List<Cliente> clie_lis= getClienteQueCumplenCon(campo + " = " + valor);
+            return clie_lis.Count > 0;
+        }
     }
 }

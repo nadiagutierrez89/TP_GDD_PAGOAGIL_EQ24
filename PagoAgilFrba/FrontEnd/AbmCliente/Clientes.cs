@@ -86,5 +86,34 @@ namespace PagoAgilFrba.FrontEnd.AbmCliente
 
             return filtro;
         }
+
+        private bool ItemSelccionado(DataGridView dataGridView)
+        {
+            return dataGridView.SelectedRows.Count != 0;
+        }
+
+        private void cliente_but_modificar_Click(object sender, EventArgs e)
+        {
+            if (this.ItemSelccionado(this.dgv_clientes))
+            {
+                Cliente unCliente = (Cliente)this.dgv_clientes.CurrentRow.DataBoundItem;
+                ABMCliente altaModifClie = new ABMCliente(unCliente);
+                altaModifClie.ShowDialog();
+                this.cliente_but_buscar.PerformClick();
+
+            }
+            else
+            {
+                MessageBox.Show("Seleccione algun elemento", "Error!", MessageBoxButtons.OK);
+            }
+
+        }
+
+        private void clientes_but_alta_Click(object sender, EventArgs e)
+        {
+            ABMCliente altaModifClie = new ABMCliente();
+            altaModifClie.ShowDialog();
+            this.cliente_but_buscar.PerformClick();
+        }
     }
 }

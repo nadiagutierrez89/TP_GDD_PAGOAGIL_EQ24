@@ -32,9 +32,7 @@
             this.abmcliente_tb_apellido = new System.Windows.Forms.TextBox();
             this.abmcliente_tb_dni = new System.Windows.Forms.TextBox();
             this.abmcliente_mtb_email = new System.Windows.Forms.MaskedTextBox();
-            this.abmcliente_mtb_fechNac = new System.Windows.Forms.MaskedTextBox();
             this.abmcliente_tb_calle = new System.Windows.Forms.TextBox();
-            this.abmcliente_tb_nro = new System.Windows.Forms.TextBox();
             this.abmcliente_tb_piso = new System.Windows.Forms.TextBox();
             this.abmcliente_tb_dto = new System.Windows.Forms.TextBox();
             this.abmcliente_tb_cp = new System.Windows.Forms.TextBox();
@@ -46,7 +44,6 @@
             this.abmcliente_lab_fechNac = new System.Windows.Forms.Label();
             this.abmcliente_lab_mail = new System.Windows.Forms.Label();
             this.abmcliente_lab_calle = new System.Windows.Forms.Label();
-            this.abmcliente_lab_numero = new System.Windows.Forms.Label();
             this.abmcliente_lab_piso = new System.Windows.Forms.Label();
             this.abmcliente_lab_dto = new System.Windows.Forms.Label();
             this.abmcliente_lab_localidad = new System.Windows.Forms.Label();
@@ -54,6 +51,7 @@
             this.abmcliente_lab_telefono = new System.Windows.Forms.Label();
             this.abmcliente_chb_baja = new System.Windows.Forms.CheckBox();
             this.abmcliente_but_aceptar = new System.Windows.Forms.Button();
+            this.dtp_fec_nac = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // abmcliente_tb_nombre
@@ -67,7 +65,7 @@
             // 
             this.abmcliente_tb_apellido.Location = new System.Drawing.Point(140, 42);
             this.abmcliente_tb_apellido.Name = "abmcliente_tb_apellido";
-            this.abmcliente_tb_apellido.Size = new System.Drawing.Size(100, 20);
+            this.abmcliente_tb_apellido.Size = new System.Drawing.Size(200, 20);
             this.abmcliente_tb_apellido.TabIndex = 1;
             // 
             // abmcliente_tb_dni
@@ -83,32 +81,16 @@
             // 
             this.abmcliente_mtb_email.Location = new System.Drawing.Point(13, 124);
             this.abmcliente_mtb_email.Name = "abmcliente_mtb_email";
-            this.abmcliente_mtb_email.Size = new System.Drawing.Size(227, 20);
+            this.abmcliente_mtb_email.Size = new System.Drawing.Size(327, 20);
             this.abmcliente_mtb_email.TabIndex = 3;
             this.abmcliente_mtb_email.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBox1_MaskInputRejected);
-            // 
-            // abmcliente_mtb_fechNac
-            // 
-            this.abmcliente_mtb_fechNac.Location = new System.Drawing.Point(140, 83);
-            this.abmcliente_mtb_fechNac.Mask = "00/00/0000";
-            this.abmcliente_mtb_fechNac.Name = "abmcliente_mtb_fechNac";
-            this.abmcliente_mtb_fechNac.Size = new System.Drawing.Size(100, 20);
-            this.abmcliente_mtb_fechNac.TabIndex = 4;
-            this.abmcliente_mtb_fechNac.ValidatingType = typeof(System.DateTime);
             // 
             // abmcliente_tb_calle
             // 
             this.abmcliente_tb_calle.Location = new System.Drawing.Point(12, 164);
             this.abmcliente_tb_calle.Name = "abmcliente_tb_calle";
-            this.abmcliente_tb_calle.Size = new System.Drawing.Size(161, 20);
+            this.abmcliente_tb_calle.Size = new System.Drawing.Size(328, 20);
             this.abmcliente_tb_calle.TabIndex = 5;
-            // 
-            // abmcliente_tb_nro
-            // 
-            this.abmcliente_tb_nro.Location = new System.Drawing.Point(179, 164);
-            this.abmcliente_tb_nro.Name = "abmcliente_tb_nro";
-            this.abmcliente_tb_nro.Size = new System.Drawing.Size(61, 20);
-            this.abmcliente_tb_nro.TabIndex = 6;
             // 
             // abmcliente_tb_piso
             // 
@@ -205,15 +187,6 @@
             this.abmcliente_lab_calle.Text = "Calle";
             this.abmcliente_lab_calle.Click += new System.EventHandler(this.label1_Click_1);
             // 
-            // abmcliente_lab_numero
-            // 
-            this.abmcliente_lab_numero.AutoSize = true;
-            this.abmcliente_lab_numero.Location = new System.Drawing.Point(176, 149);
-            this.abmcliente_lab_numero.Name = "abmcliente_lab_numero";
-            this.abmcliente_lab_numero.Size = new System.Drawing.Size(44, 13);
-            this.abmcliente_lab_numero.TabIndex = 18;
-            this.abmcliente_lab_numero.Text = "Número";
-            // 
             // abmcliente_lab_piso
             // 
             this.abmcliente_lab_piso.AutoSize = true;
@@ -271,18 +244,27 @@
             // 
             // abmcliente_but_aceptar
             // 
-            this.abmcliente_but_aceptar.Location = new System.Drawing.Point(181, 279);
+            this.abmcliente_but_aceptar.Location = new System.Drawing.Point(265, 276);
             this.abmcliente_but_aceptar.Name = "abmcliente_but_aceptar";
             this.abmcliente_but_aceptar.Size = new System.Drawing.Size(75, 23);
             this.abmcliente_but_aceptar.TabIndex = 26;
             this.abmcliente_but_aceptar.Text = "Aceptar";
             this.abmcliente_but_aceptar.UseVisualStyleBackColor = true;
+            this.abmcliente_but_aceptar.Click += new System.EventHandler(this.abmcliente_but_aceptar_Click);
+            // 
+            // dtp_fec_nac
+            // 
+            this.dtp_fec_nac.Location = new System.Drawing.Point(140, 82);
+            this.dtp_fec_nac.Name = "dtp_fec_nac";
+            this.dtp_fec_nac.Size = new System.Drawing.Size(200, 20);
+            this.dtp_fec_nac.TabIndex = 27;
             // 
             // ABMCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(265, 309);
+            this.ClientSize = new System.Drawing.Size(355, 304);
+            this.Controls.Add(this.dtp_fec_nac);
             this.Controls.Add(this.abmcliente_but_aceptar);
             this.Controls.Add(this.abmcliente_chb_baja);
             this.Controls.Add(this.abmcliente_lab_telefono);
@@ -290,7 +272,6 @@
             this.Controls.Add(this.abmcliente_lab_localidad);
             this.Controls.Add(this.abmcliente_lab_dto);
             this.Controls.Add(this.abmcliente_lab_piso);
-            this.Controls.Add(this.abmcliente_lab_numero);
             this.Controls.Add(this.abmcliente_lab_calle);
             this.Controls.Add(this.abmcliente_lab_mail);
             this.Controls.Add(this.abmcliente_lab_fechNac);
@@ -302,9 +283,7 @@
             this.Controls.Add(this.abmcliente_tb_cp);
             this.Controls.Add(this.abmcliente_tb_dto);
             this.Controls.Add(this.abmcliente_tb_piso);
-            this.Controls.Add(this.abmcliente_tb_nro);
             this.Controls.Add(this.abmcliente_tb_calle);
-            this.Controls.Add(this.abmcliente_mtb_fechNac);
             this.Controls.Add(this.abmcliente_mtb_email);
             this.Controls.Add(this.abmcliente_tb_dni);
             this.Controls.Add(this.abmcliente_tb_apellido);
@@ -322,9 +301,7 @@
         private System.Windows.Forms.TextBox abmcliente_tb_apellido;
         private System.Windows.Forms.TextBox abmcliente_tb_dni;
         private System.Windows.Forms.MaskedTextBox abmcliente_mtb_email;
-        private System.Windows.Forms.MaskedTextBox abmcliente_mtb_fechNac;
         private System.Windows.Forms.TextBox abmcliente_tb_calle;
-        private System.Windows.Forms.TextBox abmcliente_tb_nro;
         private System.Windows.Forms.TextBox abmcliente_tb_piso;
         private System.Windows.Forms.TextBox abmcliente_tb_dto;
         private System.Windows.Forms.TextBox abmcliente_tb_cp;
@@ -336,7 +313,6 @@
         public System.Windows.Forms.Label abmcliente_lab_fechNac;
         private System.Windows.Forms.Label abmcliente_lab_mail;
         private System.Windows.Forms.Label abmcliente_lab_calle;
-        private System.Windows.Forms.Label abmcliente_lab_numero;
         private System.Windows.Forms.Label abmcliente_lab_piso;
         private System.Windows.Forms.Label abmcliente_lab_dto;
         private System.Windows.Forms.Label abmcliente_lab_localidad;
@@ -344,5 +320,6 @@
         private System.Windows.Forms.Label abmcliente_lab_telefono;
         private System.Windows.Forms.CheckBox abmcliente_chb_baja;
         private System.Windows.Forms.Button abmcliente_but_aceptar;
+        private System.Windows.Forms.DateTimePicker dtp_fec_nac;
     }
 }

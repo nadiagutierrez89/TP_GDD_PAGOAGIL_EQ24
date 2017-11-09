@@ -39,5 +39,15 @@ namespace PagoAgilFrba.Models.BO
         public DateTime fecha_nac { get; set; }
 
         public DateTime ? fecha_baja { get; set; }
+
+        internal int guardar()
+        {
+            return DAOCliente.guardar(this);
+        }
+
+        internal static bool existeClienteSegun(string p1, string p2)
+        {
+            return DAOCliente.existeClienteSegun(p1,p2);
+        }
     }
 }

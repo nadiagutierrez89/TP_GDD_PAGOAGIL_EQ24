@@ -37,19 +37,19 @@
             this.nombre_clie = new System.Windows.Forms.TextBox();
             this.cliente_but_buscar = new System.Windows.Forms.Button();
             this.cliente_but_modificar = new System.Windows.Forms.Button();
-            this.cliente_but_baja = new System.Windows.Forms.Button();
             this.dgv_clientes = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_clientes)).BeginInit();
             this.SuspendLayout();
             // 
             // clientes_but_alta
             // 
-            this.clientes_but_alta.Location = new System.Drawing.Point(471, 244);
+            this.clientes_but_alta.Location = new System.Drawing.Point(552, 244);
             this.clientes_but_alta.Name = "clientes_but_alta";
             this.clientes_but_alta.Size = new System.Drawing.Size(75, 23);
             this.clientes_but_alta.TabIndex = 0;
             this.clientes_but_alta.Text = "Alta";
             this.clientes_but_alta.UseVisualStyleBackColor = true;
+            this.clientes_but_alta.Click += new System.EventHandler(this.clientes_but_alta_Click);
             // 
             // cliente_lab_dni
             // 
@@ -112,21 +112,13 @@
             // 
             // cliente_but_modificar
             // 
-            this.cliente_but_modificar.Location = new System.Drawing.Point(552, 244);
+            this.cliente_but_modificar.Location = new System.Drawing.Point(633, 244);
             this.cliente_but_modificar.Name = "cliente_but_modificar";
             this.cliente_but_modificar.Size = new System.Drawing.Size(75, 23);
             this.cliente_but_modificar.TabIndex = 26;
             this.cliente_but_modificar.Text = "Modificar";
             this.cliente_but_modificar.UseVisualStyleBackColor = true;
-            // 
-            // cliente_but_baja
-            // 
-            this.cliente_but_baja.Location = new System.Drawing.Point(633, 244);
-            this.cliente_but_baja.Name = "cliente_but_baja";
-            this.cliente_but_baja.Size = new System.Drawing.Size(75, 23);
-            this.cliente_but_baja.TabIndex = 27;
-            this.cliente_but_baja.Text = "Baja";
-            this.cliente_but_baja.UseVisualStyleBackColor = true;
+            this.cliente_but_modificar.Click += new System.EventHandler(this.cliente_but_modificar_Click);
             // 
             // dgv_clientes
             // 
@@ -142,7 +134,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(722, 299);
             this.Controls.Add(this.dgv_clientes);
-            this.Controls.Add(this.cliente_but_baja);
             this.Controls.Add(this.cliente_but_modificar);
             this.Controls.Add(this.cliente_but_buscar);
             this.Controls.Add(this.cliente_lab_dni);
@@ -172,7 +163,6 @@
         private System.Windows.Forms.TextBox nombre_clie;
         private System.Windows.Forms.Button cliente_but_buscar;
         private System.Windows.Forms.Button cliente_but_modificar;
-        private System.Windows.Forms.Button cliente_but_baja;
         private System.Windows.Forms.DataGridView dgv_clientes;
     }
 }
