@@ -1,4 +1,6 @@
 ﻿using PagoAgilFrba.FrontEnd.AbmCliente;
+using PagoAgilFrba.FrontEnd.AbmEmpresa;
+using PagoAgilFrba.FrontEnd.AbmFactura;
 using PagoAgilFrba.FrontEnd.ListadoEstadistico;
 using PagoAgilFrba.FrontEnd.AbmFactura;
 using PagoAgilFrba.FrontEnd.AbmRol;
@@ -48,8 +50,9 @@ namespace PagoAgilFrba.FrontEnd.Principal
         private void home_but_abmfactura_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Factura winformFactura = new Factura(usuarioLogueado);
-            winformFactura.ShowDialog();
+            Facturas winform = new Facturas(usuarioLogueado);
+            winform.ShowDialog();
+
             this.Show();
         }
 
@@ -77,20 +80,11 @@ namespace PagoAgilFrba.FrontEnd.Principal
         private void home_but_abmcliente_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Clientes winformClientes = new Clientes(usuarioLogueado);
-            winformClientes.ShowDialog();
+            Clientes winform = new Clientes(usuarioLogueado);
+            winform.ShowDialog();
             this.Show();
         }
 
-              
-
-        private void home_but_abmempresa_Click_1(object sender, EventArgs e)
-        {
-            this.Hide();
-            Empresa winformEmpresa = new Empresa(usuarioLogueado);
-            winformEmpresa.ShowDialog();
-            this.Show();
-        }
 
         private void home_but_abmsucursal_Click_1(object sender, EventArgs e)
         {
@@ -124,8 +118,13 @@ namespace PagoAgilFrba.FrontEnd.Principal
             this.Show();
         }
 
-        
-
+        private void home_but_abmempresa_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Empresas winform = new Empresas(usuarioLogueado);
+            winform.ShowDialog();
+            this.Show();
+        }
 
     }
 }

@@ -78,11 +78,11 @@
     <Compile Include="FrontEnd\AbmEmpresa\ABMEmpresa.Designer.cs">
       <DependentUpon>ABMEmpresa.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrontEnd\AbmEmpresa\Empresa.cs">
+    <Compile Include="FrontEnd\AbmEmpresa\Empresas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrontEnd\AbmEmpresa\Empresa.Designer.cs">
-      <DependentUpon>Empresa.cs</DependentUpon>
+    <Compile Include="FrontEnd\AbmEmpresa\Empresas.Designer.cs">
+      <DependentUpon>Empresas.cs</DependentUpon>
     </Compile>
     <Compile Include="FrontEnd\AbmFactura\ABM Factura.cs">
       <SubType>Form</SubType>
@@ -90,11 +90,11 @@
     <Compile Include="FrontEnd\AbmFactura\ABM Factura.Designer.cs">
       <DependentUpon>ABM Factura.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrontEnd\AbmFactura\Factura.cs">
+    <Compile Include="FrontEnd\AbmFactura\Facturas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrontEnd\AbmFactura\Factura.Designer.cs">
-      <DependentUpon>Factura.cs</DependentUpon>
+    <Compile Include="FrontEnd\AbmFactura\Facturas.Designer.cs">
+      <DependentUpon>Facturas.cs</DependentUpon>
     </Compile>
     <Compile Include="FrontEnd\AbmFactura\DevolucionFacturas.cs">
       <SubType>Form</SubType>
@@ -126,13 +126,21 @@
     <Compile Include="FrontEnd\AbmSucursal\Sucursal.Designer.cs">
       <DependentUpon>Sucursal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\BO\Cliente.cs" />
+    <Compile Include="Models\BO\Empresa.cs" />
+    <Compile Include="Models\BO\Factura.cs" />
     <Compile Include="Models\BO\Funcionalidad.cs" />
     <Compile Include="Models\BO\Rol.cs" />
+    <Compile Include="Models\BO\Rubro.cs" />
     <Compile Include="Models\BO\Sucursal.cs" />
+    <Compile Include="Models\DAO\DAOCliente.cs" />
+    <Compile Include="Models\DAO\DAOEmpresa.cs" />
+    <Compile Include="Models\DAO\DAOFactura.cs" />
     <Compile Include="Models\DAO\DAOListadoEstadistico.cs" />
     <Compile Include="Models\DAO\DAOFuncionalidad.cs" />
     <Compile Include="Models\DAO\DAORol.cs" />
     <Compile Include="Models\DAO\DAORolFuncionalidad.cs" />
+    <Compile Include="Models\DAO\DAORubro.cs" />
     <Compile Include="Models\DAO\DAOSocursal.cs" />
     <Compile Include="FrontEnd\Principal\SeleccionRolLogin.cs">
       <SubType>Form</SubType>
@@ -184,8 +192,8 @@
     <EmbeddedResource Include="FrontEnd\AbmEmpresa\ABMEmpresa.resx">
       <DependentUpon>ABMEmpresa.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrontEnd\AbmEmpresa\Empresa.resx">
-      <DependentUpon>Empresa.cs</DependentUpon>
+    <EmbeddedResource Include="FrontEnd\AbmEmpresa\Empresas.resx">
+      <DependentUpon>Empresas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrontEnd\AbmFactura\ABM Factura.resx">
       <DependentUpon>ABM Factura.cs</DependentUpon>
@@ -193,8 +201,8 @@
     <EmbeddedResource Include="FrontEnd\AbmFactura\DevolucionFacturas.resx">
       <DependentUpon>DevolucionFacturas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrontEnd\AbmFactura\Factura.resx">
-      <DependentUpon>Factura.cs</DependentUpon>
+    <EmbeddedResource Include="FrontEnd\AbmFactura\Facturas.resx">
+      <DependentUpon>Facturas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrontEnd\AbmRol\ABMRol.resx">
       <DependentUpon>ABMRol.cs</DependentUpon>
