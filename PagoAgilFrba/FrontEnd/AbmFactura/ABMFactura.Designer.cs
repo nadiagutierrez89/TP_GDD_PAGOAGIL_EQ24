@@ -205,7 +205,7 @@
             this.abmfactura_but_aceptar.Name = "abmfactura_but_aceptar";
             this.abmfactura_but_aceptar.Size = new System.Drawing.Size(75, 23);
             this.abmfactura_but_aceptar.TabIndex = 18;
-            this.abmfactura_but_aceptar.Text = "Aceptar";
+            this.abmfactura_but_aceptar.Text = "Guardar";
             this.abmfactura_but_aceptar.UseVisualStyleBackColor = true;
             // 
             // abmfactura

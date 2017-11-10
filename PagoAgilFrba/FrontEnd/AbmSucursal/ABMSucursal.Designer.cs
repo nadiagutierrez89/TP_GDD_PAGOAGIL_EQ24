@@ -103,7 +103,7 @@
             this.abmsucursal_but_aceptar.Name = "abmsucursal_but_aceptar";
             this.abmsucursal_but_aceptar.Size = new System.Drawing.Size(75, 23);
             this.abmsucursal_but_aceptar.TabIndex = 11;
-            this.abmsucursal_but_aceptar.Text = "Aceptar";
+            this.abmsucursal_but_aceptar.Text = "Guardar";
             this.abmsucursal_but_aceptar.UseVisualStyleBackColor = true;
             // 
             // ABMSucursal
