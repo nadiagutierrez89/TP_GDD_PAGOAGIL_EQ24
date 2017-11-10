@@ -58,7 +58,7 @@
             // 
             this.abmempresa_mtb_cuit.AllowDrop = true;
             this.abmempresa_mtb_cuit.Location = new System.Drawing.Point(12, 84);
-            this.abmempresa_mtb_cuit.Mask = "00-00000000-00";
+            this.abmempresa_mtb_cuit.Mask = "0-00000000-0";
             this.abmempresa_mtb_cuit.Name = "abmempresa_mtb_cuit";
             this.abmempresa_mtb_cuit.Size = new System.Drawing.Size(100, 20);
             this.abmempresa_mtb_cuit.TabIndex = 2;
@@ -127,7 +127,7 @@
             this.abmempresa_but_aceptar.Name = "abmempresa_but_aceptar";
             this.abmempresa_but_aceptar.Size = new System.Drawing.Size(75, 23);
             this.abmempresa_but_aceptar.TabIndex = 12;
-            this.abmempresa_but_aceptar.Text = "Aceptar";
+            this.abmempresa_but_aceptar.Text = "Guardar";
             this.abmempresa_but_aceptar.UseVisualStyleBackColor = true;
             this.abmempresa_but_aceptar.Click += new System.EventHandler(this.abmempresa_but_aceptar_Click);
             // 

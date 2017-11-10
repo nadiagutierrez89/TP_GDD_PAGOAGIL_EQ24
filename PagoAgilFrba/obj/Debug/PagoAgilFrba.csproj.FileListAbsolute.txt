@@ -66,3 +66,28 @@ C:\Users\fari2\Documents\UTN\1_GDD\TP Pago Facil Frba 1.0 - 2C 2017\TP_GDD_PAGOA
 C:\Users\fari2\Documents\UTN\1_GDD\TP Pago Facil Frba 1.0 - 2C 2017\TP_GDD_PAGOAGIL_EQ24\PagoAgilFrba\bin\Debug\PagoAgilFrba.pdb
 C:\Users\fari2\Documents\UTN\1_GDD\TP Pago Facil Frba 1.0 - 2C 2017\TP_GDD_PAGOAGIL_EQ24\PagoAgilFrba\obj\Debug\PagoAgilFrba.exe
 C:\Users\fari2\Documents\UTN\1_GDD\TP Pago Facil Frba 1.0 - 2C 2017\TP_GDD_PAGOAGIL_EQ24\PagoAgilFrba\obj\Debug\PagoAgilFrba.pdb
+C:\Users\Lucy-Note\Documents\GitHub\TP_GDD_PAGOAGIL_EQ24\PagoAgilFrba\bin\Debug\PagoAgilFrba.exe.config
+C:\Users\Lucy-Note\Documents\GitHub\TP_GDD_PAGOAGIL_EQ24\PagoAgilFrba\bin\Debug\PagoAgilFrba.exe
+C:\Users\Lucy-Note\Documents\GitHub\TP_GDD_PAGOAGIL_EQ24\PagoAgilFrba\bin\Debug\PagoAgilFrba.pdb
+C:\Users\Lucy-Note\Documents\GitHub\TP_GDD_PAGOAGIL_EQ24\PagoAgilFrba\obj\Debug\PagoAgilFrba.csprojResolveAssemblyReference.cache
+C:\Users\Lucy-Note\Documents\GitHub\TP_GDD_PAGOAGIL_EQ24\PagoAgilFrba\obj\Debug\PagoAgilFrba.FrontEnd.AbmCliente.ABMCliente.resources
+C:\Users\Lucy-Note\Documents\GitHub\TP_GDD_PAGOAGIL_EQ24\PagoAgilFrba\obj\Debug\PagoAgilFrba.FrontEnd.AbmCliente.Clientes.resources
+C:\Users\Lucy-Note\Documents\GitHub\TP_GDD_PAGOAGIL_EQ24\PagoAgilFrba\obj\Debug\PagoAgilFrba.FrontEnd.AbmEmpresa.ABMEmpresa.resources
+C:\Users\Lucy-Note\Documents\GitHub\TP_GDD_PAGOAGIL_EQ24\PagoAgilFrba\obj\Debug\PagoAgilFrba.FrontEnd.AbmEmpresa.Empresas.resources
+C:\Users\Lucy-Note\Documents\GitHub\TP_GDD_PAGOAGIL_EQ24\PagoAgilFrba\obj\Debug\PagoAgilFrba.FrontEnd.AbmFactura.abmfactura.resources
+C:\Users\Lucy-Note\Documents\GitHub\TP_GDD_PAGOAGIL_EQ24\PagoAgilFrba\obj\Debug\PagoAgilFrba.FrontEnd.AbmFactura.DevolucionFacturas.resources
+C:\Users\Lucy-Note\Documents\GitHub\TP_GDD_PAGOAGIL_EQ24\PagoAgilFrba\obj\Debug\PagoAgilFrba.FrontEnd.AbmFactura.Facturas.resources
+C:\Users\Lucy-Note\Documents\GitHub\TP_GDD_PAGOAGIL_EQ24\PagoAgilFrba\obj\Debug\PagoAgilFrba.AbmRol.ABMRol.resources
+C:\Users\Lucy-Note\Documents\GitHub\TP_GDD_PAGOAGIL_EQ24\PagoAgilFrba\obj\Debug\PagoAgilFrba.FrontEnd.AbmRol.Roles.resources
+C:\Users\Lucy-Note\Documents\GitHub\TP_GDD_PAGOAGIL_EQ24\PagoAgilFrba\obj\Debug\PagoAgilFrba.FrontEnd.AbmSucursal.ABMSucursal.resources
+C:\Users\Lucy-Note\Documents\GitHub\TP_GDD_PAGOAGIL_EQ24\PagoAgilFrba\obj\Debug\PagoAgilFrba.FrontEnd.AbmSucursal.Sucursal.resources
+C:\Users\Lucy-Note\Documents\GitHub\TP_GDD_PAGOAGIL_EQ24\PagoAgilFrba\obj\Debug\PagoAgilFrba.FrontEnd.Principal.Home.resources
+C:\Users\Lucy-Note\Documents\GitHub\TP_GDD_PAGOAGIL_EQ24\PagoAgilFrba\obj\Debug\PagoAgilFrba.FrontEnd.ListadoEstadistico.listadoEstadistico.resources
+C:\Users\Lucy-Note\Documents\GitHub\TP_GDD_PAGOAGIL_EQ24\PagoAgilFrba\obj\Debug\PagoAgilFrba.FrontEnd.Principal.Login.resources
+C:\Users\Lucy-Note\Documents\GitHub\TP_GDD_PAGOAGIL_EQ24\PagoAgilFrba\obj\Debug\PagoAgilFrba.Properties.Resources.resources
+C:\Users\Lucy-Note\Documents\GitHub\TP_GDD_PAGOAGIL_EQ24\PagoAgilFrba\obj\Debug\PagoAgilFrba.FrontEnd.RegistroPago.RegistroPago.resources
+C:\Users\Lucy-Note\Documents\GitHub\TP_GDD_PAGOAGIL_EQ24\PagoAgilFrba\obj\Debug\PagoAgilFrba.FrontEnd.Rendicion.Rendicion.resources
+C:\Users\Lucy-Note\Documents\GitHub\TP_GDD_PAGOAGIL_EQ24\PagoAgilFrba\obj\Debug\PagoAgilFrba.FrontEnd.Principal.SeleccionRolLogin.resources
+C:\Users\Lucy-Note\Documents\GitHub\TP_GDD_PAGOAGIL_EQ24\PagoAgilFrba\obj\Debug\PagoAgilFrba.csproj.GenerateResource.Cache
+C:\Users\Lucy-Note\Documents\GitHub\TP_GDD_PAGOAGIL_EQ24\PagoAgilFrba\obj\Debug\PagoAgilFrba.exe
+C:\Users\Lucy-Note\Documents\GitHub\TP_GDD_PAGOAGIL_EQ24\PagoAgilFrba\obj\Debug\PagoAgilFrba.pdb

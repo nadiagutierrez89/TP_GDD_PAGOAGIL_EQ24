@@ -237,9 +237,9 @@
             this.abmcliente_chb_baja.AutoSize = true;
             this.abmcliente_chb_baja.Location = new System.Drawing.Point(15, 282);
             this.abmcliente_chb_baja.Name = "abmcliente_chb_baja";
-            this.abmcliente_chb_baja.Size = new System.Drawing.Size(81, 17);
+            this.abmcliente_chb_baja.Size = new System.Drawing.Size(47, 17);
             this.abmcliente_chb_baja.TabIndex = 24;
-            this.abmcliente_chb_baja.Text = "Dar de baja";
+            this.abmcliente_chb_baja.Text = "Baja";
             this.abmcliente_chb_baja.UseVisualStyleBackColor = true;
             // 
             // abmcliente_but_aceptar
@@ -248,7 +248,7 @@
             this.abmcliente_but_aceptar.Name = "abmcliente_but_aceptar";
             this.abmcliente_but_aceptar.Size = new System.Drawing.Size(75, 23);
             this.abmcliente_but_aceptar.TabIndex = 26;
-            this.abmcliente_but_aceptar.Text = "Aceptar";
+            this.abmcliente_but_aceptar.Text = "Guardar";
             this.abmcliente_but_aceptar.UseVisualStyleBackColor = true;
             this.abmcliente_but_aceptar.Click += new System.EventHandler(this.abmcliente_but_aceptar_Click);
             // 

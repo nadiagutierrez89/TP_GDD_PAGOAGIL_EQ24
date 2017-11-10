@@ -85,7 +85,7 @@
             this.abmrol_but_aceptar.Name = "abmrol_but_aceptar";
             this.abmrol_but_aceptar.Size = new System.Drawing.Size(75, 23);
             this.abmrol_but_aceptar.TabIndex = 5;
-            this.abmrol_but_aceptar.Text = "Aceptar";
+            this.abmrol_but_aceptar.Text = "Guardar";
             this.abmrol_but_aceptar.UseVisualStyleBackColor = true;
             // 
             // ABMRol

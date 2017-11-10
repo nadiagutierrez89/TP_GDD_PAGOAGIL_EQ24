@@ -109,7 +109,7 @@
             // 
             this.cuit_empresa.AllowDrop = true;
             this.cuit_empresa.Location = new System.Drawing.Point(100, 34);
-            this.cuit_empresa.Mask = "00-00000000-00";
+            this.cuit_empresa.Mask = "0-00000000-0";
             this.cuit_empresa.Name = "cuit_empresa";
             this.cuit_empresa.Size = new System.Drawing.Size(100, 20);
             this.cuit_empresa.TabIndex = 40;
