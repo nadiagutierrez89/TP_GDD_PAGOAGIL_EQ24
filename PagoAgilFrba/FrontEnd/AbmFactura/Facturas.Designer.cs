@@ -59,7 +59,7 @@
             // 
             // facturas_but_buscar
             // 
-            this.facturas_but_buscar.Location = new System.Drawing.Point(239, 171);
+            this.facturas_but_buscar.Location = new System.Drawing.Point(480, 171);
             this.facturas_but_buscar.Name = "facturas_but_buscar";
             this.facturas_but_buscar.Size = new System.Drawing.Size(75, 23);
             this.facturas_but_buscar.TabIndex = 46;
@@ -184,7 +184,7 @@
             // 
             // bttn_limpiar
             // 
-            this.bttn_limpiar.Location = new System.Drawing.Point(133, 171);
+            this.bttn_limpiar.Location = new System.Drawing.Point(374, 171);
             this.bttn_limpiar.Name = "bttn_limpiar";
             this.bttn_limpiar.Size = new System.Drawing.Size(100, 23);
             this.bttn_limpiar.TabIndex = 67;
