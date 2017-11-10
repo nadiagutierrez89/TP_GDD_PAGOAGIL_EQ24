@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PagoAgilFrba.Models.BO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,18 +9,22 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PagoAgilFrba.FrontEnd.AbmFactura
+namespace PagoAgilFrba.FrontEnd.ABMFactura
 {
-    public partial class abmfactura : Form
+    public partial class ABMFactura : Form
     {
-        private Models.BO.Usuario usuarioLogueado;
+        private Factura unaFactura;
 
-        public abmfactura()
+
+        public ABMFactura()
         {
             InitializeComponent();
         }
 
-       
+        public ABMFactura(Factura unaFactura) : this()
+        {
+            this.unaFactura = unaFactura;
+        }       
 
         private void abmfactura_Load(object sender, EventArgs e)
         {

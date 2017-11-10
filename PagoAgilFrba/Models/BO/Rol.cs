@@ -12,8 +12,6 @@ namespace PagoAgilFrba.Models.BO
         private string _nombre;
         private decimal _cod_rol;
         private List<Funcionalidad> _funcionalidades;
-        private Usuario usuarioLogueado;
-
         
         public bool habilitado { set; get; }
 

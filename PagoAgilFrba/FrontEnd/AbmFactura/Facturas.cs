@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PagoAgilFrba.FrontEnd.AbmFactura
+namespace PagoAgilFrba.FrontEnd.ABMFactura
 {
     public partial class Facturas : Form
     {
@@ -110,6 +110,35 @@ namespace PagoAgilFrba.FrontEnd.AbmFactura
         private void Facturas_Shown(object sender, EventArgs e)
         {
             limpiar();
+        }
+
+        private bool ItemSelccionado(DataGridView dataGridView)
+        {
+            return dataGridView.SelectedRows.Count != 0;
+        }
+
+        private void facturas_but_modificar_Click(object sender, EventArgs e)
+        {
+            if (this.ItemSelccionado(this.factura_dgv_listado))
+            {
+                Factura unaFactura = (Factura)this.factura_dgv_listado.CurrentRow.DataBoundItem;
+
+                if(unaFactura.nro_pago != null || unaFactura.nro_rendicion != null)
+                {
+                    MessageBox.Show("Las facturas no se podrán dar de baja ni modificarlas si estas fueron pagadas, y/o rendidas", "Error!", MessageBoxButtons.OK);
+                    return;
+                }
+                
+
+                ABMFactura altaModifEmpresa = new ABMFactura(unaFactura);
+                altaModifEmpresa.ShowDialog();
+                this.facturas_but_buscar.PerformClick();
+
+            }
+            else
+            {
+                MessageBox.Show("Seleccione algun elemento", "Error!", MessageBoxButtons.OK);
+            }
         }
     }
 }

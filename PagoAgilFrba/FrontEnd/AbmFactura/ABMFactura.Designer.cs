@@ -1,6 +1,6 @@
-﻿namespace PagoAgilFrba.FrontEnd.AbmFactura
+﻿namespace PagoAgilFrba.FrontEnd.ABMFactura
 {
-    partial class abmfactura
+    partial class ABMFactura
     {
         /// <summary>
         /// Required designer variable.

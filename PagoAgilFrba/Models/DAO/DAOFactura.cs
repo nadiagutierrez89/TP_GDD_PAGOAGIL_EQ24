@@ -36,7 +36,7 @@ namespace PagoAgilFrba.Models.DAO
                         unFactura.nro_pago = (decimal)lector["nro_pago"];
 
                     if (lector["nro_rendicion"] != DBNull.Value)
-                        unFactura.nro_pago = (decimal)lector["nro_rendicion"];
+                        unFactura.nro_rendicion = (decimal)lector["nro_rendicion"];
 
                     mi_lista_return.Add(unFactura);
                 }

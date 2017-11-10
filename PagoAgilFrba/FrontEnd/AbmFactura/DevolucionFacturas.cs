@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PagoAgilFrba.FrontEnd.AbmFactura
+namespace PagoAgilFrba.FrontEnd.ABMFactura
 {
     public partial class DevolucionFacturas : Form
     {

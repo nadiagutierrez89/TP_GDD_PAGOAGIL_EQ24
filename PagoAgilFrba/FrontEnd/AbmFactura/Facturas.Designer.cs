@@ -1,4 +1,4 @@
-﻿namespace PagoAgilFrba.FrontEnd.AbmFactura
+﻿namespace PagoAgilFrba.FrontEnd.ABMFactura
 {
     partial class Facturas
     {
@@ -56,6 +56,7 @@
             this.facturas_but_modificar.TabIndex = 47;
             this.facturas_but_modificar.Text = "Modificar";
             this.facturas_but_modificar.UseVisualStyleBackColor = true;
+            this.facturas_but_modificar.Click += new System.EventHandler(this.facturas_but_modificar_Click);
             // 
             // facturas_but_buscar
             // 
