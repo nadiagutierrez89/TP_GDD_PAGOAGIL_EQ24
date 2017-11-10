@@ -12,9 +12,17 @@ namespace PagoAgilFrba.FrontEnd.AbmRol
 {
     public partial class Roles : Form
     {
+        private Models.BO.Usuario usuarioLogueado;
+
         public Roles()
         {
             InitializeComponent();
+        }
+
+        public Roles(Models.BO.Usuario usuarioLogueado)
+        {
+          
+            this.usuarioLogueado = usuarioLogueado;
         }
     }
 }

@@ -12,9 +12,16 @@ namespace PagoAgilFrba.FrontEnd.RegistroPago
 {
     public partial class RegistroPago : Form
     {
+        private Models.BO.Usuario usuarioLogueado;
+
         public RegistroPago()
         {
             InitializeComponent();
+        }
+
+        public RegistroPago(Models.BO.Usuario usuarioLogueado)
+        {           
+            this.usuarioLogueado = usuarioLogueado;
         }
     }
 }

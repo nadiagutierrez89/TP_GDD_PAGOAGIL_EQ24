@@ -10,11 +10,18 @@ using System.Windows.Forms;
 
 namespace PagoAgilFrba.FrontEnd.AbmFactura
 {
-    public partial class DevoluciónFacturas : Form
+    public partial class Factura : Form
     {
-        public DevoluciónFacturas()
+        private Models.BO.Usuario usuarioLogueado;
+
+        public Factura()
         {
             InitializeComponent();
+        }
+
+        public Factura(Models.BO.Usuario usuarioLogueado)
+        {
+            this.usuarioLogueado = usuarioLogueado;
         }
     }
 }

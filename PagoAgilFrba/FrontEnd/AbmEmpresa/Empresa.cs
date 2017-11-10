@@ -8,20 +8,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PagoAgilFrba.FrontEnd.Rendicion
+namespace PagoAgilFrba.FrontEnd.AbmEmpresa
 {
-    public partial class Rendicion : Form
+    public partial class Empresa : Form
     {
         private Models.BO.Usuario usuarioLogueado;
 
-        public Rendicion()
+        public Empresa()
         {
             InitializeComponent();
         }
 
-        public Rendicion(Models.BO.Usuario usuarioLogueado)
+        public Empresa(Models.BO.Usuario usuarioLogueado) : this()
         {
-            // TODO: Complete member initialization
             this.usuarioLogueado = usuarioLogueado;
         }
     }

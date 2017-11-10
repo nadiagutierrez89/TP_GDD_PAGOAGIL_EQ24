@@ -114,5 +114,6 @@ namespace PagoAgilFrba.FrontEnd.AbmCliente
             altaModifClie.ShowDialog();
             this.cliente_but_buscar.PerformClick();
         }
+
     }
 }
