@@ -32,7 +32,7 @@
             this.roles_but_baja = new System.Windows.Forms.Button();
             this.roles_but_modificacion = new System.Windows.Forms.Button();
             this.roles_label_rol = new System.Windows.Forms.Label();
-            this.roles_but_funcionalidades = new System.Windows.Forms.Label();
+            this.roles_lab_funcionalidades = new System.Windows.Forms.Label();
             this.rol_dgv_listado = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.rol_dgv_listado)).BeginInit();
             this.SuspendLayout();
@@ -73,14 +73,14 @@
             this.roles_label_rol.TabIndex = 4;
             this.roles_label_rol.Text = "Rol";
             // 
-            // roles_but_funcionalidades
+            // roles_lab_funcionalidades
             // 
-            this.roles_but_funcionalidades.AutoSize = true;
-            this.roles_but_funcionalidades.Location = new System.Drawing.Point(89, 13);
-            this.roles_but_funcionalidades.Name = "roles_but_funcionalidades";
-            this.roles_but_funcionalidades.Size = new System.Drawing.Size(84, 13);
-            this.roles_but_funcionalidades.TabIndex = 5;
-            this.roles_but_funcionalidades.Text = "Funcionalidades";
+            this.roles_lab_funcionalidades.AutoSize = true;
+            this.roles_lab_funcionalidades.Location = new System.Drawing.Point(89, 13);
+            this.roles_lab_funcionalidades.Name = "roles_lab_funcionalidades";
+            this.roles_lab_funcionalidades.Size = new System.Drawing.Size(84, 13);
+            this.roles_lab_funcionalidades.TabIndex = 5;
+            this.roles_lab_funcionalidades.Text = "Funcionalidades";
             // 
             // rol_dgv_listado
             // 
@@ -96,7 +96,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
             this.Controls.Add(this.rol_dgv_listado);
-            this.Controls.Add(this.roles_but_funcionalidades);
+            this.Controls.Add(this.roles_lab_funcionalidades);
             this.Controls.Add(this.roles_label_rol);
             this.Controls.Add(this.roles_but_modificacion);
             this.Controls.Add(this.roles_but_baja);
@@ -115,7 +115,7 @@
         private System.Windows.Forms.Button roles_but_baja;
         private System.Windows.Forms.Button roles_but_modificacion;
         private System.Windows.Forms.Label roles_label_rol;
-        private System.Windows.Forms.Label roles_but_funcionalidades;
+        private System.Windows.Forms.Label roles_lab_funcionalidades;
         private System.Windows.Forms.DataGridView rol_dgv_listado;
     }
 }

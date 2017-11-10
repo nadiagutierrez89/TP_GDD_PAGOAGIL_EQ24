@@ -12,9 +12,16 @@ namespace PagoAgilFrba.FrontEnd.AbmEmpresa
 {
     public partial class Empresa : Form
     {
+        private Models.BO.Usuario usuarioLogueado;
+
         public Empresa()
         {
             InitializeComponent();
+        }
+
+        public Empresa(Models.BO.Usuario usuarioLogueado) : this()
+        {
+            this.usuarioLogueado = usuarioLogueado;
         }
     }
 }

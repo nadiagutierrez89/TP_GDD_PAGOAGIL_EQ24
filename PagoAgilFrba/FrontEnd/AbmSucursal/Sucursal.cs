@@ -12,9 +12,16 @@ namespace PagoAgilFrba.FrontEnd.AbmSucursal
 {
     public partial class Sucursal : Form
     {
+        private Models.BO.Usuario usuarioLogueado;
+
         public Sucursal()
         {
             InitializeComponent();
+        }
+
+        public Sucursal(Models.BO.Usuario usuarioLogueado)
+        {
+            this.usuarioLogueado = usuarioLogueado;
         }
 
         private void sucursales_dgv_listado_CellContentClick(object sender, DataGridViewCellEventArgs e)

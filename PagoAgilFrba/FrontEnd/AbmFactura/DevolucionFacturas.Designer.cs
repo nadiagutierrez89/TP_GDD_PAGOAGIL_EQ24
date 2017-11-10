@@ -1,6 +1,6 @@
 ﻿namespace PagoAgilFrba.FrontEnd.AbmFactura
 {
-    partial class DevoluciónFacturas
+    partial class DevolucionFacturas
     {
         /// <summary>
         /// Required designer variable.

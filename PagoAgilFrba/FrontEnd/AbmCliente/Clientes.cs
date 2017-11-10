@@ -23,5 +23,7 @@ namespace PagoAgilFrba.FrontEnd.AbmCliente
         {
             this.usuarioLogueado = usuarioLogueado;
         }
+
+
     }
 }

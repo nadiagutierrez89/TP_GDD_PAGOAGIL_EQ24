@@ -33,7 +33,6 @@
             this.home_but_abmfactura = new System.Windows.Forms.Button();
             this.home_but_abmsucursal = new System.Windows.Forms.Button();
             this.home_but_ambrol = new System.Windows.Forms.Button();
-            this.home_but_regusuario = new System.Windows.Forms.Button();
             this.home_but_regpagf = new System.Windows.Forms.Button();
             this.home_but_rendirf = new System.Windows.Forms.Button();
             this.home_but_devolverf = new System.Windows.Forms.Button();
@@ -60,6 +59,7 @@
             this.home_but_abmempresa.TabIndex = 1;
             this.home_but_abmempresa.Text = "ABM de Empresa";
             this.home_but_abmempresa.UseVisualStyleBackColor = true;
+            this.home_but_abmempresa.Click += new System.EventHandler(this.home_but_abmempresa_Click_1);
             // 
             // home_but_abmfactura
             // 
@@ -79,6 +79,7 @@
             this.home_but_abmsucursal.TabIndex = 3;
             this.home_but_abmsucursal.Text = "ABM de Sucursal";
             this.home_but_abmsucursal.UseVisualStyleBackColor = true;
+            this.home_but_abmsucursal.Click += new System.EventHandler(this.home_but_abmsucursal_Click_1);
             // 
             // home_but_ambrol
             // 
@@ -90,15 +91,6 @@
             this.home_but_ambrol.UseVisualStyleBackColor = true;
             this.home_but_ambrol.Click += new System.EventHandler(this.home_but_ambrol_Click);
             // 
-            // home_but_regusuario
-            // 
-            this.home_but_regusuario.Location = new System.Drawing.Point(51, 287);
-            this.home_but_regusuario.Name = "home_but_regusuario";
-            this.home_but_regusuario.Size = new System.Drawing.Size(108, 38);
-            this.home_but_regusuario.TabIndex = 5;
-            this.home_but_regusuario.Text = "Registro de Usuario";
-            this.home_but_regusuario.UseVisualStyleBackColor = true;
-            // 
             // home_but_regpagf
             // 
             this.home_but_regpagf.Location = new System.Drawing.Point(49, 180);
@@ -107,6 +99,7 @@
             this.home_but_regpagf.TabIndex = 6;
             this.home_but_regpagf.Text = "Registro de Pago de Facturas";
             this.home_but_regpagf.UseVisualStyleBackColor = true;
+            this.home_but_regpagf.Click += new System.EventHandler(this.home_but_regpagf_Click);
             // 
             // home_but_rendirf
             // 
@@ -116,6 +109,7 @@
             this.home_but_rendirf.TabIndex = 7;
             this.home_but_rendirf.Text = "Rendición de Facturas cobradas";
             this.home_but_rendirf.UseVisualStyleBackColor = true;
+            this.home_but_rendirf.Click += new System.EventHandler(this.home_but_rendirf_Click);
             // 
             // home_but_devolverf
             // 
@@ -125,6 +119,7 @@
             this.home_but_devolverf.TabIndex = 8;
             this.home_but_devolverf.Text = "Devoluciones";
             this.home_but_devolverf.UseVisualStyleBackColor = true;
+            this.home_but_devolverf.Click += new System.EventHandler(this.home_but_devolverf_Click);
             // 
             // home_but_estadisticas
             // 
@@ -168,7 +163,6 @@
             this.Controls.Add(this.home_but_devolverf);
             this.Controls.Add(this.home_but_rendirf);
             this.Controls.Add(this.home_but_regpagf);
-            this.Controls.Add(this.home_but_regusuario);
             this.Controls.Add(this.home_but_ambrol);
             this.Controls.Add(this.home_but_abmsucursal);
             this.Controls.Add(this.home_but_abmfactura);
@@ -188,7 +182,6 @@
         private System.Windows.Forms.Button home_but_abmfactura;
         private System.Windows.Forms.Button home_but_abmsucursal;
         private System.Windows.Forms.Button home_but_ambrol;
-        private System.Windows.Forms.Button home_but_regusuario;
         private System.Windows.Forms.Button home_but_regpagf;
         private System.Windows.Forms.Button home_but_rendirf;
         private System.Windows.Forms.Button home_but_devolverf;

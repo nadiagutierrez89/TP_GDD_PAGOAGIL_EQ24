@@ -12,10 +12,14 @@ namespace PagoAgilFrba.FrontEnd.AbmFactura
 {
     public partial class abmfactura : Form
     {
+        private Models.BO.Usuario usuarioLogueado;
+
         public abmfactura()
         {
             InitializeComponent();
         }
+
+       
 
         private void abmfactura_Load(object sender, EventArgs e)
         {
