@@ -78,5 +78,10 @@ namespace PagoAgilFrba.Models.DAO
             }
             return DBAcess.WriteInBase(noQuery, "T", ListaParametros);
         }
+
+        internal static List<Empresa> devolverTodas()
+        {
+            return getEmpresasQueCumplenCon("1 = 1");
+        }
     }
 }

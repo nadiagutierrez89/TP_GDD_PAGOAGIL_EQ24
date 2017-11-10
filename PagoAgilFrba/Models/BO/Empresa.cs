@@ -36,5 +36,11 @@ namespace PagoAgilFrba.Models.BO
         {
             return DAOEmpresa.guardar(this);
         }
+
+        internal static List<Empresa> todas()
+        {
+            return DAOEmpresa.devolverTodas();
+        }
+
     }
 }

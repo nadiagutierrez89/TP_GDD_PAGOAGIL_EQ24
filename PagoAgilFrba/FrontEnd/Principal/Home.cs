@@ -1,5 +1,6 @@
 ﻿using PagoAgilFrba.FrontEnd.AbmCliente;
 using PagoAgilFrba.FrontEnd.AbmEmpresa;
+using PagoAgilFrba.FrontEnd.AbmFactura;
 using PagoAgilFrba.FrontEnd.ListadoEstadistico;
 using PagoAgilFrba.Models.BO;
 using System;
@@ -42,7 +43,10 @@ namespace PagoAgilFrba.FrontEnd.Principal
 
         private void home_but_abmfactura_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            Facturas winform = new Facturas(usuarioLogueado);
+            winform.ShowDialog();
+            this.Show();
         }
 
         private void home_but_estadisticas_Click(object sender, EventArgs e)
