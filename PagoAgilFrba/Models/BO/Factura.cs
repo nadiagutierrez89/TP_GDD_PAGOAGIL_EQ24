@@ -24,10 +24,28 @@ namespace PagoAgilFrba.Models.BO
 
         public DateTime fecha_vto_fac { get; set; }
 
-        public decimal Importe_total_fac { get; set; }
+        public decimal importe_total_fac { get; set; }
 
         public decimal ? nro_pago { get; set; }
 
         public decimal ? nro_rendicion { get; set; }
+
+        internal int guardar()
+        {
+            return DAOFactura.guardar(this);
+        }
+
+        internal static bool yaExiste(Factura facturaNueva)
+        {
+            string filtro = "nro_factura = " + facturaNueva.nro_factura + " and cod_empresa = " + facturaNueva.cod_empresa + "";
+            return DAOFactura.getLosQueCumplenCon(filtro).Count > 0;
+        }
+
+        public List<FacturaItem> facturaItems { get; set; }
+
+        internal void getItems()
+        {
+            this.facturaItems = FacturaItem.getItemsDe(this);
+        }
     }
 }

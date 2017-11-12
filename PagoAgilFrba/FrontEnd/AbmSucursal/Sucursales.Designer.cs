@@ -1,6 +1,6 @@
 ﻿namespace PagoAgilFrba.FrontEnd.AbmSucursal
 {
-    partial class Sucursal
+    partial class Sucursales
     {
         /// <summary>
         /// Required designer variable.
@@ -28,43 +28,39 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.sucursal_tb_cp = new System.Windows.Forms.TextBox();
-            this.sucursal_tb_direccion = new System.Windows.Forms.TextBox();
-            this.sucursal_tb_nombre = new System.Windows.Forms.TextBox();
+            this.codigo_postal_suc = new System.Windows.Forms.TextBox();
+            this.direccion_suc = new System.Windows.Forms.TextBox();
+            this.nombre_suc = new System.Windows.Forms.TextBox();
             this.sucursal_lab_cp = new System.Windows.Forms.Label();
             this.sucursal_lab_direccion = new System.Windows.Forms.Label();
             this.sucursal_lab_nombre = new System.Windows.Forms.Label();
-            this.sucursal_but_baja = new System.Windows.Forms.Button();
             this.sucursal_but_modificar = new System.Windows.Forms.Button();
             this.sucursal_but_buscar = new System.Windows.Forms.Button();
             this.sucursal_but_alta = new System.Windows.Forms.Button();
             this.sucursales_dgv_listado = new System.Windows.Forms.DataGridView();
-            this.NombreSucursal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CodigoPostal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.sucursales_dgv_listado)).BeginInit();
             this.SuspendLayout();
             // 
-            // sucursal_tb_cp
+            // codigo_postal_suc
             // 
-            this.sucursal_tb_cp.Location = new System.Drawing.Point(225, 38);
-            this.sucursal_tb_cp.Name = "sucursal_tb_cp";
-            this.sucursal_tb_cp.Size = new System.Drawing.Size(53, 20);
-            this.sucursal_tb_cp.TabIndex = 11;
+            this.codigo_postal_suc.Location = new System.Drawing.Point(225, 38);
+            this.codigo_postal_suc.Name = "codigo_postal_suc";
+            this.codigo_postal_suc.Size = new System.Drawing.Size(53, 20);
+            this.codigo_postal_suc.TabIndex = 11;
             // 
-            // sucursal_tb_direccion
+            // direccion_suc
             // 
-            this.sucursal_tb_direccion.Location = new System.Drawing.Point(119, 38);
-            this.sucursal_tb_direccion.Name = "sucursal_tb_direccion";
-            this.sucursal_tb_direccion.Size = new System.Drawing.Size(100, 20);
-            this.sucursal_tb_direccion.TabIndex = 10;
+            this.direccion_suc.Location = new System.Drawing.Point(119, 38);
+            this.direccion_suc.Name = "direccion_suc";
+            this.direccion_suc.Size = new System.Drawing.Size(100, 20);
+            this.direccion_suc.TabIndex = 10;
             // 
-            // sucursal_tb_nombre
+            // nombre_suc
             // 
-            this.sucursal_tb_nombre.Location = new System.Drawing.Point(15, 38);
-            this.sucursal_tb_nombre.Name = "sucursal_tb_nombre";
-            this.sucursal_tb_nombre.Size = new System.Drawing.Size(98, 20);
-            this.sucursal_tb_nombre.TabIndex = 9;
+            this.nombre_suc.Location = new System.Drawing.Point(15, 38);
+            this.nombre_suc.Name = "nombre_suc";
+            this.nombre_suc.Size = new System.Drawing.Size(98, 20);
+            this.nombre_suc.TabIndex = 9;
             // 
             // sucursal_lab_cp
             // 
@@ -91,23 +87,15 @@
             this.sucursal_lab_nombre.TabIndex = 6;
             this.sucursal_lab_nombre.Text = "Nombre Sucursal:";
             // 
-            // sucursal_but_baja
-            // 
-            this.sucursal_but_baja.Location = new System.Drawing.Point(295, 158);
-            this.sucursal_but_baja.Name = "sucursal_but_baja";
-            this.sucursal_but_baja.Size = new System.Drawing.Size(75, 23);
-            this.sucursal_but_baja.TabIndex = 43;
-            this.sucursal_but_baja.Text = "Baja";
-            this.sucursal_but_baja.UseVisualStyleBackColor = true;
-            // 
             // sucursal_but_modificar
             // 
-            this.sucursal_but_modificar.Location = new System.Drawing.Point(295, 120);
+            this.sucursal_but_modificar.Location = new System.Drawing.Point(409, 221);
             this.sucursal_but_modificar.Name = "sucursal_but_modificar";
             this.sucursal_but_modificar.Size = new System.Drawing.Size(75, 23);
             this.sucursal_but_modificar.TabIndex = 42;
             this.sucursal_but_modificar.Text = "Modificar";
             this.sucursal_but_modificar.UseVisualStyleBackColor = true;
+            this.sucursal_but_modificar.Click += new System.EventHandler(this.sucursal_but_modificar_Click);
             // 
             // sucursal_but_buscar
             // 
@@ -117,68 +105,42 @@
             this.sucursal_but_buscar.TabIndex = 41;
             this.sucursal_but_buscar.Text = "Buscar";
             this.sucursal_but_buscar.UseVisualStyleBackColor = true;
+            this.sucursal_but_buscar.Click += new System.EventHandler(this.sucursal_but_buscar_Click);
             // 
             // sucursal_but_alta
             // 
-            this.sucursal_but_alta.Location = new System.Drawing.Point(295, 82);
+            this.sucursal_but_alta.Location = new System.Drawing.Point(328, 221);
             this.sucursal_but_alta.Name = "sucursal_but_alta";
             this.sucursal_but_alta.Size = new System.Drawing.Size(75, 23);
             this.sucursal_but_alta.TabIndex = 40;
             this.sucursal_but_alta.Text = "Alta";
             this.sucursal_but_alta.UseVisualStyleBackColor = true;
+            this.sucursal_but_alta.Click += new System.EventHandler(this.sucursal_but_alta_Click);
             // 
             // sucursales_dgv_listado
             // 
             this.sucursales_dgv_listado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.sucursales_dgv_listado.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.NombreSucursal,
-            this.Direccion,
-            this.CodigoPostal});
-            this.sucursales_dgv_listado.Location = new System.Drawing.Point(13, 65);
+            this.sucursales_dgv_listado.Location = new System.Drawing.Point(15, 65);
             this.sucursales_dgv_listado.Name = "sucursales_dgv_listado";
-            this.sucursales_dgv_listado.Size = new System.Drawing.Size(265, 188);
+            this.sucursales_dgv_listado.Size = new System.Drawing.Size(468, 150);
             this.sucursales_dgv_listado.TabIndex = 44;
-            this.sucursales_dgv_listado.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.sucursales_dgv_listado_CellContentClick);
             // 
-            // NombreSucursal
-            // 
-            this.NombreSucursal.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.NombreSucursal.HeaderText = "Nombre";
-            this.NombreSucursal.MinimumWidth = 4;
-            this.NombreSucursal.Name = "NombreSucursal";
-            this.NombreSucursal.Width = 69;
-            // 
-            // Direccion
-            // 
-            this.Direccion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Direccion.HeaderText = "Dirección";
-            this.Direccion.Name = "Direccion";
-            this.Direccion.Width = 77;
-            // 
-            // CodigoPostal
-            // 
-            this.CodigoPostal.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.CodigoPostal.HeaderText = "C.P.";
-            this.CodigoPostal.Name = "CodigoPostal";
-            this.CodigoPostal.Width = 52;
-            // 
-            // Sucursal
+            // Sucursales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(385, 265);
+            this.ClientSize = new System.Drawing.Size(494, 265);
             this.Controls.Add(this.sucursales_dgv_listado);
-            this.Controls.Add(this.sucursal_but_baja);
             this.Controls.Add(this.sucursal_but_modificar);
             this.Controls.Add(this.sucursal_but_buscar);
             this.Controls.Add(this.sucursal_but_alta);
-            this.Controls.Add(this.sucursal_tb_cp);
-            this.Controls.Add(this.sucursal_tb_direccion);
-            this.Controls.Add(this.sucursal_tb_nombre);
+            this.Controls.Add(this.codigo_postal_suc);
+            this.Controls.Add(this.direccion_suc);
+            this.Controls.Add(this.nombre_suc);
             this.Controls.Add(this.sucursal_lab_cp);
             this.Controls.Add(this.sucursal_lab_direccion);
             this.Controls.Add(this.sucursal_lab_nombre);
-            this.Name = "Sucursal";
+            this.Name = "Sucursales";
             this.Text = "Sucursales";
             ((System.ComponentModel.ISupportInitialize)(this.sucursales_dgv_listado)).EndInit();
             this.ResumeLayout(false);
@@ -188,19 +150,15 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox sucursal_tb_cp;
-        private System.Windows.Forms.TextBox sucursal_tb_direccion;
-        private System.Windows.Forms.TextBox sucursal_tb_nombre;
+        private System.Windows.Forms.TextBox codigo_postal_suc;
+        private System.Windows.Forms.TextBox direccion_suc;
+        private System.Windows.Forms.TextBox nombre_suc;
         private System.Windows.Forms.Label sucursal_lab_cp;
         private System.Windows.Forms.Label sucursal_lab_direccion;
         private System.Windows.Forms.Label sucursal_lab_nombre;
-        private System.Windows.Forms.Button sucursal_but_baja;
         private System.Windows.Forms.Button sucursal_but_modificar;
         private System.Windows.Forms.Button sucursal_but_buscar;
         private System.Windows.Forms.Button sucursal_but_alta;
         private System.Windows.Forms.DataGridView sucursales_dgv_listado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NombreSucursal;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Direccion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CodigoPostal;
     }
 }

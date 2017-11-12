@@ -223,7 +223,7 @@ CREATE TABLE MARGINADOS.Factura (
   dni_cliente numeric(18, 0) FOREIGN KEY REFERENCES MARGINADOS.Cliente (dni_clie),
   fecha_alta_fac datetime NOT NULL,
   fecha_vto_fac datetime NOT NULL,
-  Importe_total_fac numeric(18, 2) NOT NULL,
+  importe_total_fac numeric(18, 2) NOT NULL,
   nro_pago numeric(18, 0) FOREIGN KEY REFERENCES MARGINADOS.Pago (nro_pago),
   nro_rendicion numeric(18, 0) FOREIGN KEY REFERENCES MARGINADOS.Rendicion (nro_rendicion),
   PRIMARY KEY (nro_factura, cod_empresa)

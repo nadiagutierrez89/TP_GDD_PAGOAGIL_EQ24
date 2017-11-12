@@ -76,6 +76,7 @@
             this.facturas_but_alta.TabIndex = 45;
             this.facturas_but_alta.Text = "Alta";
             this.facturas_but_alta.UseVisualStyleBackColor = true;
+            this.facturas_but_alta.Click += new System.EventHandler(this.facturas_but_alta_Click);
             // 
             // nro_factura
             // 

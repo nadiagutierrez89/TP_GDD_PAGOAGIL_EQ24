@@ -34,7 +34,7 @@
             this.abmsucursal_tb_nombre = new System.Windows.Forms.TextBox();
             this.abmsucursal_tb_direccion = new System.Windows.Forms.TextBox();
             this.abmsucursal_tb_cp = new System.Windows.Forms.TextBox();
-            this.abmsucursal_chb_baja = new System.Windows.Forms.CheckBox();
+            this.habilitado = new System.Windows.Forms.CheckBox();
             this.abmsucursal_but_aceptar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -87,15 +87,17 @@
             this.abmsucursal_tb_cp.Size = new System.Drawing.Size(100, 20);
             this.abmsucursal_tb_cp.TabIndex = 5;
             // 
-            // abmsucursal_chb_baja
+            // habilitado
             // 
-            this.abmsucursal_chb_baja.AutoSize = true;
-            this.abmsucursal_chb_baja.Location = new System.Drawing.Point(25, 187);
-            this.abmsucursal_chb_baja.Name = "abmsucursal_chb_baja";
-            this.abmsucursal_chb_baja.Size = new System.Drawing.Size(80, 17);
-            this.abmsucursal_chb_baja.TabIndex = 10;
-            this.abmsucursal_chb_baja.Text = "Inhabilitada";
-            this.abmsucursal_chb_baja.UseVisualStyleBackColor = true;
+            this.habilitado.AutoSize = true;
+            this.habilitado.Checked = true;
+            this.habilitado.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.habilitado.Location = new System.Drawing.Point(25, 187);
+            this.habilitado.Name = "habilitado";
+            this.habilitado.Size = new System.Drawing.Size(73, 17);
+            this.habilitado.TabIndex = 10;
+            this.habilitado.Text = "Habilitada";
+            this.habilitado.UseVisualStyleBackColor = true;
             // 
             // abmsucursal_but_aceptar
             // 
@@ -105,6 +107,7 @@
             this.abmsucursal_but_aceptar.TabIndex = 11;
             this.abmsucursal_but_aceptar.Text = "Guardar";
             this.abmsucursal_but_aceptar.UseVisualStyleBackColor = true;
+            this.abmsucursal_but_aceptar.Click += new System.EventHandler(this.abmsucursal_but_aceptar_Click);
             // 
             // ABMSucursal
             // 
@@ -112,7 +115,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
             this.Controls.Add(this.abmsucursal_but_aceptar);
-            this.Controls.Add(this.abmsucursal_chb_baja);
+            this.Controls.Add(this.habilitado);
             this.Controls.Add(this.abmsucursal_tb_cp);
             this.Controls.Add(this.abmsucursal_tb_direccion);
             this.Controls.Add(this.abmsucursal_tb_nombre);
@@ -135,7 +138,7 @@
         private System.Windows.Forms.TextBox abmsucursal_tb_nombre;
         private System.Windows.Forms.TextBox abmsucursal_tb_direccion;
         private System.Windows.Forms.TextBox abmsucursal_tb_cp;
-        private System.Windows.Forms.CheckBox abmsucursal_chb_baja;
+        private System.Windows.Forms.CheckBox habilitado;
         private System.Windows.Forms.Button abmsucursal_but_aceptar;
     }
 }

@@ -32,8 +32,8 @@ namespace PagoAgilFrba.FrontEnd.Principal
 
             List<Sucursal> misSucursales = usuarioLogueado.sucursales;
             this.cb_sucursal.DataSource = misSucursales;
-            this.cb_sucursal.ValueMember = "codigo_postal";
-            this.cb_sucursal.DisplayMember = "nombre";
+            this.cb_sucursal.ValueMember = "codigo_postal_suc";
+            this.cb_sucursal.DisplayMember = "nombre_suc";
 
         }
 

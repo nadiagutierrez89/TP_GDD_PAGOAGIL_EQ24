@@ -83,5 +83,6 @@ namespace PagoAgilFrba.Models.DAO
         {
             return getEmpresasQueCumplenCon("1 = 1");
         }
+
     }
 }

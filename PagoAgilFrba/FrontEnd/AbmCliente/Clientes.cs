@@ -63,7 +63,7 @@ namespace PagoAgilFrba.FrontEnd.AbmCliente
             un_dgv.Columns.Add(col_fecha_baja);
         }
 
-        public Clientes(Models.BO.Usuario usuarioLogueado) : this()
+        public Clientes(Usuario usuarioLogueado) : this()
         {
             this.usuarioLogueado = usuarioLogueado;
         }

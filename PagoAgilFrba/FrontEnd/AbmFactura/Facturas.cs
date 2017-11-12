@@ -127,8 +127,7 @@ namespace PagoAgilFrba.FrontEnd.ABMFactura
                 {
                     MessageBox.Show("Las facturas no se podrán dar de baja ni modificarlas si estas fueron pagadas, y/o rendidas", "Error!", MessageBoxButtons.OK);
                     return;
-                }
-                
+                }               
 
                 ABMFactura altaModifEmpresa = new ABMFactura(unaFactura);
                 altaModifEmpresa.ShowDialog();
@@ -139,6 +138,13 @@ namespace PagoAgilFrba.FrontEnd.ABMFactura
             {
                 MessageBox.Show("Seleccione algun elemento", "Error!", MessageBoxButtons.OK);
             }
+        }
+
+        private void facturas_but_alta_Click(object sender, EventArgs e)
+        {
+            ABMFactura altaModifEmpresa = new ABMFactura();
+            altaModifEmpresa.ShowDialog();
+            this.facturas_but_buscar.PerformClick();
         }
     }
 }

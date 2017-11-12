@@ -33,20 +33,16 @@
             this.ambfactura_lab_fechaalta = new System.Windows.Forms.Label();
             this.abmempresa_lab_fechavto = new System.Windows.Forms.Label();
             this.abmfactura_lab_total = new System.Windows.Forms.Label();
-            this.abmfactura_lab_items = new System.Windows.Forms.Label();
-            this.abmfactura_lab_monto = new System.Windows.Forms.Label();
-            this.abmfactura_lab_cantidad = new System.Windows.Forms.Label();
-            this.ambfactura_tb_dni = new System.Windows.Forms.TextBox();
+            this.dni_cliente = new System.Windows.Forms.TextBox();
             this.abmfactura_lab_empresa = new System.Windows.Forms.Label();
-            this.abmfactura_tb_empresa = new System.Windows.Forms.ComboBox();
-            this.ambfactura_tb_nrofac = new System.Windows.Forms.TextBox();
-            this.abmfactura_mtb_fecalta = new System.Windows.Forms.MaskedTextBox();
-            this.abmfactura_mtb_fecvto = new System.Windows.Forms.MaskedTextBox();
-            this.abmfactura_tb_total = new System.Windows.Forms.TextBox();
-            this.abmfactura_tb_items = new System.Windows.Forms.TextBox();
-            this.abmfactura_tb_monto = new System.Windows.Forms.TextBox();
-            this.abmfactura_tb_cantidad = new System.Windows.Forms.TextBox();
+            this.cod_empresa = new System.Windows.Forms.ComboBox();
+            this.nro_factura = new System.Windows.Forms.TextBox();
+            this.importe_total_fac = new System.Windows.Forms.TextBox();
             this.abmfactura_but_aceptar = new System.Windows.Forms.Button();
+            this.fecha_alta_fac = new System.Windows.Forms.DateTimePicker();
+            this.fecha_vto_fac = new System.Windows.Forms.DateTimePicker();
+            this.dgvFacturaItems = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFacturaItems)).BeginInit();
             this.SuspendLayout();
             // 
             // abmcliente_lab_cliente
@@ -94,40 +90,12 @@
             this.abmfactura_lab_total.TabIndex = 5;
             this.abmfactura_lab_total.Text = "Total:";
             // 
-            // abmfactura_lab_items
+            // dni_cliente
             // 
-            this.abmfactura_lab_items.AutoSize = true;
-            this.abmfactura_lab_items.Location = new System.Drawing.Point(13, 232);
-            this.abmfactura_lab_items.Name = "abmfactura_lab_items";
-            this.abmfactura_lab_items.Size = new System.Drawing.Size(35, 13);
-            this.abmfactura_lab_items.TabIndex = 6;
-            this.abmfactura_lab_items.Text = "Items:";
-            // 
-            // abmfactura_lab_monto
-            // 
-            this.abmfactura_lab_monto.AutoSize = true;
-            this.abmfactura_lab_monto.Location = new System.Drawing.Point(74, 233);
-            this.abmfactura_lab_monto.Name = "abmfactura_lab_monto";
-            this.abmfactura_lab_monto.Size = new System.Drawing.Size(40, 13);
-            this.abmfactura_lab_monto.TabIndex = 7;
-            this.abmfactura_lab_monto.Text = "Monto:";
-            this.abmfactura_lab_monto.Click += new System.EventHandler(this.abmfactura_lab_monto_Click);
-            // 
-            // abmfactura_lab_cantidad
-            // 
-            this.abmfactura_lab_cantidad.AutoSize = true;
-            this.abmfactura_lab_cantidad.Location = new System.Drawing.Point(143, 233);
-            this.abmfactura_lab_cantidad.Name = "abmfactura_lab_cantidad";
-            this.abmfactura_lab_cantidad.Size = new System.Drawing.Size(52, 13);
-            this.abmfactura_lab_cantidad.TabIndex = 8;
-            this.abmfactura_lab_cantidad.Text = "Cantidad:";
-            // 
-            // ambfactura_tb_dni
-            // 
-            this.ambfactura_tb_dni.Location = new System.Drawing.Point(13, 42);
-            this.ambfactura_tb_dni.Name = "ambfactura_tb_dni";
-            this.ambfactura_tb_dni.Size = new System.Drawing.Size(100, 20);
-            this.ambfactura_tb_dni.TabIndex = 9;
+            this.dni_cliente.Location = new System.Drawing.Point(13, 42);
+            this.dni_cliente.Name = "dni_cliente";
+            this.dni_cliente.Size = new System.Drawing.Size(100, 20);
+            this.dni_cliente.TabIndex = 9;
             // 
             // abmfactura_lab_empresa
             // 
@@ -138,103 +106,83 @@
             this.abmfactura_lab_empresa.TabIndex = 1;
             this.abmfactura_lab_empresa.Text = "Empresa:";
             // 
-            // abmfactura_tb_empresa
+            // cod_empresa
             // 
-            this.abmfactura_tb_empresa.FormattingEnabled = true;
-            this.abmfactura_tb_empresa.Location = new System.Drawing.Point(122, 41);
-            this.abmfactura_tb_empresa.Name = "abmfactura_tb_empresa";
-            this.abmfactura_tb_empresa.Size = new System.Drawing.Size(121, 21);
-            this.abmfactura_tb_empresa.TabIndex = 10;
+            this.cod_empresa.FormattingEnabled = true;
+            this.cod_empresa.Location = new System.Drawing.Point(122, 41);
+            this.cod_empresa.Name = "cod_empresa";
+            this.cod_empresa.Size = new System.Drawing.Size(121, 21);
+            this.cod_empresa.TabIndex = 10;
             // 
-            // ambfactura_tb_nrofac
+            // nro_factura
             // 
-            this.ambfactura_tb_nrofac.Location = new System.Drawing.Point(13, 85);
-            this.ambfactura_tb_nrofac.Name = "ambfactura_tb_nrofac";
-            this.ambfactura_tb_nrofac.Size = new System.Drawing.Size(139, 20);
-            this.ambfactura_tb_nrofac.TabIndex = 11;
+            this.nro_factura.Location = new System.Drawing.Point(13, 85);
+            this.nro_factura.Name = "nro_factura";
+            this.nro_factura.Size = new System.Drawing.Size(139, 20);
+            this.nro_factura.TabIndex = 11;
             // 
-            // abmfactura_mtb_fecalta
+            // importe_total_fac
             // 
-            this.abmfactura_mtb_fecalta.Location = new System.Drawing.Point(13, 126);
-            this.abmfactura_mtb_fecalta.Mask = "00/00/0000";
-            this.abmfactura_mtb_fecalta.Name = "abmfactura_mtb_fecalta";
-            this.abmfactura_mtb_fecalta.Size = new System.Drawing.Size(100, 20);
-            this.abmfactura_mtb_fecalta.TabIndex = 12;
-            this.abmfactura_mtb_fecalta.ValidatingType = typeof(System.DateTime);
-            // 
-            // abmfactura_mtb_fecvto
-            // 
-            this.abmfactura_mtb_fecvto.Location = new System.Drawing.Point(13, 166);
-            this.abmfactura_mtb_fecvto.Mask = "00/00/0000";
-            this.abmfactura_mtb_fecvto.Name = "abmfactura_mtb_fecvto";
-            this.abmfactura_mtb_fecvto.Size = new System.Drawing.Size(100, 20);
-            this.abmfactura_mtb_fecvto.TabIndex = 13;
-            this.abmfactura_mtb_fecvto.ValidatingType = typeof(System.DateTime);
-            // 
-            // abmfactura_tb_total
-            // 
-            this.abmfactura_tb_total.Location = new System.Drawing.Point(13, 207);
-            this.abmfactura_tb_total.Name = "abmfactura_tb_total";
-            this.abmfactura_tb_total.Size = new System.Drawing.Size(100, 20);
-            this.abmfactura_tb_total.TabIndex = 14;
-            // 
-            // abmfactura_tb_items
-            // 
-            this.abmfactura_tb_items.Location = new System.Drawing.Point(13, 249);
-            this.abmfactura_tb_items.Name = "abmfactura_tb_items";
-            this.abmfactura_tb_items.Size = new System.Drawing.Size(50, 20);
-            this.abmfactura_tb_items.TabIndex = 15;
-            // 
-            // abmfactura_tb_monto
-            // 
-            this.abmfactura_tb_monto.Location = new System.Drawing.Point(77, 249);
-            this.abmfactura_tb_monto.Name = "abmfactura_tb_monto";
-            this.abmfactura_tb_monto.Size = new System.Drawing.Size(55, 20);
-            this.abmfactura_tb_monto.TabIndex = 16;
-            // 
-            // abmfactura_tb_cantidad
-            // 
-            this.abmfactura_tb_cantidad.Location = new System.Drawing.Point(146, 249);
-            this.abmfactura_tb_cantidad.Name = "abmfactura_tb_cantidad";
-            this.abmfactura_tb_cantidad.Size = new System.Drawing.Size(62, 20);
-            this.abmfactura_tb_cantidad.TabIndex = 17;
+            this.importe_total_fac.Location = new System.Drawing.Point(13, 209);
+            this.importe_total_fac.Name = "importe_total_fac";
+            this.importe_total_fac.Size = new System.Drawing.Size(100, 20);
+            this.importe_total_fac.TabIndex = 14;
             // 
             // abmfactura_but_aceptar
             // 
-            this.abmfactura_but_aceptar.Location = new System.Drawing.Point(180, 277);
+            this.abmfactura_but_aceptar.Location = new System.Drawing.Point(221, 420);
             this.abmfactura_but_aceptar.Name = "abmfactura_but_aceptar";
             this.abmfactura_but_aceptar.Size = new System.Drawing.Size(75, 23);
             this.abmfactura_but_aceptar.TabIndex = 18;
             this.abmfactura_but_aceptar.Text = "Guardar";
             this.abmfactura_but_aceptar.UseVisualStyleBackColor = true;
+            this.abmfactura_but_aceptar.Click += new System.EventHandler(this.abmfactura_but_aceptar_Click);
             // 
-            // abmfactura
+            // fecha_alta_fac
+            // 
+            this.fecha_alta_fac.Location = new System.Drawing.Point(13, 128);
+            this.fecha_alta_fac.Name = "fecha_alta_fac";
+            this.fecha_alta_fac.Size = new System.Drawing.Size(200, 20);
+            this.fecha_alta_fac.TabIndex = 19;
+            // 
+            // fecha_vto_fac
+            // 
+            this.fecha_vto_fac.Location = new System.Drawing.Point(13, 170);
+            this.fecha_vto_fac.Name = "fecha_vto_fac";
+            this.fecha_vto_fac.Size = new System.Drawing.Size(200, 20);
+            this.fecha_vto_fac.TabIndex = 20;
+            // 
+            // dgvFacturaItems
+            // 
+            this.dgvFacturaItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvFacturaItems.Location = new System.Drawing.Point(16, 264);
+            this.dgvFacturaItems.Name = "dgvFacturaItems";
+            this.dgvFacturaItems.Size = new System.Drawing.Size(280, 150);
+            this.dgvFacturaItems.TabIndex = 21;
+            // 
+            // ABMFactura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(267, 312);
+            this.ClientSize = new System.Drawing.Size(310, 450);
+            this.Controls.Add(this.dgvFacturaItems);
+            this.Controls.Add(this.fecha_vto_fac);
+            this.Controls.Add(this.fecha_alta_fac);
             this.Controls.Add(this.abmfactura_but_aceptar);
-            this.Controls.Add(this.abmfactura_tb_cantidad);
-            this.Controls.Add(this.abmfactura_tb_monto);
-            this.Controls.Add(this.abmfactura_tb_items);
-            this.Controls.Add(this.abmfactura_tb_total);
-            this.Controls.Add(this.abmfactura_mtb_fecvto);
-            this.Controls.Add(this.abmfactura_mtb_fecalta);
-            this.Controls.Add(this.ambfactura_tb_nrofac);
-            this.Controls.Add(this.abmfactura_tb_empresa);
-            this.Controls.Add(this.ambfactura_tb_dni);
-            this.Controls.Add(this.abmfactura_lab_cantidad);
-            this.Controls.Add(this.abmfactura_lab_monto);
-            this.Controls.Add(this.abmfactura_lab_items);
+            this.Controls.Add(this.importe_total_fac);
+            this.Controls.Add(this.nro_factura);
+            this.Controls.Add(this.cod_empresa);
+            this.Controls.Add(this.dni_cliente);
             this.Controls.Add(this.abmfactura_lab_total);
             this.Controls.Add(this.abmempresa_lab_fechavto);
             this.Controls.Add(this.ambfactura_lab_fechaalta);
             this.Controls.Add(this.abmfactura_lab_nrofactura);
             this.Controls.Add(this.abmfactura_lab_empresa);
             this.Controls.Add(this.abmcliente_lab_cliente);
-            this.Name = "abmfactura";
+            this.Name = "ABMFactura";
             this.Text = "ABM Factura";
             this.Load += new System.EventHandler(this.abmfactura_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFacturaItems)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -247,19 +195,14 @@
         private System.Windows.Forms.Label ambfactura_lab_fechaalta;
         private System.Windows.Forms.Label abmempresa_lab_fechavto;
         private System.Windows.Forms.Label abmfactura_lab_total;
-        private System.Windows.Forms.Label abmfactura_lab_items;
-        private System.Windows.Forms.Label abmfactura_lab_monto;
-        private System.Windows.Forms.Label abmfactura_lab_cantidad;
-        private System.Windows.Forms.TextBox ambfactura_tb_dni;
+        private System.Windows.Forms.TextBox dni_cliente;
         private System.Windows.Forms.Label abmfactura_lab_empresa;
-        private System.Windows.Forms.ComboBox abmfactura_tb_empresa;
-        private System.Windows.Forms.TextBox ambfactura_tb_nrofac;
-        private System.Windows.Forms.MaskedTextBox abmfactura_mtb_fecalta;
-        private System.Windows.Forms.MaskedTextBox abmfactura_mtb_fecvto;
-        private System.Windows.Forms.TextBox abmfactura_tb_total;
-        private System.Windows.Forms.TextBox abmfactura_tb_items;
-        private System.Windows.Forms.TextBox abmfactura_tb_monto;
-        private System.Windows.Forms.TextBox abmfactura_tb_cantidad;
+        private System.Windows.Forms.ComboBox cod_empresa;
+        private System.Windows.Forms.TextBox nro_factura;
+        private System.Windows.Forms.TextBox importe_total_fac;
         private System.Windows.Forms.Button abmfactura_but_aceptar;
+        private System.Windows.Forms.DateTimePicker fecha_alta_fac;
+        private System.Windows.Forms.DateTimePicker fecha_vto_fac;
+        private System.Windows.Forms.DataGridView dgvFacturaItems;
     }
 }

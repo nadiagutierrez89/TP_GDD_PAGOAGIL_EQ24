@@ -28,7 +28,7 @@ namespace PagoAgilFrba.FrontEnd.Principal
         {
             InitializeComponent();
             this.usuarioLogueado = usuarioLogueado;
-            this.lbl_socursal.Text = this.usuarioLogueado.socursalActual.nombre;
+            this.lbl_socursal.Text = this.usuarioLogueado.socursalActual.nombre_suc;
             this.lbl_rol.Text = this.usuarioLogueado.rolActual.nombre;
 
             this.usuarioLogueado = usuarioLogueado;
@@ -88,7 +88,7 @@ namespace PagoAgilFrba.FrontEnd.Principal
         private void home_but_abmsucursal_Click_1(object sender, EventArgs e)
         {
             this.Hide();
-            PagoAgilFrba.FrontEnd.AbmSucursal.Sucursal winformSucursal = new PagoAgilFrba.FrontEnd.AbmSucursal.Sucursal(usuarioLogueado);
+            Sucursales winformSucursal = new Sucursales(usuarioLogueado);
             winformSucursal.ShowDialog();
             this.Show();
         }
