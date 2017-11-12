@@ -38,6 +38,7 @@
             this.cliente_but_buscar = new System.Windows.Forms.Button();
             this.cliente_but_modificar = new System.Windows.Forms.Button();
             this.dgv_clientes = new System.Windows.Forms.DataGridView();
+            this.bttnSeleccionar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_clientes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -128,11 +129,23 @@
             this.dgv_clientes.Size = new System.Drawing.Size(692, 155);
             this.dgv_clientes.TabIndex = 28;
             // 
+            // bttnSeleccionar
+            // 
+            this.bttnSeleccionar.Location = new System.Drawing.Point(471, 243);
+            this.bttnSeleccionar.Name = "bttnSeleccionar";
+            this.bttnSeleccionar.Size = new System.Drawing.Size(75, 23);
+            this.bttnSeleccionar.TabIndex = 29;
+            this.bttnSeleccionar.Text = "Seleccionar";
+            this.bttnSeleccionar.UseVisualStyleBackColor = true;
+            this.bttnSeleccionar.Visible = false;
+            this.bttnSeleccionar.Click += new System.EventHandler(this.bttnSeleccionar_Click);
+            // 
             // Clientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(722, 299);
+            this.Controls.Add(this.bttnSeleccionar);
             this.Controls.Add(this.dgv_clientes);
             this.Controls.Add(this.cliente_but_modificar);
             this.Controls.Add(this.cliente_but_buscar);
@@ -164,5 +177,6 @@
         private System.Windows.Forms.Button cliente_but_buscar;
         private System.Windows.Forms.Button cliente_but_modificar;
         private System.Windows.Forms.DataGridView dgv_clientes;
+        private System.Windows.Forms.Button bttnSeleccionar;
     }
 }

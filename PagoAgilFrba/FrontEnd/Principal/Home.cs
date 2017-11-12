@@ -4,7 +4,6 @@ using PagoAgilFrba.FrontEnd.ABMFactura;
 using PagoAgilFrba.FrontEnd.ListadoEstadistico;
 using PagoAgilFrba.FrontEnd.AbmRol;
 using PagoAgilFrba.FrontEnd.AbmSucursal;
-using PagoAgilFrba.FrontEnd.RegistroPago;
 using PagoAgilFrba.FrontEnd.Rendicion;
 using PagoAgilFrba.Models.BO;
 using System;
@@ -16,6 +15,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PagoAgilFrba.FrontEnd.RegistroPago;
 
 
 namespace PagoAgilFrba.FrontEnd.Principal
@@ -51,7 +51,6 @@ namespace PagoAgilFrba.FrontEnd.Principal
             this.Hide();
             Facturas winform = new Facturas(usuarioLogueado);
             winform.ShowDialog();
-
             this.Show();
         }
 
@@ -65,10 +64,10 @@ namespace PagoAgilFrba.FrontEnd.Principal
 
         private void home_but_ambrol_Click(object sender, EventArgs e)
         {
-          this.Hide();
-           Roles winformRol = new Roles(usuarioLogueado);
-           winformRol.ShowDialog();
-           this.Show();
+            this.Hide();
+            Roles winformRol = new Roles(usuarioLogueado);
+            winformRol.ShowDialog();
+            this.Show();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -96,15 +95,19 @@ namespace PagoAgilFrba.FrontEnd.Principal
         private void home_but_regpagf_Click(object sender, EventArgs e)
         {
             this.Hide();
-            PagoAgilFrba.FrontEnd.RegistroPago.RegistroPago winformRegPago = new PagoAgilFrba.FrontEnd.RegistroPago.RegistroPago(usuarioLogueado);
-            winformRegPago.ShowDialog();
+            do
+            {
+                RegistroPagos winformRegPago = new RegistroPagos(usuarioLogueado);
+                winformRegPago.ShowDialog();
+            } while (MessageBox.Show("Quiere incresar otro pago?", "PROCESAR OTRO PAGO?", MessageBoxButtons.YesNo) == DialogResult.Yes);
+
             this.Show();
         }
 
         private void home_but_rendirf_Click(object sender, EventArgs e)
         {
             this.Hide();
-            PagoAgilFrba.FrontEnd.Rendicion.Rendicion winformRendicion = new PagoAgilFrba.FrontEnd.Rendicion.Rendicion (usuarioLogueado);
+            PagoAgilFrba.FrontEnd.Rendicion.Rendicion winformRendicion = new PagoAgilFrba.FrontEnd.Rendicion.Rendicion(usuarioLogueado);
             winformRendicion.ShowDialog();
             this.Show();
         }

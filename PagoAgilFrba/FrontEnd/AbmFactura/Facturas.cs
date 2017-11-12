@@ -15,15 +15,28 @@ namespace PagoAgilFrba.FrontEnd.ABMFactura
     public partial class Facturas : Form
     {
         private Usuario usuarioLogueado;
+        private DateTime hoy = Convert.ToDateTime(ConfigurationManager.AppSettings["fecha"]);
+        private List<Factura> facturas_a_pagar;
+        public Factura factSelect { get; set; }
 
         public Facturas()
         {
             InitializeComponent();
         }
 
-        public Facturas(Usuario usuarioLogueado) : this ()
+        public Facturas(Usuario usuarioLogueado)
+            : this()
         {
             this.usuarioLogueado = usuarioLogueado;
+        }
+
+        public Facturas(List<Factura> factuasPagar)
+            : this()
+        {
+            this.facturas_a_pagar = factuasPagar;
+            this.facturas_but_alta.Visible = false;
+            this.facturas_but_modificar.Visible = false;
+            this.bttnSeleccionar.Visible = true;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -33,7 +46,14 @@ namespace PagoAgilFrba.FrontEnd.ABMFactura
 
         private void facturas_but_buscar_Click(object sender, EventArgs e)
         {
-            this.factura_dgv_listado.DataSource = Factura.buscarSegun(this.armarFiltro());
+            List<Factura> lista_a_mostrar = Factura.buscarSegun(this.armarFiltro());
+
+            if (this.bttnSeleccionar.Visible)
+            {//saco los elementos ya elejidos 
+                lista_a_mostrar.RemoveAll(f => facturas_a_pagar.Any(fap => fap.nro_factura == f.nro_factura && fap.cod_empresa == fap.cod_empresa));
+            }
+
+            this.factura_dgv_listado.DataSource = lista_a_mostrar;
         }
 
         private string armarFiltro()
@@ -54,24 +74,45 @@ namespace PagoAgilFrba.FrontEnd.ABMFactura
             if (this.fecha_alta_fac_desde.Checked)
                 filtro = filtro + " and fecha_alta_fac >= CONVERT (datetime, '" + this.fecha_alta_fac_desde.Value.Date + "', 103)";
 
-            if(this.fecha_alta_fac_hasta.Checked)
+            if (this.fecha_alta_fac_hasta.Checked)
                 filtro = filtro + " and fecha_alta_fac <= CONVERT (datetime, '" + this.fecha_alta_fac_hasta.Value.Date + "', 103)";
 
-            if(this.fecha_vto_fac_desde.Checked)
+            if (this.fecha_vto_fac_desde.Checked)
                 filtro = filtro + " and fecha_vto_fac >= CONVERT (datetime, '" + this.fecha_vto_fac_desde.Value.Date + "', 103)";
 
             if (this.fecha_vto_fac_hasta.Checked)
                 filtro = filtro + " and fecha_vto_fac <= CONVERT (datetime, '" + this.fecha_vto_fac_hasta.Value.Date + "', 103)";
 
+            if (this.bttnSeleccionar.Visible)
+            {// si es para el registro de pagos no traigo las facturas vencidas ni pagadas
+                filtro = filtro + " and fecha_vto_fac >= CONVERT (datetime, '" + hoy + "', 103)";
+                filtro = filtro + " and nro_pago is null ";
+            }
+
             return filtro;
+        }
+
+        private void bttn_limpiar_Click(object sender, EventArgs e)
+        {
+            limpiar();
+        }
+
+        private void bttn_limpiar_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Facturas_Shown(object sender, EventArgs e)
+        {
+            this.bttn_limpiar.PerformClick();
         }
 
         private void limpiar()
         {
-            this.fecha_alta_fac_desde.Value = Convert.ToDateTime(ConfigurationManager.AppSettings["fecha"]);
-            this.fecha_alta_fac_hasta.Value = Convert.ToDateTime(ConfigurationManager.AppSettings["fecha"]);
-            this.fecha_vto_fac_desde.Value = Convert.ToDateTime(ConfigurationManager.AppSettings["fecha"]);
-            this.fecha_vto_fac_hasta.Value = Convert.ToDateTime(ConfigurationManager.AppSettings["fecha"]);
+            this.fecha_alta_fac_desde.Value = hoy;
+            this.fecha_alta_fac_hasta.Value = hoy;
+            this.fecha_vto_fac_desde.Value = hoy;
+            this.fecha_vto_fac_hasta.Value = hoy;
 
             this.fecha_alta_fac_desde.Checked = false;
             this.fecha_alta_fac_hasta.Checked = false;
@@ -97,21 +138,6 @@ namespace PagoAgilFrba.FrontEnd.ABMFactura
             }
         }
 
-        private void bttn_limpiar_Click(object sender, EventArgs e)
-        {
-            limpiar();
-        }
-
-        private void bttn_limpiar_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void Facturas_Shown(object sender, EventArgs e)
-        {
-            limpiar();
-        }
-
         private bool ItemSelccionado(DataGridView dataGridView)
         {
             return dataGridView.SelectedRows.Count != 0;
@@ -123,11 +149,11 @@ namespace PagoAgilFrba.FrontEnd.ABMFactura
             {
                 Factura unaFactura = (Factura)this.factura_dgv_listado.CurrentRow.DataBoundItem;
 
-                if(unaFactura.nro_pago != null || unaFactura.nro_rendicion != null)
+                if (unaFactura.nro_pago != null || unaFactura.nro_rendicion != null)
                 {
                     MessageBox.Show("Las facturas no se podrán dar de baja ni modificarlas si estas fueron pagadas, y/o rendidas", "Error!", MessageBoxButtons.OK);
                     return;
-                }               
+                }
 
                 ABMFactura altaModifEmpresa = new ABMFactura(unaFactura);
                 altaModifEmpresa.ShowDialog();
@@ -146,5 +172,20 @@ namespace PagoAgilFrba.FrontEnd.ABMFactura
             altaModifEmpresa.ShowDialog();
             this.facturas_but_buscar.PerformClick();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (this.ItemSelccionado(this.factura_dgv_listado))
+            {
+                this.facturas_a_pagar.Add((Factura)this.factura_dgv_listado.CurrentRow.DataBoundItem);
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Seleccione algun elemento", "Error!", MessageBoxButtons.OK);
+            }
+
+        }
+
     }
 }

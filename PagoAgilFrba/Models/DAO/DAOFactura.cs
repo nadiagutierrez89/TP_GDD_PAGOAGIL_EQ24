@@ -55,14 +55,26 @@ namespace PagoAgilFrba.Models.DAO
             ListaParametros.Add(new SqlParameter("@fecha_alta_fac", unafactura.fecha_alta_fac));
             ListaParametros.Add(new SqlParameter("@fecha_vto_fac", unafactura.fecha_vto_fac));
             ListaParametros.Add(new SqlParameter("@importe_total_fac", unafactura.importe_total_fac));
-            ListaParametros.Add(new SqlParameter("@nro_pago", DBNull.Value));
-            ListaParametros.Add(new SqlParameter("@nro_rendicion", DBNull.Value));
 
             if (unafactura.nro_pago != null)
+            {
                 ListaParametros.Add(new SqlParameter("@nro_pago", unafactura.nro_pago));
+            }
+            else
+            {
+                ListaParametros.Add(new SqlParameter("@nro_pago", DBNull.Value));
+            }
+
 
             if (unafactura.nro_rendicion != null)
+            {
                 ListaParametros.Add(new SqlParameter("@nro_rendicion", unafactura.nro_rendicion));
+            }
+            else
+            {
+                ListaParametros.Add(new SqlParameter("@nro_rendicion", DBNull.Value));
+            }
+                
 
             if (Factura.yaExiste(unafactura))
             {

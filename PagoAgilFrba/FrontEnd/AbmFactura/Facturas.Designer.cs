@@ -45,6 +45,7 @@
             this.lbl_vt_hasta = new System.Windows.Forms.Label();
             this.lbl_nro_factura = new System.Windows.Forms.Label();
             this.bttn_limpiar = new System.Windows.Forms.Button();
+            this.bttnSeleccionar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.factura_dgv_listado)).BeginInit();
             this.SuspendLayout();
             // 
@@ -195,11 +196,23 @@
             this.bttn_limpiar.Click += new System.EventHandler(this.bttn_limpiar_Click);
             this.bttn_limpiar.Paint += new System.Windows.Forms.PaintEventHandler(this.bttn_limpiar_Paint);
             // 
+            // bttnSeleccionar
+            // 
+            this.bttnSeleccionar.Location = new System.Drawing.Point(318, 404);
+            this.bttnSeleccionar.Name = "bttnSeleccionar";
+            this.bttnSeleccionar.Size = new System.Drawing.Size(75, 23);
+            this.bttnSeleccionar.TabIndex = 68;
+            this.bttnSeleccionar.Text = "Seleccionar";
+            this.bttnSeleccionar.UseVisualStyleBackColor = true;
+            this.bttnSeleccionar.Visible = false;
+            this.bttnSeleccionar.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Facturas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(565, 433);
+            this.Controls.Add(this.bttnSeleccionar);
             this.Controls.Add(this.bttn_limpiar);
             this.Controls.Add(this.lbl_nro_factura);
             this.Controls.Add(this.lbl_vt_hasta);
@@ -245,5 +258,6 @@
         private System.Windows.Forms.Label lbl_vt_hasta;
         private System.Windows.Forms.Label lbl_nro_factura;
         private System.Windows.Forms.Button bttn_limpiar;
+        private System.Windows.Forms.Button bttnSeleccionar;
     }
 }

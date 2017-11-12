@@ -126,11 +126,19 @@
     <Compile Include="FrontEnd\AbmSucursal\Sucursales.Designer.cs">
       <DependentUpon>Sucursales.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrontEnd\RegistroPago\MediosDePago.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrontEnd\RegistroPago\MediosDePago.Designer.cs">
+      <DependentUpon>MediosDePago.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\BO\Cliente.cs" />
     <Compile Include="Models\BO\Empresa.cs" />
     <Compile Include="Models\BO\Factura.cs" />
     <Compile Include="Models\BO\Funcionalidad.cs" />
     <Compile Include="Models\BO\FacturaItem.cs" />
+    <Compile Include="Models\BO\MedioDePago.cs" />
+    <Compile Include="Models\BO\Pago.cs" />
     <Compile Include="Models\BO\Rol.cs" />
     <Compile Include="Models\BO\Rubro.cs" />
     <Compile Include="Models\BO\Sucursal.cs" />
@@ -140,6 +148,8 @@
     <Compile Include="Models\DAO\DAOFacturaItem.cs" />
     <Compile Include="Models\DAO\DAOListadoEstadistico.cs" />
     <Compile Include="Models\DAO\DAOFuncionalidad.cs" />
+    <Compile Include="Models\DAO\DAOMedioDePago.cs" />
+    <Compile Include="Models\DAO\DAOPago.cs" />
     <Compile Include="Models\DAO\DAORol.cs" />
     <Compile Include="Models\DAO\DAORolFuncionalidad.cs" />
     <Compile Include="Models\DAO\DAORubro.cs" />
@@ -173,11 +183,11 @@
     <Compile Include="Models\DataBase\DBAcess.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="FrontEnd\RegistroPago\RegistroPago.cs">
+    <Compile Include="FrontEnd\RegistroPago\RegistroPagos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrontEnd\RegistroPago\RegistroPago.Designer.cs">
-      <DependentUpon>RegistroPago.cs</DependentUpon>
+    <Compile Include="FrontEnd\RegistroPago\RegistroPagos.Designer.cs">
+      <DependentUpon>RegistroPagos.cs</DependentUpon>
     </Compile>
     <Compile Include="FrontEnd\Rendicion\Rendicion.cs">
       <SubType>Form</SubType>
@@ -227,6 +237,9 @@
     <EmbeddedResource Include="FrontEnd\Principal\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrontEnd\RegistroPago\MediosDePago.resx">
+      <DependentUpon>MediosDePago.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -236,8 +249,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="FrontEnd\RegistroPago\RegistroPago.resx">
-      <DependentUpon>RegistroPago.cs</DependentUpon>
+    <EmbeddedResource Include="FrontEnd\RegistroPago\RegistroPagos.resx">
+      <DependentUpon>RegistroPagos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrontEnd\Rendicion\Rendicion.resx">
       <DependentUpon>Rendicion.cs</DependentUpon>

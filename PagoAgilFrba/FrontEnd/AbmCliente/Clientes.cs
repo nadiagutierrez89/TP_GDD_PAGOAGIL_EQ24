@@ -14,6 +14,7 @@ namespace PagoAgilFrba.FrontEnd.AbmCliente
     public partial class Clientes : Form
     {
         private Usuario usuarioLogueado;
+        public Cliente clientePagador { get; set; }
 
         public Clientes()
         {
@@ -68,6 +69,14 @@ namespace PagoAgilFrba.FrontEnd.AbmCliente
             this.usuarioLogueado = usuarioLogueado;
         }
 
+        public Clientes(Cliente clientePagador) : this()
+        {
+            this.clientePagador = clientePagador;
+            this.cliente_but_modificar.Visible = false;
+            this.clientes_but_alta.Visible = false;
+            this.bttnSeleccionar.Visible = true;
+        }
+
         private void cliente_but_buscar_Click(object sender, EventArgs e)
         {
             this.dgv_clientes.DataSource = Cliente.buscarClientes(this.armarFiltro());
@@ -82,6 +91,11 @@ namespace PagoAgilFrba.FrontEnd.AbmCliente
                 {
                     filtro = filtro + " and " + ctrl.Name + " like '%" + ctrl.Text + "%'";
                 }
+            }
+
+            if (this.bttnSeleccionar.Visible)
+            {// si es para el registro de pagos no traigo los clientes dados de baja
+                filtro = filtro + " and fecha_baja is null ";
             }
 
             return filtro;
@@ -113,6 +127,20 @@ namespace PagoAgilFrba.FrontEnd.AbmCliente
             ABMCliente altaModifClie = new ABMCliente();
             altaModifClie.ShowDialog();
             this.cliente_but_buscar.PerformClick();
+        }
+
+        private void bttnSeleccionar_Click(object sender, EventArgs e)
+        {
+            if (this.ItemSelccionado(this.dgv_clientes))
+            {
+                this.clientePagador = (Cliente)this.dgv_clientes.CurrentRow.DataBoundItem;
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Seleccione algun elemento", "Error!", MessageBoxButtons.OK);
+            }
+
         }
 
     }
