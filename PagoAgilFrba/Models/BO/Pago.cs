@@ -19,17 +19,15 @@ namespace PagoAgilFrba.Models.BO
 
         public decimal cod_user { get; set; }
 
-        public List<Factura> facturas { get; set; }
+        public decimal ? nro_pago { get; set; }
 
-        public List<MedioDePago> mediosDePago { get; set; }
+        public decimal cod_medioDePago { get; set; }
+
+        public List<Factura> facturas { get; set; }
 
         internal decimal importe_total()
         {
             return this.facturas.Sum(f => f.importe_total_fac);
-        }
-        internal decimal importe_total_mediosDePago()
-        {
-            return this.mediosDePago.Sum(m => m.importe);
         }
 
         internal int guardar()
@@ -37,6 +35,10 @@ namespace PagoAgilFrba.Models.BO
             return DAOPago.guardar(this);
         }
 
-        public decimal nro_pago { get; set; }
+        internal static Pago get(decimal? nullable)
+        {
+
+            return DAOPago.get((decimal)nullable);
+        }
     }
 }

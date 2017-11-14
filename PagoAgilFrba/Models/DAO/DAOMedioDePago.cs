@@ -28,26 +28,5 @@ namespace PagoAgilFrba.Models.DAO
             }
             return lista;
         }
-
-        internal static int guardar(MedioDePago medioDePago)
-        {
-            string noQuery = "";
-
-            List<SqlParameter> ListaParametros = new List<SqlParameter>();
-            ListaParametros.Add(new SqlParameter("@nro_pago", medioDePago.nro_pago));
-            ListaParametros.Add(new SqlParameter("@cod_pago_MP", medioDePago.cod_medioDePago));
-            ListaParametros.Add(new SqlParameter("@importe", medioDePago.importe));
-
-            noQuery = "INSERT INTO MARGINADOS.PagoMedioDePago " +
-               "(nro_pago " +
-               ",cod_pago_MP " +
-               ",importe ) " +
-         "VALUES " +
-               "(@nro_pago " +
-               ",@cod_pago_MP " +
-               ",@importe ) ";
-
-            return DBAcess.WriteInBase(noQuery, "T", ListaParametros);
-        }
     }
 }

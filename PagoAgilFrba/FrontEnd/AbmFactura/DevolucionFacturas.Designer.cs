@@ -28,41 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ambfactura_tb_nrofac = new System.Windows.Forms.TextBox();
-            this.registropago_lab_numeroF = new System.Windows.Forms.Label();
-            this.registropago_but_agregar = new System.Windows.Forms.Button();
             this.registropago_tb_nrofac = new System.Windows.Forms.TextBox();
-            this.registropago_lab_importe = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.registropago_lab_total = new System.Windows.Forms.Label();
-            this.registropago_tb_total = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.cod_motivoDevolucion = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblFacturaSeleccionar = new System.Windows.Forms.Label();
+            this.tbSucursal = new System.Windows.Forms.TextBox();
+            this.tbUser = new System.Windows.Forms.TextBox();
+            this.lblSucursal = new System.Windows.Forms.Label();
+            this.lblUser = new System.Windows.Forms.Label();
+            this.dgv_listado_factura = new System.Windows.Forms.DataGridView();
+            this.bttnDevolucion = new System.Windows.Forms.Button();
+            this.bttn_agregar = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_listado_factura)).BeginInit();
             this.SuspendLayout();
-            // 
-            // ambfactura_tb_nrofac
-            // 
-            this.ambfactura_tb_nrofac.Location = new System.Drawing.Point(15, 52);
-            this.ambfactura_tb_nrofac.Name = "ambfactura_tb_nrofac";
-            this.ambfactura_tb_nrofac.Size = new System.Drawing.Size(68, 20);
-            this.ambfactura_tb_nrofac.TabIndex = 18;
-            // 
-            // registropago_lab_numeroF
-            // 
-            this.registropago_lab_numeroF.Location = new System.Drawing.Point(12, 18);
-            this.registropago_lab_numeroF.Name = "registropago_lab_numeroF";
-            this.registropago_lab_numeroF.Size = new System.Drawing.Size(48, 31);
-            this.registropago_lab_numeroF.TabIndex = 17;
-            this.registropago_lab_numeroF.Text = "Número factura:";
-            // 
-            // registropago_but_agregar
-            // 
-            this.registropago_but_agregar.Location = new System.Drawing.Point(211, 50);
-            this.registropago_but_agregar.Name = "registropago_but_agregar";
-            this.registropago_but_agregar.Size = new System.Drawing.Size(61, 23);
-            this.registropago_but_agregar.TabIndex = 25;
-            this.registropago_but_agregar.Text = "Agregar";
-            this.registropago_but_agregar.UseVisualStyleBackColor = true;
             // 
             // registropago_tb_nrofac
             // 
@@ -70,15 +49,6 @@
             this.registropago_tb_nrofac.Name = "registropago_tb_nrofac";
             this.registropago_tb_nrofac.Size = new System.Drawing.Size(68, 20);
             this.registropago_tb_nrofac.TabIndex = 24;
-            // 
-            // registropago_lab_importe
-            // 
-            this.registropago_lab_importe.AutoSize = true;
-            this.registropago_lab_importe.Location = new System.Drawing.Point(114, 18);
-            this.registropago_lab_importe.Name = "registropago_lab_importe";
-            this.registropago_lab_importe.Size = new System.Drawing.Size(45, 13);
-            this.registropago_lab_importe.TabIndex = 23;
-            this.registropago_lab_importe.Text = "Importe:";
             // 
             // label1
             // 
@@ -88,69 +58,116 @@
             this.label1.TabIndex = 22;
             this.label1.Text = "Número factura:";
             // 
-            // tableLayoutPanel1
+            // cod_motivoDevolucion
             // 
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(15, 94);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 5;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(200, 100);
-            this.tableLayoutPanel1.TabIndex = 26;
+            this.cod_motivoDevolucion.FormattingEnabled = true;
+            this.cod_motivoDevolucion.Location = new System.Drawing.Point(183, 159);
+            this.cod_motivoDevolucion.Name = "cod_motivoDevolucion";
+            this.cod_motivoDevolucion.Size = new System.Drawing.Size(197, 21);
+            this.cod_motivoDevolucion.TabIndex = 52;
             // 
-            // registropago_lab_total
+            // label2
             // 
-            this.registropago_lab_total.AutoSize = true;
-            this.registropago_lab_total.Location = new System.Drawing.Point(12, 207);
-            this.registropago_lab_total.Name = "registropago_lab_total";
-            this.registropago_lab_total.Size = new System.Drawing.Size(34, 13);
-            this.registropago_lab_total.TabIndex = 27;
-            this.registropago_lab_total.Text = "Total:";
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(10, 162);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(167, 13);
+            this.label2.TabIndex = 51;
+            this.label2.Text = "3) Seleccionar motivo devolucion:";
             // 
-            // registropago_tb_total
+            // lblFacturaSeleccionar
             // 
-            this.registropago_tb_total.Location = new System.Drawing.Point(117, 200);
-            this.registropago_tb_total.Name = "registropago_tb_total";
-            this.registropago_tb_total.ReadOnly = true;
-            this.registropago_tb_total.Size = new System.Drawing.Size(53, 20);
-            this.registropago_tb_total.TabIndex = 28;
+            this.lblFacturaSeleccionar.AutoSize = true;
+            this.lblFacturaSeleccionar.Location = new System.Drawing.Point(9, 51);
+            this.lblFacturaSeleccionar.Name = "lblFacturaSeleccionar";
+            this.lblFacturaSeleccionar.Size = new System.Drawing.Size(117, 13);
+            this.lblFacturaSeleccionar.TabIndex = 45;
+            this.lblFacturaSeleccionar.Text = "1) Seleccionar Factura:";
             // 
-            // button1
+            // tbSucursal
             // 
-            this.button1.Location = new System.Drawing.Point(197, 226);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 29;
-            this.button1.Text = "Devolver";
-            this.button1.UseVisualStyleBackColor = true;
+            this.tbSucursal.Enabled = false;
+            this.tbSucursal.Location = new System.Drawing.Point(227, 17);
+            this.tbSucursal.Name = "tbSucursal";
+            this.tbSucursal.Size = new System.Drawing.Size(184, 20);
+            this.tbSucursal.TabIndex = 44;
             // 
-            // DevoluciónFacturas
+            // tbUser
+            // 
+            this.tbUser.Enabled = false;
+            this.tbUser.Location = new System.Drawing.Point(63, 17);
+            this.tbUser.Name = "tbUser";
+            this.tbUser.Size = new System.Drawing.Size(100, 20);
+            this.tbUser.TabIndex = 43;
+            // 
+            // lblSucursal
+            // 
+            this.lblSucursal.AutoSize = true;
+            this.lblSucursal.Location = new System.Drawing.Point(173, 20);
+            this.lblSucursal.Name = "lblSucursal";
+            this.lblSucursal.Size = new System.Drawing.Size(51, 13);
+            this.lblSucursal.TabIndex = 42;
+            this.lblSucursal.Text = "Sucursal:";
+            // 
+            // lblUser
+            // 
+            this.lblUser.AutoSize = true;
+            this.lblUser.Location = new System.Drawing.Point(14, 20);
+            this.lblUser.Name = "lblUser";
+            this.lblUser.Size = new System.Drawing.Size(46, 13);
+            this.lblUser.TabIndex = 41;
+            this.lblUser.Text = "Usuario:";
+            // 
+            // dgv_listado_factura
+            // 
+            this.dgv_listado_factura.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_listado_factura.Enabled = false;
+            this.dgv_listado_factura.Location = new System.Drawing.Point(12, 75);
+            this.dgv_listado_factura.Name = "dgv_listado_factura";
+            this.dgv_listado_factura.Size = new System.Drawing.Size(719, 70);
+            this.dgv_listado_factura.TabIndex = 40;
+            // 
+            // bttnDevolucion
+            // 
+            this.bttnDevolucion.Location = new System.Drawing.Point(581, 183);
+            this.bttnDevolucion.Name = "bttnDevolucion";
+            this.bttnDevolucion.Size = new System.Drawing.Size(150, 23);
+            this.bttnDevolucion.TabIndex = 39;
+            this.bttnDevolucion.Text = "Procesar Devolucion";
+            this.bttnDevolucion.UseVisualStyleBackColor = true;
+            this.bttnDevolucion.Click += new System.EventHandler(this.bttnDevolucion_Click);
+            // 
+            // bttn_agregar
+            // 
+            this.bttn_agregar.Location = new System.Drawing.Point(132, 46);
+            this.bttn_agregar.Name = "bttn_agregar";
+            this.bttn_agregar.Size = new System.Drawing.Size(100, 23);
+            this.bttn_agregar.TabIndex = 38;
+            this.bttn_agregar.Text = "Agregar factura";
+            this.bttn_agregar.UseVisualStyleBackColor = true;
+            this.bttn_agregar.Click += new System.EventHandler(this.bttn_agregar_Click);
+            // 
+            // DevolucionFacturas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.registropago_tb_total);
-            this.Controls.Add(this.registropago_lab_total);
-            this.Controls.Add(this.tableLayoutPanel1);
-            this.Controls.Add(this.registropago_but_agregar);
+            this.ClientSize = new System.Drawing.Size(743, 218);
+            this.Controls.Add(this.cod_motivoDevolucion);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblFacturaSeleccionar);
+            this.Controls.Add(this.tbSucursal);
+            this.Controls.Add(this.tbUser);
+            this.Controls.Add(this.lblSucursal);
+            this.Controls.Add(this.lblUser);
+            this.Controls.Add(this.dgv_listado_factura);
+            this.Controls.Add(this.bttnDevolucion);
+            this.Controls.Add(this.bttn_agregar);
             this.Controls.Add(this.registropago_tb_nrofac);
-            this.Controls.Add(this.registropago_lab_importe);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.ambfactura_tb_nrofac);
-            this.Controls.Add(this.registropago_lab_numeroF);
-            this.Name = "DevoluciónFacturas";
-            this.Text = "Form1";
+            this.Name = "DevolucionFacturas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "Devolucion de Factura Pagada";
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_listado_factura)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -158,16 +175,18 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox ambfactura_tb_nrofac;
-        private System.Windows.Forms.Label registropago_lab_numeroF;
-        private System.Windows.Forms.Button registropago_but_agregar;
         private System.Windows.Forms.TextBox registropago_tb_nrofac;
-        private System.Windows.Forms.Label registropago_lab_importe;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Label registropago_lab_total;
-        private System.Windows.Forms.TextBox registropago_tb_total;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox cod_motivoDevolucion;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblFacturaSeleccionar;
+        private System.Windows.Forms.TextBox tbSucursal;
+        private System.Windows.Forms.TextBox tbUser;
+        private System.Windows.Forms.Label lblSucursal;
+        private System.Windows.Forms.Label lblUser;
+        private System.Windows.Forms.DataGridView dgv_listado_factura;
+        private System.Windows.Forms.Button bttnDevolucion;
+        private System.Windows.Forms.Button bttn_agregar;
 
     }
 }

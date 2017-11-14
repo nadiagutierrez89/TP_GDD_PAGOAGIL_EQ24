@@ -43,13 +43,8 @@
             this.tbCliente = new System.Windows.Forms.TextBox();
             this.tbTotal = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.dgvMediosDePago = new System.Windows.Forms.DataGridView();
-            this.bttnQuitarFormaPago = new System.Windows.Forms.Button();
-            this.bttnAgregarFormaPago = new System.Windows.Forms.Button();
-            this.tbTotalMediosDePago = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.cod_medioDePago = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.registroPago_dgv_listado)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMediosDePago)).BeginInit();
             this.SuspendLayout();
             // 
             // registropago_lab_total
@@ -73,7 +68,7 @@
             // 
             // registropago_but_pagar
             // 
-            this.registropago_but_pagar.Location = new System.Drawing.Point(279, 521);
+            this.registropago_but_pagar.Location = new System.Drawing.Point(292, 366);
             this.registropago_but_pagar.Name = "registropago_but_pagar";
             this.registropago_but_pagar.Size = new System.Drawing.Size(61, 23);
             this.registropago_but_pagar.TabIndex = 22;
@@ -187,61 +182,20 @@
             this.label2.TabIndex = 35;
             this.label2.Text = "3) Forma de pago:";
             // 
-            // dgvMediosDePago
+            // cod_medioDePago
             // 
-            this.dgvMediosDePago.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMediosDePago.Location = new System.Drawing.Point(18, 343);
-            this.dgvMediosDePago.Name = "dgvMediosDePago";
-            this.dgvMediosDePago.Size = new System.Drawing.Size(635, 150);
-            this.dgvMediosDePago.TabIndex = 36;
-            // 
-            // bttnQuitarFormaPago
-            // 
-            this.bttnQuitarFormaPago.Location = new System.Drawing.Point(346, 316);
-            this.bttnQuitarFormaPago.Name = "bttnQuitarFormaPago";
-            this.bttnQuitarFormaPago.Size = new System.Drawing.Size(150, 23);
-            this.bttnQuitarFormaPago.TabIndex = 38;
-            this.bttnQuitarFormaPago.Text = "Quitar Forma De Pago";
-            this.bttnQuitarFormaPago.UseVisualStyleBackColor = true;
-            this.bttnQuitarFormaPago.Click += new System.EventHandler(this.bttnQuitarFormaPago_Click);
-            // 
-            // bttnAgregarFormaPago
-            // 
-            this.bttnAgregarFormaPago.Location = new System.Drawing.Point(502, 316);
-            this.bttnAgregarFormaPago.Name = "bttnAgregarFormaPago";
-            this.bttnAgregarFormaPago.Size = new System.Drawing.Size(150, 23);
-            this.bttnAgregarFormaPago.TabIndex = 37;
-            this.bttnAgregarFormaPago.Text = "Agregar Forma De Pago";
-            this.bttnAgregarFormaPago.UseVisualStyleBackColor = true;
-            this.bttnAgregarFormaPago.Click += new System.EventHandler(this.bttnAgregarFormaPago_Click);
-            // 
-            // tbTotalMediosDePago
-            // 
-            this.tbTotalMediosDePago.Enabled = false;
-            this.tbTotalMediosDePago.Location = new System.Drawing.Point(553, 499);
-            this.tbTotalMediosDePago.Name = "tbTotalMediosDePago";
-            this.tbTotalMediosDePago.Size = new System.Drawing.Size(100, 20);
-            this.tbTotalMediosDePago.TabIndex = 40;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(513, 502);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(34, 13);
-            this.label3.TabIndex = 39;
-            this.label3.Text = "Total:";
+            this.cod_medioDePago.FormattingEnabled = true;
+            this.cod_medioDePago.Location = new System.Drawing.Point(115, 326);
+            this.cod_medioDePago.Name = "cod_medioDePago";
+            this.cod_medioDePago.Size = new System.Drawing.Size(197, 21);
+            this.cod_medioDePago.TabIndex = 36;
             // 
             // RegistroPagos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(679, 581);
-            this.Controls.Add(this.tbTotalMediosDePago);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.bttnQuitarFormaPago);
-            this.Controls.Add(this.bttnAgregarFormaPago);
-            this.Controls.Add(this.dgvMediosDePago);
+            this.ClientSize = new System.Drawing.Size(679, 405);
+            this.Controls.Add(this.cod_medioDePago);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.tbTotal);
             this.Controls.Add(this.tbCliente);
@@ -260,7 +214,6 @@
             this.Name = "RegistroPagos";
             this.Text = "Registrar Pago";
             ((System.ComponentModel.ISupportInitialize)(this.registroPago_dgv_listado)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMediosDePago)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -283,10 +236,6 @@
         private System.Windows.Forms.TextBox tbCliente;
         private System.Windows.Forms.TextBox tbTotal;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridView dgvMediosDePago;
-        private System.Windows.Forms.Button bttnQuitarFormaPago;
-        private System.Windows.Forms.Button bttnAgregarFormaPago;
-        private System.Windows.Forms.TextBox tbTotalMediosDePago;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox cod_medioDePago;
     }
 }

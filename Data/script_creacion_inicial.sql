@@ -202,18 +202,11 @@ CREATE TABLE MARGINADOS.Pago (
   importe_total_pago numeric(18, 2) NOT NULL,
   codigo_postal_suc numeric(18, 0) NOT NULL,
   cod_user numeric(18, 0) NOT NULL,
+  cod_medioDePago numeric(3, 0) NOT NULL,
   PRIMARY KEY (nro_pago),
   FOREIGN KEY (dni_cliente) REFERENCES MARGINADOS.Cliente (dni_clie),
-  FOREIGN KEY (codigo_postal_suc) REFERENCES MARGINADOS.Sucursal (codigo_postal_suc)
-)
-
---- --> PagoMedioDePago <-- --
-CREATE TABLE MARGINADOS.PagoMedioDePago (
-  nro_pago numeric(18, 0) NOT NULL,
-  cod_pago_MP numeric(3, 0) NOT NULL,
-  importe numeric(18, 2) NOT NULL,
-  FOREIGN KEY (nro_pago) REFERENCES MARGINADOS.Pago (nro_pago),
-  FOREIGN KEY (cod_pago_MP) REFERENCES MARGINADOS.MedioDePago (cod_medioDePago)
+  FOREIGN KEY (codigo_postal_suc) REFERENCES MARGINADOS.Sucursal (codigo_postal_suc),
+  FOREIGN KEY (cod_medioDePago) REFERENCES MARGINADOS.MedioDePago (cod_medioDePago)
 )
 
 -- --> Factura <-- --
@@ -248,7 +241,7 @@ CREATE TABLE MARGINADOS.MotivoDevolucion (
 )
 -- --> Devolucion <-- --
 CREATE TABLE MARGINADOS.Devolucion (
-  cod_devolucion char(8) NOT NULL,
+  cod_devolucion numeric(18, 0) NOT NULL IDENTITY (1, 1),
   cod_user numeric(18, 0) NOT NULL,
   nro_factura numeric(18, 0) NOT NULL,
   cod_empresa numeric(18, 0) NOT NULL,
@@ -418,31 +411,23 @@ GO
 -- --> Pago <-- --
 /*Habilitamos el insertado explicito de valores en la columna de tipo identity para mantener los valores antiguos del campo ID*/
 SET IDENTITY_INSERT MARGINADOS.Pago ON
-INSERT INTO MARGINADOS.Pago (nro_pago, fecha_pago, dni_cliente, importe_total_pago, codigo_postal_suc, cod_user)
-  SELECT DISTINCT
-    pago_nro,
-    Pago_Fecha,
-    [Cliente-Dni],
-    Total,
-    Sucursal_Codigo_Postal,
-    1
-  FROM gd_esquema.Maestra
-  WHERE pago_nro IS NOT NULL
-GO
-/*Deshabilitamos el insertado explicito de valores en la columna de tipo identity*/
-SET IDENTITY_INSERT MARGINADOS.Pago OFF
-
--- --> PagoMedioDePago  <-- --
-INSERT INTO MARGINADOS.PagoMedioDePago (nro_pago, cod_pago_MP, importe)
+INSERT INTO MARGINADOS.Pago (nro_pago, fecha_pago, dni_cliente, importe_total_pago, codigo_postal_suc, cod_user,cod_medioDePago)
   SELECT DISTINCT
     m.pago_nro,
-    p.cod_medioDePago,
-    m.Total
+    m.Pago_Fecha,
+    m.[Cliente-Dni],
+    m.Total,
+    m.Sucursal_Codigo_Postal,
+    1,
+	p.cod_medioDePago
   FROM gd_esquema.Maestra m
   INNER JOIN MARGINADOS.MedioDePago p
     ON m.FormaPagoDescripcion = p.descripcion_MP
   WHERE m.pago_nro IS NOT NULL
 GO
+/*Deshabilitamos el insertado explicito de valores en la columna de tipo identity*/
+SET IDENTITY_INSERT MARGINADOS.Pago OFF
+
 -- actualizo la tabla factuas
 UPDATE MARGINADOS.Factura
 SET MARGINADOS.Factura.nro_pago = p.Pago_nro

@@ -14,6 +14,7 @@ namespace PagoAgilFrba.FrontEnd.ABMFactura
 {
     public partial class Facturas : Form
     {
+        int modo = 1;
         private Usuario usuarioLogueado;
         private DateTime hoy = Convert.ToDateTime(ConfigurationManager.AppSettings["fecha"]);
         private List<Factura> facturas_a_pagar;
@@ -24,19 +25,23 @@ namespace PagoAgilFrba.FrontEnd.ABMFactura
             InitializeComponent();
         }
 
-        public Facturas(Usuario usuarioLogueado)
-            : this()
+        public Facturas(Usuario usuarioLogueado) : this()
         {
             this.usuarioLogueado = usuarioLogueado;
+            this.modo = 1;
         }
 
-        public Facturas(List<Factura> factuasPagar)
-            : this()
+        public Facturas(List<Factura> factuasPagar, int un_modo) : this()
         {
+
             this.facturas_a_pagar = factuasPagar;
             this.facturas_but_alta.Visible = false;
             this.facturas_but_modificar.Visible = false;
             this.bttnSeleccionar.Visible = true;
+            //1 = alta y modificacion de fatura
+            //2 = facturas a pagar
+            //3 = facturas a devolver pago
+            this.modo = un_modo;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -83,13 +88,34 @@ namespace PagoAgilFrba.FrontEnd.ABMFactura
             if (this.fecha_vto_fac_hasta.Checked)
                 filtro = filtro + " and fecha_vto_fac <= CONVERT (datetime, '" + this.fecha_vto_fac_hasta.Value.Date + "', 103)";
 
-            if (this.bttnSeleccionar.Visible)
-            {// si es para el registro de pagos no traigo las facturas vencidas ni pagadas
-                filtro = filtro + " and fecha_vto_fac >= CONVERT (datetime, '" + hoy + "', 103)";
-                filtro = filtro + " and nro_pago is null ";
-            }
+            filtro = filtro + completarFiltroSegunModo();
 
             return filtro;
+        }
+
+        private string completarFiltroSegunModo()
+        {
+            string mifiltro = "";
+            //1 = alta y modificacion de fatura
+            if (this.modo == 1)
+            {
+                mifiltro = mifiltro + " and nro_rendicion is null ";
+                mifiltro = mifiltro + " and nro_pago is null ";
+            }
+            //2 = facturas a pagar
+            if (this.modo == 2)
+            {// si es para el registro de pagos no traigo las facturas vencidas ni pagadas
+                mifiltro = mifiltro + " and fecha_vto_fac >= CONVERT (datetime, '" + hoy + "', 103)";
+                mifiltro = mifiltro + " and nro_pago is null ";
+            }
+            //3 = facturas a devolver pago
+            if (this.modo == 3)
+            {// si es para devoluciones traigo las facturas pagas pero no rendidas 
+                mifiltro = mifiltro + " and nro_rendicion is null ";
+                mifiltro = mifiltro + " and nro_pago IS NOT NULL ";
+            }
+
+            return mifiltro;
         }
 
         private void bttn_limpiar_Click(object sender, EventArgs e)

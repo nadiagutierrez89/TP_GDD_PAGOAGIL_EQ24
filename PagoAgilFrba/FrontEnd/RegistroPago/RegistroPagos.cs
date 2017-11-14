@@ -19,13 +19,16 @@ namespace PagoAgilFrba.FrontEnd.RegistroPago
     {
         private Usuario usuarioLogueado;
         private List<Factura> factuasPagar = new List<Factura>();
-        private List<MedioDePago> mediosDePagosDelPago = new List<MedioDePago>();
         private Cliente clientePagador;
         private DateTime hoy = Convert.ToDateTime(ConfigurationManager.AppSettings["fecha"]);
 
         public RegistroPagos()
         {
             InitializeComponent();
+            List<MedioDePago> medios = MedioDePago.obtenerLosTiposDeMediosDePago();
+            this.cod_medioDePago.DataSource = medios;
+            this.cod_medioDePago.ValueMember = "cod_medioDePago";
+            this.cod_medioDePago.DisplayMember = "descripcion_MP";
 
         }
 
@@ -45,7 +48,7 @@ namespace PagoAgilFrba.FrontEnd.RegistroPago
         private void registropago_but_agregar_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Facturas winform = new Facturas(factuasPagar);
+            Facturas winform = new Facturas(factuasPagar,2);
             winform.ShowDialog();
             this.registroPago_dgv_listado.DataSource = null;
             this.registroPago_dgv_listado.DataSource = factuasPagar;
@@ -56,7 +59,6 @@ namespace PagoAgilFrba.FrontEnd.RegistroPago
         private void actualizarTotalDePago()
         {
             this.tbTotal.Text = factuasPagar.Sum(f => f.importe_total_fac).ToString();
-            this.tbTotalMediosDePago.Text = mediosDePagosDelPago.Sum(m => m.importe).ToString();
         }
 
         private bool ItemSelccionado(DataGridView dataGridView)
@@ -112,19 +114,12 @@ namespace PagoAgilFrba.FrontEnd.RegistroPago
 
             Pago unPago = new Pago();
             unPago.facturas = this.factuasPagar;
-            unPago.mediosDePago = this.mediosDePagosDelPago;
             unPago.fecha_pago = hoy;
             unPago.dni_cliente = this.clientePagador.dni;
             unPago.importe_total_pago = unPago.importe_total();
             unPago.codigo_postal_suc = this.usuarioLogueado.socursalActual.codigo_postal_suc;
             unPago.cod_user = this.usuarioLogueado.cod_user;
-
-
-            if (unPago.importe_total_pago != unPago.importe_total_mediosDePago())
-            {
-                MessageBox.Show("Monto total de facturas no es igual al monto total medios de pago", "Error!", MessageBoxButtons.OK);
-                return;
-            }
+            unPago.cod_medioDePago = ((MedioDePago)this.cod_medioDePago.SelectedItem).cod_medioDePago;
 
             if (unPago.guardar() > 0)
             {
@@ -141,33 +136,10 @@ namespace PagoAgilFrba.FrontEnd.RegistroPago
 
         private void bttnAgregarFormaPago_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            MediosDePago winform = new MediosDePago(mediosDePagosDelPago);
-            winform.ShowDialog();
-            this.dgvMediosDePago.DataSource = null;
-            this.dgvMediosDePago.DataSource = mediosDePagosDelPago;
-            this.actualizarTotalDePago();
-            this.Show();
-
         }
 
         private void bttnQuitarFormaPago_Click(object sender, EventArgs e)
         {
-            if (this.ItemSelccionado(this.dgvMediosDePago))
-            {
-                MedioDePago medioDePago_a_borrar = (MedioDePago)this.dgvMediosDePago.CurrentRow.DataBoundItem;
-
-                mediosDePagosDelPago.Remove(medioDePago_a_borrar);
-
-                this.dgvMediosDePago.DataSource = null;
-                this.dgvMediosDePago.DataSource = mediosDePagosDelPago;
-
-                this.actualizarTotalDePago();
-            }
-            else
-            {
-                MessageBox.Show("Seleccione algun elemento", "Error!", MessageBoxButtons.OK);
-            }
         }
     }
 }

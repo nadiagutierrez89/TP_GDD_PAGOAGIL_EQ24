@@ -13,18 +13,9 @@ namespace PagoAgilFrba.Models.BO
 
         public string descripcion_MP { get; set; }
 
-        public decimal importe { get; set; }
-
-        public decimal nro_pago { get; set; }
-
         public static List<MedioDePago> obtenerLosTiposDeMediosDePago()
         {
             return DAOMedioDePago.obtenerLosTiposDeMediosDePago();
-        }
-
-        internal int guardar()
-        {
-            return DAOMedioDePago.guardar(this);
         }
     }
 }

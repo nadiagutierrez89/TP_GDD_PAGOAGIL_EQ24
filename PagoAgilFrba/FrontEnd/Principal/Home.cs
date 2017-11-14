@@ -99,8 +99,7 @@ namespace PagoAgilFrba.FrontEnd.Principal
             {
                 RegistroPagos winformRegPago = new RegistroPagos(usuarioLogueado);
                 winformRegPago.ShowDialog();
-            } while (MessageBox.Show("Quiere incresar otro pago?", "PROCESAR OTRO PAGO?", MessageBoxButtons.YesNo) == DialogResult.Yes);
-
+            } while (MessageBox.Show("Quiere ingresar otro pago?", "PROCESAR OTRO PAGO?", MessageBoxButtons.YesNo) == DialogResult.Yes);
             this.Show();
         }
 
@@ -115,8 +114,11 @@ namespace PagoAgilFrba.FrontEnd.Principal
         private void home_but_devolverf_Click(object sender, EventArgs e)
         {
             this.Hide();
-            DevolucionFacturas winformDevolverF = new DevolucionFacturas(usuarioLogueado);
-            winformDevolverF.ShowDialog();
+            do
+            {
+                DevolucionFacturas winformDevolverF = new DevolucionFacturas(usuarioLogueado);
+                winformDevolverF.ShowDialog();
+            } while (MessageBox.Show("Quiere ingresar otra devolucion?", "DEVOLVER OTRA FACTURA PAGADA?", MessageBoxButtons.YesNo) == DialogResult.Yes);            
             this.Show();
         }
 
