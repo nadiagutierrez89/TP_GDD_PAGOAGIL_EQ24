@@ -1,4 +1,4 @@
-﻿namespace PagoAgilFrba.AbmRol
+﻿namespace PagoAgilFrba.FrontEnd.AbmRol
 {
     partial class ABMRol
     {
@@ -28,79 +28,51 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.abmrol_cb_funcionalidades = new System.Windows.Forms.ComboBox();
-            this.abmrol_lab_funcionalidades = new System.Windows.Forms.Label();
-            this.abmrol_lab_nombre = new System.Windows.Forms.Label();
-            this.abmrol_tb_nombre = new System.Windows.Forms.TextBox();
-            this.abmrol_chb_inhabilitar = new System.Windows.Forms.CheckBox();
-            this.abmrol_but_aceptar = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dataGridViewRol = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRol)).BeginInit();
             this.SuspendLayout();
             // 
-            // abmrol_cb_funcionalidades
+            // label1
             // 
-            this.abmrol_cb_funcionalidades.FormattingEnabled = true;
-            this.abmrol_cb_funcionalidades.Location = new System.Drawing.Point(154, 52);
-            this.abmrol_cb_funcionalidades.Name = "abmrol_cb_funcionalidades";
-            this.abmrol_cb_funcionalidades.Size = new System.Drawing.Size(121, 21);
-            this.abmrol_cb_funcionalidades.TabIndex = 0;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(205, 60);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(165, 24);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Listado de Roles";
             // 
-            // abmrol_lab_funcionalidades
+            // dataGridViewRol
             // 
-            this.abmrol_lab_funcionalidades.AutoSize = true;
-            this.abmrol_lab_funcionalidades.Location = new System.Drawing.Point(154, 33);
-            this.abmrol_lab_funcionalidades.Name = "abmrol_lab_funcionalidades";
-            this.abmrol_lab_funcionalidades.Size = new System.Drawing.Size(87, 13);
-            this.abmrol_lab_funcionalidades.TabIndex = 1;
-            this.abmrol_lab_funcionalidades.Text = "Funcionalidades:";
+            this.dataGridViewRol.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewRol.Location = new System.Drawing.Point(28, 95);
+            this.dataGridViewRol.Name = "dataGridViewRol";
+            this.dataGridViewRol.Size = new System.Drawing.Size(537, 213);
+            this.dataGridViewRol.TabIndex = 6;
             // 
-            // abmrol_lab_nombre
+            // button1
             // 
-            this.abmrol_lab_nombre.AutoSize = true;
-            this.abmrol_lab_nombre.Location = new System.Drawing.Point(13, 32);
-            this.abmrol_lab_nombre.Name = "abmrol_lab_nombre";
-            this.abmrol_lab_nombre.Size = new System.Drawing.Size(61, 13);
-            this.abmrol_lab_nombre.TabIndex = 2;
-            this.abmrol_lab_nombre.Text = "Nombre rol:";
-            // 
-            // abmrol_tb_nombre
-            // 
-            this.abmrol_tb_nombre.Location = new System.Drawing.Point(16, 52);
-            this.abmrol_tb_nombre.Name = "abmrol_tb_nombre";
-            this.abmrol_tb_nombre.Size = new System.Drawing.Size(100, 20);
-            this.abmrol_tb_nombre.TabIndex = 3;
-            // 
-            // abmrol_chb_inhabilitar
-            // 
-            this.abmrol_chb_inhabilitar.AutoSize = true;
-            this.abmrol_chb_inhabilitar.Location = new System.Drawing.Point(16, 128);
-            this.abmrol_chb_inhabilitar.Name = "abmrol_chb_inhabilitar";
-            this.abmrol_chb_inhabilitar.Size = new System.Drawing.Size(71, 17);
-            this.abmrol_chb_inhabilitar.TabIndex = 4;
-            this.abmrol_chb_inhabilitar.Text = "Inhabilitar";
-            this.abmrol_chb_inhabilitar.UseVisualStyleBackColor = true;
-            // 
-            // abmrol_but_aceptar
-            // 
-            this.abmrol_but_aceptar.Location = new System.Drawing.Point(16, 226);
-            this.abmrol_but_aceptar.Name = "abmrol_but_aceptar";
-            this.abmrol_but_aceptar.Size = new System.Drawing.Size(75, 23);
-            this.abmrol_but_aceptar.TabIndex = 5;
-            this.abmrol_but_aceptar.Text = "Guardar";
-            this.abmrol_but_aceptar.UseVisualStyleBackColor = true;
+            this.button1.Location = new System.Drawing.Point(189, 334);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "Crear Rol";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // ABMRol
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
-            this.Controls.Add(this.abmrol_but_aceptar);
-            this.Controls.Add(this.abmrol_chb_inhabilitar);
-            this.Controls.Add(this.abmrol_tb_nombre);
-            this.Controls.Add(this.abmrol_lab_nombre);
-            this.Controls.Add(this.abmrol_lab_funcionalidades);
-            this.Controls.Add(this.abmrol_cb_funcionalidades);
+            this.ClientSize = new System.Drawing.Size(592, 419);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.dataGridViewRol);
             this.Name = "ABMRol";
             this.Text = "ABM Rol";
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRol)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -108,11 +80,9 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox abmrol_cb_funcionalidades;
-        private System.Windows.Forms.Label abmrol_lab_funcionalidades;
-        private System.Windows.Forms.Label abmrol_lab_nombre;
-        private System.Windows.Forms.TextBox abmrol_tb_nombre;
-        private System.Windows.Forms.CheckBox abmrol_chb_inhabilitar;
-        private System.Windows.Forms.Button abmrol_but_aceptar;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridView dataGridViewRol;
+        private System.Windows.Forms.Button button1;
+
     }
 }

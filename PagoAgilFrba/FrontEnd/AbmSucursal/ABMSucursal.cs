@@ -58,6 +58,7 @@ namespace PagoAgilFrba.FrontEnd.AbmSucursal
             if (sucursal_modificada.guardar() > 0)
             {
                 MessageBox.Show("Se han guardado los cambios.", ":o)", MessageBoxButtons.OK);
+                this.Close();
             }
             else
             {

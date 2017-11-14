@@ -65,8 +65,8 @@ namespace PagoAgilFrba.FrontEnd.Principal
         private void home_but_ambrol_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Roles winformRol = new Roles(usuarioLogueado);
-            winformRol.ShowDialog();
+            ABMRol abmRol = new ABMRol();
+            abmRol.ShowDialog();
             this.Show();
         }
 

@@ -39,5 +39,10 @@ namespace PagoAgilFrba.Models.BO
         {
             DAORolFuncionalidad.eliminateDe(rol, this);
         }
+
+        internal static List<Funcionalidad> retrieveAll()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

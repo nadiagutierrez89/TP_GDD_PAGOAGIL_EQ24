@@ -108,11 +108,11 @@
     <Compile Include="FrontEnd\AbmRol\ABMRol.Designer.cs">
       <DependentUpon>ABMRol.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrontEnd\AbmRol\Roles.cs">
+    <Compile Include="FrontEnd\AbmRol\FormRol.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrontEnd\AbmRol\Roles.Designer.cs">
-      <DependentUpon>Roles.cs</DependentUpon>
+    <Compile Include="FrontEnd\AbmRol\FormRol.Designer.cs">
+      <DependentUpon>FormRol.cs</DependentUpon>
     </Compile>
     <Compile Include="FrontEnd\AbmSucursal\ABMSucursal.cs">
       <SubType>Form</SubType>
@@ -217,8 +217,8 @@
     <EmbeddedResource Include="FrontEnd\AbmRol\ABMRol.resx">
       <DependentUpon>ABMRol.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrontEnd\AbmRol\Roles.resx">
-      <DependentUpon>Roles.cs</DependentUpon>
+    <EmbeddedResource Include="FrontEnd\AbmRol\FormRol.resx">
+      <DependentUpon>FormRol.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrontEnd\AbmSucursal\ABMSucursal.resx">
       <DependentUpon>ABMSucursal.cs</DependentUpon>
