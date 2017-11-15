@@ -135,6 +135,7 @@
     <Compile Include="Models\BO\MedioDePago.cs" />
     <Compile Include="Models\BO\MotivoDevolucion.cs" />
     <Compile Include="Models\BO\Pago.cs" />
+    <Compile Include="Models\BO\Rendicion.cs" />
     <Compile Include="Models\BO\Rol.cs" />
     <Compile Include="Models\BO\Rubro.cs" />
     <Compile Include="Models\BO\Sucursal.cs" />
@@ -148,6 +149,7 @@
     <Compile Include="Models\DAO\DAOMedioDePago.cs" />
     <Compile Include="Models\DAO\DAOMotivoDevolucion.cs" />
     <Compile Include="Models\DAO\DAOPago.cs" />
+    <Compile Include="Models\DAO\DAORendicion.cs" />
     <Compile Include="Models\DAO\DAORol.cs" />
     <Compile Include="Models\DAO\DAORolFuncionalidad.cs" />
     <Compile Include="Models\DAO\DAORubro.cs" />
@@ -187,11 +189,11 @@
     <Compile Include="FrontEnd\RegistroPago\RegistroPagos.Designer.cs">
       <DependentUpon>RegistroPagos.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrontEnd\Rendicion\Rendicion.cs">
+    <Compile Include="FrontEnd\RegistroRendicion\Rendiciones.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrontEnd\Rendicion\Rendicion.Designer.cs">
-      <DependentUpon>Rendicion.cs</DependentUpon>
+    <Compile Include="FrontEnd\RegistroRendicion\Rendiciones.Designer.cs">
+      <DependentUpon>Rendiciones.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="FrontEnd\AbmCliente\ABMCliente.resx">
       <DependentUpon>ABMCliente.cs</DependentUpon>
@@ -247,8 +249,8 @@
     <EmbeddedResource Include="FrontEnd\RegistroPago\RegistroPagos.resx">
       <DependentUpon>RegistroPagos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrontEnd\Rendicion\Rendicion.resx">
-      <DependentUpon>Rendicion.cs</DependentUpon>
+    <EmbeddedResource Include="FrontEnd\RegistroRendicion\Rendiciones.resx">
+      <DependentUpon>Rendiciones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrontEnd\Principal\SeleccionRolLogin.resx">
       <DependentUpon>SeleccionRolLogin.cs</DependentUpon>

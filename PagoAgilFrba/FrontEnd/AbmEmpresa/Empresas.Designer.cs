@@ -38,6 +38,7 @@
             this.cuit_empresa = new System.Windows.Forms.MaskedTextBox();
             this.cod_rubro = new System.Windows.Forms.ComboBox();
             this.empresa_dgv_listado = new System.Windows.Forms.DataGridView();
+            this.bttnSeleccionar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.empresa_dgv_listado)).BeginInit();
             this.SuspendLayout();
             // 
@@ -130,11 +131,23 @@
             this.empresa_dgv_listado.Size = new System.Drawing.Size(629, 200);
             this.empresa_dgv_listado.TabIndex = 41;
             // 
+            // bttnSeleccionar
+            // 
+            this.bttnSeleccionar.Location = new System.Drawing.Point(402, 267);
+            this.bttnSeleccionar.Name = "bttnSeleccionar";
+            this.bttnSeleccionar.Size = new System.Drawing.Size(75, 23);
+            this.bttnSeleccionar.TabIndex = 42;
+            this.bttnSeleccionar.Text = "Seleccionar";
+            this.bttnSeleccionar.UseVisualStyleBackColor = true;
+            this.bttnSeleccionar.Visible = false;
+            this.bttnSeleccionar.Click += new System.EventHandler(this.bttnSeleccionar_Click);
+            // 
             // Empresas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(686, 302);
+            this.Controls.Add(this.bttnSeleccionar);
             this.Controls.Add(this.empresa_dgv_listado);
             this.Controls.Add(this.cod_rubro);
             this.Controls.Add(this.cuit_empresa);
@@ -165,5 +178,6 @@
         private System.Windows.Forms.MaskedTextBox cuit_empresa;
         private System.Windows.Forms.ComboBox cod_rubro;
         private System.Windows.Forms.DataGridView empresa_dgv_listado;
+        private System.Windows.Forms.Button bttnSeleccionar;
     }
 }

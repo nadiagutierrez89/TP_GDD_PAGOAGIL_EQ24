@@ -4,7 +4,7 @@ using PagoAgilFrba.FrontEnd.ABMFactura;
 using PagoAgilFrba.FrontEnd.ListadoEstadistico;
 using PagoAgilFrba.FrontEnd.AbmRol;
 using PagoAgilFrba.FrontEnd.AbmSucursal;
-using PagoAgilFrba.FrontEnd.Rendicion;
+using PagoAgilFrba.FrontEnd.RegistroRendicion;
 using PagoAgilFrba.Models.BO;
 using System;
 using System.Collections.Generic;
@@ -106,7 +106,7 @@ namespace PagoAgilFrba.FrontEnd.Principal
         private void home_but_rendirf_Click(object sender, EventArgs e)
         {
             this.Hide();
-            PagoAgilFrba.FrontEnd.Rendicion.Rendicion winformRendicion = new PagoAgilFrba.FrontEnd.Rendicion.Rendicion(usuarioLogueado);
+            Rendiciones winformRendicion = new Rendiciones(usuarioLogueado);
             winformRendicion.ShowDialog();
             this.Show();
         }

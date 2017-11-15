@@ -81,6 +81,7 @@
             this.registroPago_dgv_listado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.registroPago_dgv_listado.Location = new System.Drawing.Point(18, 70);
             this.registroPago_dgv_listado.Name = "registroPago_dgv_listado";
+            this.registroPago_dgv_listado.ReadOnly = true;
             this.registroPago_dgv_listado.Size = new System.Drawing.Size(635, 176);
             this.registroPago_dgv_listado.TabIndex = 24;
             // 
