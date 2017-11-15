@@ -24,7 +24,7 @@ namespace PagoAgilFrba.Models.DAO
                 while (lector.Read())
                 {
                     Rol unRol = new Rol();
-                    unRol.nombre = (string)lector["nombre_rol"];
+                    unRol.nombre_rol = (string)lector["nombre_rol"];
                     unRol.cod_rol = (decimal)lector["cod_rol"];
                     rolesDe.Add(unRol);
                 }
@@ -43,7 +43,7 @@ namespace PagoAgilFrba.Models.DAO
                 {
                     Rol unRol = new Rol();
                     unRol.cod_rol = (decimal)lector["cod_rol"];
-                    unRol.nombre = (string)lector["nombre_rol"];
+                    unRol.nombre_rol = (string)lector["nombre_rol"];
                     unRol.habilitado = (bool)lector["habilitado"];
                     roles.Add(unRol);
                 }
@@ -71,13 +71,13 @@ namespace PagoAgilFrba.Models.DAO
         public static Rol crearRol(Rol r)
         {
             List<SqlParameter> parameterList = new List<SqlParameter>();
-            parameterList.Add(new SqlParameter("@nombre_rol", r.nombre));
+            parameterList.Add(new SqlParameter("@nombre_rol", r.nombre_rol));
 
             DBAcess.WriteInBase("INSERT INTO MARGINADOS.Rol (Rol.nombre_rol,Rol.habilitado) " +
                                                 " VALUES (@nombre_rol,1)", "T", parameterList);
 
             List<SqlParameter> param = new List<SqlParameter>();
-            param.Add(new SqlParameter("@nombre_rol", r.nombre));
+            param.Add(new SqlParameter("@nombre_rol", r.nombre_rol));
 
             List<Rol> roles = new List<Rol>();
             SqlDataReader lector = DBAcess.GetDataReader("SELECT R.cod_rol,R.nombre_rol,R.habilitado FROM MARGINADOS.Rol R WHERE R.nombre_rol=@nombre_rol", "T", param);
@@ -87,7 +87,7 @@ namespace PagoAgilFrba.Models.DAO
                 {
                     Rol unRol = new Rol();
                     unRol.cod_rol = (decimal)lector["cod_rol"];
-                    unRol.nombre = (string)lector["nombre_rol"];
+                    unRol.nombre_rol = (string)lector["nombre_rol"];
                     unRol.habilitado = (bool)lector["habilitado"];
                     roles.Add(unRol);
                 }
@@ -108,7 +108,7 @@ namespace PagoAgilFrba.Models.DAO
                 {
                     Rol unRol = new Rol();
                     unRol.cod_rol = (decimal)lector["cod_rol"];
-                    unRol.nombre = (string)lector["nombre_rol"];
+                    unRol.nombre_rol = (string)lector["nombre_rol"];
                     unRol.habilitado = (bool)lector["habilitado"];
                     roles.Add(unRol);
                 }
@@ -141,7 +141,7 @@ namespace PagoAgilFrba.Models.DAO
         {
             List<SqlParameter> paramList = new List<SqlParameter>();
             paramList.Add(new SqlParameter("@nom_ant", nombreViejoRol));
-            paramList.Add(new SqlParameter("@nombre_rol", rol.nombre));
+            paramList.Add(new SqlParameter("@nombre_rol", rol.nombre_rol));
             DBAcess.WriteInBase("UPDATE MARGINADOS.Rol SET Rol.nombre_rol=@nombre_rol WHERE Rol.nombre_rol=@nom_ant", "T", paramList);
 
         }

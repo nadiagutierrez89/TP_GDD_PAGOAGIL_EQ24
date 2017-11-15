@@ -12,15 +12,9 @@ namespace PagoAgilFrba.Models.BO
         private string _nombre;
         private decimal _cod_rol;
         private List<Funcionalidad> _funcionalidades;
-        
-        public bool habilitado { set; get; }
 
-        // gets and sets
-        public string nombre
-        {
-            get { return _nombre; }
-            set { _nombre = value; }
-        }
+        public string nombre_rol { get; set; }
+        public bool habilitado { set; get; }
 
         public decimal cod_rol
         {
@@ -53,7 +47,7 @@ namespace PagoAgilFrba.Models.BO
 
         internal bool existeNombre()
         {
-            return DAORol.existeNombreRol(this.nombre);
+            return DAORol.existeNombreRol(this.nombre_rol);
         }
 
         internal Rol create()
@@ -70,8 +64,6 @@ namespace PagoAgilFrba.Models.BO
         {
             throw new NotImplementedException();
         }
-
-        public string nombre_rol { get; set; }
 
         internal static void deleteRol(int p)
         {

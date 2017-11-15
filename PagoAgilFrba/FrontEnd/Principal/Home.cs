@@ -29,7 +29,7 @@ namespace PagoAgilFrba.FrontEnd.Principal
             InitializeComponent();
             this.usuarioLogueado = usuarioLogueado;
             this.lbl_socursal.Text = this.usuarioLogueado.socursalActual.nombre_suc;
-            this.lbl_rol.Text = this.usuarioLogueado.rolActual.nombre;
+            this.lbl_rol.Text = this.usuarioLogueado.rolActual.nombre_rol;
 
             this.usuarioLogueado = usuarioLogueado;
             foreach (Control boton in this.Controls)

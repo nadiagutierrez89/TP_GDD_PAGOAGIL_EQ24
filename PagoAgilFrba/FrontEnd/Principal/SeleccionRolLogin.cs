@@ -28,7 +28,7 @@ namespace PagoAgilFrba.FrontEnd.Principal
             List<Rol> list = usuarioLogueado.roles;
             this.seleccionRol_cb_roles.DataSource = list;
             this.seleccionRol_cb_roles.ValueMember = "cod_rol";
-            this.seleccionRol_cb_roles.DisplayMember = "nombre";
+            this.seleccionRol_cb_roles.DisplayMember = "nombre_rol";
 
             List<Sucursal> misSucursales = usuarioLogueado.sucursales;
             this.cb_sucursal.DataSource = misSucursales;
