@@ -87,23 +87,27 @@ namespace PagoAgilFrba.FrontEnd.RegistroRendicion
 
         private void bttnGuardar_Click(object sender, EventArgs e)
         {
-            if (this.rendicionSelect != null)
+            if (this.rendicionSelect == null)
             {
-                if (this.rendicionSelect.guardar() > 0)
-                {
-                    MessageBox.Show("Se han guardado los cambios.", ":o)", MessageBoxButtons.OK);
-                    this.rendicionSelect = null;
-                }
-                else
-                {
-                    MessageBox.Show("No se han guardado los cambios!", ":o(", MessageBoxButtons.OK);
-                }
+                MessageBox.Show("Por favor genere una rendicion, antes de guarar", "Error!", MessageBoxButtons.OK);
+                return;
+            }
+            if (this.rendicionSelect.cant_facturas_rendidas < 1)
+            {
+                MessageBox.Show("No hay facturas que rendir", "Error!", MessageBoxButtons.OK);
+                return;
+            }
 
+            if (this.rendicionSelect.guardar() > 0)
+            {
+                MessageBox.Show("Se han guardado los cambios.", ":o)", MessageBoxButtons.OK);
+                this.rendicionSelect = null;
             }
             else
             {
-                MessageBox.Show("Por favor genere una rendicion, antes de guarar", "Error!", MessageBoxButtons.OK);
+                MessageBox.Show("No se han guardado los cambios!", ":o(", MessageBoxButtons.OK);
             }
+
 
         }
 

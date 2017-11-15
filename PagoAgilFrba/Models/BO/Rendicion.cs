@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PagoAgilFrba.Models.DAO;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,8 @@ namespace PagoAgilFrba.Models.BO
 {
     public class Rendicion
     {
+        public decimal ? nro_rendicion { get; set; }
+
         public decimal porcentaje_comision { get; set; }
 
         public List<Factura> facturas { get; set; }
@@ -25,7 +28,7 @@ namespace PagoAgilFrba.Models.BO
 
         internal int guardar()
         {
-            throw new NotImplementedException();
+            return DAORendicion.guardar(this);
         }
     }
 }
