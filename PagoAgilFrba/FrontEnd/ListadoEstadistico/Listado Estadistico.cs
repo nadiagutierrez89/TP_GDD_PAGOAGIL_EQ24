@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using PagoAgilFrba.Models.DataBase;
 using PagoAgilFrba.Models.DAO;
 using PagoAgilFRBA.Models.DAO;
+using PagoAgilFrba.Models.BO;
 
 
 namespace PagoAgilFrba.FrontEnd.ListadoEstadistico
@@ -22,6 +23,10 @@ namespace PagoAgilFrba.FrontEnd.ListadoEstadistico
         public listadoEstadistico()
         {
             InitializeComponent();
+            fillestadistica_cb_trimestre();
+            fillestadistica_cb_anio();
+            estadistica_cb_anio.SelectedIndex = 0;
+            fillestadistica_cb_listado();
         }
 
         public listadoEstadistico(Models.BO.Usuario usuarioLogueado) : this()
@@ -51,8 +56,9 @@ namespace PagoAgilFrba.FrontEnd.ListadoEstadistico
 
         private void fillestadistica_cb_anio()
         {
-            for (int i = 2000; i < 2030; i++)
-                estadistica_cb_anio.Items.Add(i);
+            //for (int i = 2000; i < 2030; i++)
+              //  estadistica_cb_anio.Items.Add(i);
+            this.estadistica_cb_anio.DataSource = Factura.allYears();
         }
 
         private void fillestadistica_cb_listado()
@@ -69,10 +75,11 @@ namespace PagoAgilFrba.FrontEnd.ListadoEstadistico
 
         private void estadistica_but_consultar_click(object sender, EventArgs e)
         {
-            int trim=0, anio=0;
-            DAOListadoEstadistico daoListadoEstadistico = new DAOListadoEstadistico();
+            int trim = Convert.ToInt32(this.estadistica_cb_trimestre.SelectedValue);
+            int anio = Convert.ToInt32(this.estadistica_cb_anio.SelectedValue);
 
-            
+            DAOListadoEstadistico daoListadoEstadistico = new DAOListadoEstadistico();
+                        
             switch (Convert.ToInt32(estadistica_cb_listado.SelectedValue))
             {
                 case 1:

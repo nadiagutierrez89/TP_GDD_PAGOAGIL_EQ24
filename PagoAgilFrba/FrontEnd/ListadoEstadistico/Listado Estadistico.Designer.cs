@@ -39,12 +39,13 @@
             // 
             // estadistica_but_consultar
             // 
-            this.estadistica_but_consultar.Location = new System.Drawing.Point(283, 12);
+            this.estadistica_but_consultar.Location = new System.Drawing.Point(427, 41);
             this.estadistica_but_consultar.Name = "estadistica_but_consultar";
-            this.estadistica_but_consultar.Size = new System.Drawing.Size(75, 23);
+            this.estadistica_but_consultar.Size = new System.Drawing.Size(75, 21);
             this.estadistica_but_consultar.TabIndex = 0;
             this.estadistica_but_consultar.Text = "Consultar";
             this.estadistica_but_consultar.UseVisualStyleBackColor = true;
+            this.estadistica_but_consultar.Click += new System.EventHandler(this.estadistica_but_consultar_click);
             // 
             // estadistca_lab_timestre
             // 
@@ -60,13 +61,13 @@
             this.estadistica_dgv_listaResultados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.estadistica_dgv_listaResultados.Location = new System.Drawing.Point(12, 68);
             this.estadistica_dgv_listaResultados.Name = "estadistica_dgv_listaResultados";
-            this.estadistica_dgv_listaResultados.Size = new System.Drawing.Size(346, 177);
+            this.estadistica_dgv_listaResultados.Size = new System.Drawing.Size(492, 177);
             this.estadistica_dgv_listaResultados.TabIndex = 14;
             // 
             // estadistica_cb_trimestre
             // 
             this.estadistica_cb_trimestre.FormattingEnabled = true;
-            this.estadistica_cb_trimestre.Location = new System.Drawing.Point(15, 41);
+            this.estadistica_cb_trimestre.Location = new System.Drawing.Point(12, 41);
             this.estadistica_cb_trimestre.Name = "estadistica_cb_trimestre";
             this.estadistica_cb_trimestre.Size = new System.Drawing.Size(59, 21);
             this.estadistica_cb_trimestre.TabIndex = 15;
@@ -74,24 +75,24 @@
             // estadistica_cb_anio
             // 
             this.estadistica_cb_anio.FormattingEnabled = true;
-            this.estadistica_cb_anio.Location = new System.Drawing.Point(81, 40);
+            this.estadistica_cb_anio.Location = new System.Drawing.Point(77, 41);
             this.estadistica_cb_anio.Name = "estadistica_cb_anio";
-            this.estadistica_cb_anio.Size = new System.Drawing.Size(80, 21);
+            this.estadistica_cb_anio.Size = new System.Drawing.Size(67, 21);
             this.estadistica_cb_anio.TabIndex = 16;
             // 
             // estadistica_cb_listado
             // 
             this.estadistica_cb_listado.FormattingEnabled = true;
-            this.estadistica_cb_listado.Location = new System.Drawing.Point(168, 40);
+            this.estadistica_cb_listado.Location = new System.Drawing.Point(150, 41);
             this.estadistica_cb_listado.Name = "estadistica_cb_listado";
-            this.estadistica_cb_listado.Size = new System.Drawing.Size(190, 21);
+            this.estadistica_cb_listado.Size = new System.Drawing.Size(271, 21);
             this.estadistica_cb_listado.TabIndex = 17;
             // 
             // listadoEstadistico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(379, 261);
+            this.ClientSize = new System.Drawing.Size(516, 261);
             this.Controls.Add(this.estadistica_cb_listado);
             this.Controls.Add(this.estadistica_cb_anio);
             this.Controls.Add(this.estadistica_cb_trimestre);

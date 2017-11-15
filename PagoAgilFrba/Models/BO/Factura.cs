@@ -14,6 +14,10 @@ namespace PagoAgilFrba.Models.BO
             return DAOFactura.getLosQueCumplenCon(filtro);
         }
 
+        internal static List<decimal> allYears()
+        {
+            return DAOFactura.allYears();
+        }
         public decimal nro_factura { get; set; }
 
         public decimal cod_empresa { get; set; }

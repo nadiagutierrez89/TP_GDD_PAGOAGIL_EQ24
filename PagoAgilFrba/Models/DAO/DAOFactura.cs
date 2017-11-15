@@ -113,5 +113,28 @@ namespace PagoAgilFrba.Models.DAO
             }
             return DBAcess.WriteInBase(noQuery, "T", ListaParametros);
         }
+
+        internal static List<decimal> allYears()
+        {
+            List<decimal> years = new List<decimal>();
+            List<SqlParameter> paramList = new List<SqlParameter>();
+
+            SqlDataReader lector = DBAcess.GetDataReader(
+                "select distinct year(f.fecha_alta_fac) as anio from MARGINADOS.Factura f " +
+                "union " +
+                "select distinct year(p.fecha_pago) as anio from MARGINADOS.Pago p " +
+                "union " +
+                "select distinct year(r.fecha_rendicion) as anio from MARGINADOS.Rendicion r ", "T", paramList);
+            if (lector.HasRows)
+            {
+                while (lector.Read())
+                {
+                    int anio = (int)lector["anio"];
+                    years.Add((decimal) anio);
+                    
+                }
+            }
+            return years;
+        }
     }
 }
