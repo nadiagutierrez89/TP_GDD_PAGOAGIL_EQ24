@@ -36,6 +36,7 @@ namespace PagoAgilFrba.FrontEnd.AbmRol
                 if (!(bool)rol.habilitado)
                     RbNoActivo.Checked = true;
             }
+
         }
 
         private void FormRol_Load(object sender, EventArgs e)
@@ -48,7 +49,7 @@ namespace PagoAgilFrba.FrontEnd.AbmRol
         {
             funcList = Funcionalidad.retrieveAll();
             dgvFuncionalidades.DataSource = funcList;
-            checkFunc();
+            //checkFunc();
         }
 
         private void checkFunc()
@@ -57,7 +58,7 @@ namespace PagoAgilFrba.FrontEnd.AbmRol
             {
                 DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)row.Cells[0];
                 //chk.Value = true;
-                chk.Value = Rol.existeRolFuncionalidad(_rol_id, (int)row.Cells["ID"].Value);
+                chk.Value = Rol.existeRolFuncionalidad(_rol_id, (int)row.Cells["cod_funcionalidad"].Value);
             }
         }
 
@@ -74,12 +75,12 @@ namespace PagoAgilFrba.FrontEnd.AbmRol
             checkColumn.FillWeight = 10;
             dgvFuncionalidades.Columns.Insert(0, checkColumn);
 
-            dgvFuncionalidades.Columns[1].Name = "ID";
-            dgvFuncionalidades.Columns[1].DataPropertyName = "id";
+            dgvFuncionalidades.Columns[1].Name = "cod_funcionalidad";
+            dgvFuncionalidades.Columns[1].DataPropertyName = "cod_funcionalidad";
             dgvFuncionalidades.Columns[1].Visible = false;
 
-            dgvFuncionalidades.Columns[2].Name = "Nombre";
-            dgvFuncionalidades.Columns[2].DataPropertyName = "name";
+            dgvFuncionalidades.Columns[2].Name = "nombre_func";
+            dgvFuncionalidades.Columns[2].DataPropertyName = "nombre_func";
             dgvFuncionalidades.Columns[2].ReadOnly = true;
 
         }
@@ -121,7 +122,7 @@ namespace PagoAgilFrba.FrontEnd.AbmRol
                 DataGridViewCheckBoxCell chk = row.Cells["chkFunc"] as DataGridViewCheckBoxCell;
                 if (Convert.ToBoolean(chk.Value))
                 {
-                    Rol.createRolFuncionalidad(id_rol, (int)row.Cells["ID"].Value);
+                    Rol.createRolFuncionalidad(id_rol, (int)row.Cells["cod_funcionalidad"].Value);
                 }
             }
         }

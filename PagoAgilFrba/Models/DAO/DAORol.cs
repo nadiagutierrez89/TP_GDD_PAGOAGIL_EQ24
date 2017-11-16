@@ -129,7 +129,7 @@ namespace PagoAgilFrba.Models.DAO
                 {
                     Funcionalidad funcionalidad = new Funcionalidad();
                     funcionalidad.cod_funcionalidad = (decimal)lector["cod_funcionalidad"];
-                    funcionalidad.nombre = (string)lector["nombre_func"];
+                    funcionalidad.nombre_func = (string)lector["nombre_func"];
                     func.Add(funcionalidad);
                 }
                 lector.Close();
@@ -146,5 +146,22 @@ namespace PagoAgilFrba.Models.DAO
 
         }
 
+
+        internal static int getLastIdRol()
+        {
+            List<SqlParameter> paramList = new List<SqlParameter>();
+            int id = 0;
+
+            SqlDataReader lector = DBAcess.GetDataReader("select IDENT_CURRENT('MARGINADOS.Rol') as id", "T", paramList);
+            if (lector.HasRows)
+            {
+                while (lector.Read())
+                {
+                    id = (int)lector["id"];
+                }
+            }
+
+            return id;
+        }
     }
 }

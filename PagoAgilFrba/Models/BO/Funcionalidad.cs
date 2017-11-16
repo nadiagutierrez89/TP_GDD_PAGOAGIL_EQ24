@@ -13,7 +13,7 @@ namespace PagoAgilFrba.Models.BO
         private decimal _cod_funcionalidad;
 
         // gets and sets
-        public String nombre
+        public String nombre_func
         {
             get { return _nombre; }
             set { _nombre = value; }
@@ -42,7 +42,7 @@ namespace PagoAgilFrba.Models.BO
 
         internal static List<Funcionalidad> retrieveAll()
         {
-            throw new NotImplementedException();
+            return DAOFuncionalidad.buscarFuncionalidades();
         }
     }
 }

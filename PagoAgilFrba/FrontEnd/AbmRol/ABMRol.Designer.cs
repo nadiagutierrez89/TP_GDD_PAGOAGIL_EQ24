@@ -72,6 +72,7 @@
             this.Controls.Add(this.dataGridViewRol);
             this.Name = "ABMRol";
             this.Text = "ABM Rol";
+            this.Load += new System.EventHandler(this.ABMRol_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRol)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

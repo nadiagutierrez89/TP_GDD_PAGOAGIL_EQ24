@@ -41,16 +41,16 @@ namespace PagoAgilFrba.FrontEnd.AbmRol
             dataGridViewRol.ColumnCount = 3;
             dataGridViewRol.AllowUserToAddRows = false;
 
-            dataGridViewRol.Columns[0].Name = "ID";
-            dataGridViewRol.Columns[0].DataPropertyName = "id";
+            dataGridViewRol.Columns[0].Name = "cod_rol";
+            dataGridViewRol.Columns[0].DataPropertyName = "cod_rol";
             dataGridViewRol.Columns[0].Visible = false;
 
-            dataGridViewRol.Columns[1].Name = "Nombre";
-            dataGridViewRol.Columns[1].DataPropertyName = "name";
+            dataGridViewRol.Columns[1].Name = "nombre_rol";
+            dataGridViewRol.Columns[1].DataPropertyName = "nombre_rol";
             dataGridViewRol.Columns[1].ReadOnly = true;
 
-            dataGridViewRol.Columns[2].Name = "Activo";
-            dataGridViewRol.Columns[2].DataPropertyName = "activo";
+            dataGridViewRol.Columns[2].Name = "habilitado";
+            dataGridViewRol.Columns[2].DataPropertyName = "habilitado";
             dataGridViewRol.Columns[2].ReadOnly = true;
             dataGridViewRol.Columns[2].Width = 40;
 
@@ -124,7 +124,7 @@ namespace PagoAgilFrba.FrontEnd.AbmRol
         private void dataGridViewRol_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow row = dataGridViewRol.CurrentCell.OwningRow;
-            int rol_id = Convert.ToInt32(row.Cells["ID"].Value.ToString());
+            int rol_id = Convert.ToInt32(row.Cells["cod_rol"].Value.ToString());
 
             if (e.ColumnIndex == 3)
                 showFormRol(rol_id);

@@ -23,7 +23,7 @@ namespace PagoAgilFrba.Models.DAO
                 while (lector.Read())
                 {
                     Funcionalidad unaFuncion = new Funcionalidad();
-                    unaFuncion.nombre = (string)lector["nombre_func"];
+                    unaFuncion.nombre_func = (string)lector["nombre_func"];
                     unaFuncion.cod_funcionalidad = (decimal)lector["cod_funcionalidad"];
                     funcionesDe.Add(unaFuncion);
                 }
@@ -35,14 +35,14 @@ namespace PagoAgilFrba.Models.DAO
         public static List<Funcionalidad> buscarFuncionalidades()
         {
             List<Funcionalidad> funcionalidades = new List<Funcionalidad>();
-            SqlDataReader lector = DBAcess.GetDataReader("SELECT * MARGINADOS.Funcionalidad", "T", new List<SqlParameter>());
+            SqlDataReader lector = DBAcess.GetDataReader("SELECT * FROM MARGINADOS.Funcionalidad", "T", new List<SqlParameter>());
             if (lector.HasRows)
             {
                 while (lector.Read())
                 {
                     Funcionalidad func = new Funcionalidad();
                     func.cod_funcionalidad = (decimal)lector["cod_funcionalidad"];
-                    func.nombre = (string)lector["nombre_func"];
+                    func.nombre_func = (string)lector["nombre_func"];
                     funcionalidades.Add(func);
                 }
                 lector.Close();

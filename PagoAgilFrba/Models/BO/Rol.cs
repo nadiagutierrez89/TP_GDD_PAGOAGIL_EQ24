@@ -37,7 +37,7 @@ namespace PagoAgilFrba.Models.BO
         // Metodos de instancia
         internal bool funcionalidadValida(string nombreFuncionalidad)
         {
-            return this.funcionalidades.Any(func => func.nombre.Equals(nombreFuncionalidad));
+            return this.funcionalidades.Any(func => func.nombre_func.Equals(nombreFuncionalidad));
         }
 
         internal void cargarFuncionalidades()
@@ -62,7 +62,7 @@ namespace PagoAgilFrba.Models.BO
 
         internal static List<Rol> retrieveAll()
         {
-            throw new NotImplementedException();
+            return DAORol.buscarRoles();
         }
 
         internal static void deleteRol(int p)
@@ -72,12 +72,15 @@ namespace PagoAgilFrba.Models.BO
 
         internal static Rol getRolById(int _rol_id)
         {
-            throw new NotImplementedException();
+            return retrieveAll().Find(r => r.cod_rol == _rol_id);
         }
 
-        internal static object existeRolFuncionalidad(int _rol_id, int p)
+        internal static bool existeRolFuncionalidad(int _rol_id, int cod_func)
         {
-            throw new NotImplementedException();
+            Rol unRol = getRolById(_rol_id);
+            unRol.cargarFuncionalidades();
+
+            return unRol.funcionalidades.Any(f => f.cod_funcionalidad == cod_func);
         }
 
         internal static void update(Rol rol)
@@ -97,7 +100,7 @@ namespace PagoAgilFrba.Models.BO
 
         internal static int getLastIdRol()
         {
-            throw new NotImplementedException();
+            return DAORol.getLastIdRol();
         }
 
         internal static void createRolFuncionalidad(int id_rol, int p)

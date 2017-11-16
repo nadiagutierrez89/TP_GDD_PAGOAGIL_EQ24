@@ -130,6 +130,7 @@
             this.Controls.Add(this.lblTitulo);
             this.Name = "FormRol";
             this.Text = "FormRol";
+            this.Load += new System.EventHandler(this.FormRol_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvFuncionalidades)).EndInit();
             this.GbActivo.ResumeLayout(false);
             this.GbActivo.PerformLayout();
