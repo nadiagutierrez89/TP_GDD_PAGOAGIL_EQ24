@@ -45,5 +45,36 @@ namespace PagoAgilFrba.Models.DAO
 
             DBAcess.WriteInBase("DELETE FROM MARGINADOS.RolFuncionalidad WHERE COD_ROL=@cod_rol AND COD_FUNCIONALIDAD=@cod_funcionalidad", "T", ListaParametros);
         }
+
+        public static int deleteAllFunc(int cod_rol)
+        {
+            try
+            {
+                List<SqlParameter> ListaParametros = new List<SqlParameter>();
+
+                ListaParametros.Add(new SqlParameter("@cod_rol", cod_rol));
+
+                return DBAcess.WriteInBase("DELETE FROM MARGINADOS.RolFuncionalidad WHERE cod_rol=@cod_rol", "T", ListaParametros);
+            }
+            catch { return 0; }
+        }
+
+        internal static int create(int cod_rol, Decimal cod_funcionalidad)
+        {
+            try
+            {
+                List<SqlParameter> ListaParametros = new List<SqlParameter>();
+
+                ListaParametros.Add(new SqlParameter("@cod_rol", cod_rol));
+                ListaParametros.Add(new SqlParameter("@cod_funcionalidad", cod_funcionalidad));
+
+                return DBAcess.WriteInBase("insert into MARGINADOS.RolFuncionalidad (cod_rol, cod_funcionalidad) VALUES(@cod_rol, @cod_funcionalidad)", "T", ListaParametros);
+            }
+            catch
+            {
+                return 0;
+            }
+
+        }
     }
 }

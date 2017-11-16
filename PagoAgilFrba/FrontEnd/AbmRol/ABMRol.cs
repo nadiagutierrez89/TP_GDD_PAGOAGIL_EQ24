@@ -52,7 +52,7 @@ namespace PagoAgilFrba.FrontEnd.AbmRol
             dataGridViewRol.Columns[2].Name = "habilitado";
             dataGridViewRol.Columns[2].DataPropertyName = "habilitado";
             dataGridViewRol.Columns[2].ReadOnly = true;
-            dataGridViewRol.Columns[2].Width = 40;
+            dataGridViewRol.Columns[2].Width = 60;
 
             DataGridViewButtonColumn btn = new DataGridViewButtonColumn();
             dataGridViewRol.Columns.Add(btn);
@@ -87,7 +87,7 @@ namespace PagoAgilFrba.FrontEnd.AbmRol
             DataGridViewTextBoxColumn colEstado = new DataGridViewTextBoxColumn();
             colEstado.DataPropertyName = "habilitado";
             colEstado.HeaderText = "habilitado";
-            colEstado.Width = 50;
+            colEstado.Width = 60;
             colEstado.ReadOnly = true;
 
             dataGridViewRol.Columns.Add(colId);

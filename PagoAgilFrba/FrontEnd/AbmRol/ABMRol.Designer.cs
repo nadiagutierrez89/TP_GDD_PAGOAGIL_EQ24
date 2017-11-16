@@ -38,7 +38,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(205, 60);
+            this.label1.Location = new System.Drawing.Point(12, 21);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(165, 24);
             this.label1.TabIndex = 8;
@@ -47,14 +47,15 @@
             // dataGridViewRol
             // 
             this.dataGridViewRol.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewRol.Location = new System.Drawing.Point(28, 95);
+            this.dataGridViewRol.Location = new System.Drawing.Point(12, 48);
             this.dataGridViewRol.Name = "dataGridViewRol";
-            this.dataGridViewRol.Size = new System.Drawing.Size(537, 213);
+            this.dataGridViewRol.Size = new System.Drawing.Size(421, 213);
             this.dataGridViewRol.TabIndex = 6;
+            this.dataGridViewRol.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewRol_CellContentClick);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(189, 334);
+            this.button1.Location = new System.Drawing.Point(358, 267);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 9;
@@ -66,7 +67,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(592, 419);
+            this.ClientSize = new System.Drawing.Size(445, 299);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridViewRol);

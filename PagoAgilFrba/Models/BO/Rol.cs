@@ -9,7 +9,6 @@ namespace PagoAgilFrba.Models.BO
 {
     public class Rol
     {
-        private string _nombre;
         private decimal _cod_rol;
         private List<Funcionalidad> _funcionalidades;
 
@@ -67,7 +66,8 @@ namespace PagoAgilFrba.Models.BO
 
         internal static void deleteRol(int p)
         {
-            throw new NotImplementedException();
+            Rol unRol = getRolById(p);
+            DAORol.bajaLogica(unRol);
         }
 
         internal static Rol getRolById(int _rol_id)
@@ -75,9 +75,13 @@ namespace PagoAgilFrba.Models.BO
             return retrieveAll().Find(r => r.cod_rol == _rol_id);
         }
 
-        internal static bool existeRolFuncionalidad(int _rol_id, int cod_func)
+        internal static bool existeRolFuncionalidad(int _rol_id, Decimal cod_func)
         {
             Rol unRol = getRolById(_rol_id);
+
+            if (unRol == null)
+                return false;
+
             unRol.cargarFuncionalidades();
 
             return unRol.funcionalidades.Any(f => f.cod_funcionalidad == cod_func);
@@ -85,17 +89,17 @@ namespace PagoAgilFrba.Models.BO
 
         internal static void update(Rol rol)
         {
-            throw new NotImplementedException();
+            DAORol.update(rol);
         }
 
         internal static void deleteAllFunc(int p)
         {
-            throw new NotImplementedException();
+            DAORolFuncionalidad.deleteAllFunc(p);
         }
 
         internal static void create(Rol rol)
         {
-            throw new NotImplementedException();
+            DAORol.crearRol(rol);
         }
 
         internal static int getLastIdRol()
@@ -103,9 +107,9 @@ namespace PagoAgilFrba.Models.BO
             return DAORol.getLastIdRol();
         }
 
-        internal static void createRolFuncionalidad(int id_rol, int p)
+        internal static void createRolFuncionalidad(int cod_rol, Decimal cod_funcionalidad)
         {
-            throw new NotImplementedException();
+            DAORolFuncionalidad.create(cod_rol, cod_funcionalidad);
         }
     }
 }

@@ -31,10 +31,8 @@ namespace PagoAgilFrba.FrontEnd.AbmRol
                 lblTitulo.Text = "Modificar Rol";
                 rol = Rol.getRolById(_rol_id);
                 txtNombreRol.Text = rol.nombre_rol;
-                if ((bool)rol.habilitado)
-                    RbActivo.Checked = true;
-                if (!(bool)rol.habilitado)
-                    RbNoActivo.Checked = true;
+
+                this.cbHabilitado.Checked = rol.habilitado;
             }
 
         }
@@ -49,7 +47,7 @@ namespace PagoAgilFrba.FrontEnd.AbmRol
         {
             funcList = Funcionalidad.retrieveAll();
             dgvFuncionalidades.DataSource = funcList;
-            //checkFunc();
+            checkFunc();
         }
 
         private void checkFunc()
@@ -57,8 +55,7 @@ namespace PagoAgilFrba.FrontEnd.AbmRol
             foreach (DataGridViewRow row in dgvFuncionalidades.Rows)
             {
                 DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)row.Cells[0];
-                //chk.Value = true;
-                chk.Value = Rol.existeRolFuncionalidad(_rol_id, (int)row.Cells["cod_funcionalidad"].Value);
+                chk.Value = Rol.existeRolFuncionalidad(_rol_id, (Decimal)row.Cells["cod_funcionalidad"].Value);
             }
         }
 
@@ -70,9 +67,9 @@ namespace PagoAgilFrba.FrontEnd.AbmRol
             DataGridViewCheckBoxColumn checkColumn = new DataGridViewCheckBoxColumn();
             checkColumn.Name = "chkFunc";
             checkColumn.HeaderText = "Seleccionar";
-            checkColumn.Width = 50;
+            checkColumn.Width = 70;
             checkColumn.ReadOnly = false;
-            checkColumn.FillWeight = 10;
+            checkColumn.FillWeight = 70;
             dgvFuncionalidades.Columns.Insert(0, checkColumn);
 
             dgvFuncionalidades.Columns[1].Name = "cod_funcionalidad";
@@ -81,6 +78,8 @@ namespace PagoAgilFrba.FrontEnd.AbmRol
 
             dgvFuncionalidades.Columns[2].Name = "nombre_func";
             dgvFuncionalidades.Columns[2].DataPropertyName = "nombre_func";
+            dgvFuncionalidades.Columns[2].Width = 250;
+            dgvFuncionalidades.Columns[2].FillWeight = 250;
             dgvFuncionalidades.Columns[2].ReadOnly = true;
 
         }
@@ -91,26 +90,24 @@ namespace PagoAgilFrba.FrontEnd.AbmRol
                 return;
             rol = new Rol();
             rol.nombre_rol = txtNombreRol.Text;
-            if (RbActivo.Checked)
-                rol.habilitado = true;
-            else if (RbNoActivo.Checked)
-                rol.habilitado = false;
-            else
-                rol.habilitado = false;
+
+            rol.habilitado = this.cbHabilitado.Checked;
+
             if (this._rol_id != 0) //Es modificacion
             {
                 rol.cod_rol = this._rol_id;
                 Rol.update(rol);
                 Rol.deleteAllFunc(this._rol_id);
                 saveRolFunc(this._rol_id);
-
             }
             else
             {
                 Rol.create(rol);
                 saveRolFunc(Rol.getLastIdRol());
             }
-            _abmRol.fillDataGridView();
+            
+            this._abmRol.fillDataGridView();
+
             this.Hide();
         }
 
@@ -122,7 +119,7 @@ namespace PagoAgilFrba.FrontEnd.AbmRol
                 DataGridViewCheckBoxCell chk = row.Cells["chkFunc"] as DataGridViewCheckBoxCell;
                 if (Convert.ToBoolean(chk.Value))
                 {
-                    Rol.createRolFuncionalidad(id_rol, (int)row.Cells["cod_funcionalidad"].Value);
+                    Rol.createRolFuncionalidad(id_rol, (Decimal)row.Cells["cod_funcionalidad"].Value);
                 }
             }
         }
@@ -132,12 +129,6 @@ namespace PagoAgilFrba.FrontEnd.AbmRol
             if (String.IsNullOrEmpty(txtNombreRol.Text))
             {
                 MessageBox.Show("Por favor ingrese el nombre del rol");
-                return false;
-            }
-
-            if (RbActivo.Checked == false && RbNoActivo.Checked == false)
-            {
-                MessageBox.Show("Por favor seleccione si el rol esta activo o no");
                 return false;
             }
             return true;

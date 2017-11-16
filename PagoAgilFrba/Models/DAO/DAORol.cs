@@ -163,5 +163,21 @@ namespace PagoAgilFrba.Models.DAO
 
             return id;
         }
+
+        public static int update(Rol rol)
+        {
+            try
+            {
+                List<SqlParameter> ListaParametros = new List<SqlParameter>();
+
+                ListaParametros.Add(new SqlParameter("@cod_rol", rol.cod_rol));
+                ListaParametros.Add(new SqlParameter("@nombre_rol", rol.nombre_rol));
+                ListaParametros.Add(new SqlParameter("@habilitado", rol.habilitado));
+
+                return DBAcess.WriteInBase("update MARGINADOS.Rol set nombre_rol=@nombre_rol, habilitado=@habilitado where cod_rol = @cod_rol ", "T", ListaParametros);
+            }
+            catch { return 0; }
+        }
+
     }
 }
