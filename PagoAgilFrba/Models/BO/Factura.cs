@@ -51,5 +51,12 @@ namespace PagoAgilFrba.Models.BO
         {
             this.facturaItems = FacturaItem.getItemsDe(this);
         }
+
+        internal int guardarItems()
+        {
+            this.facturaItems.ForEach(i => i.cod_empresa = this.cod_empresa);
+            this.facturaItems.ForEach(i => i.nro_factura = this.nro_factura);
+            return DAOFacturaItem.guardar(this);
+        }
     }
 }

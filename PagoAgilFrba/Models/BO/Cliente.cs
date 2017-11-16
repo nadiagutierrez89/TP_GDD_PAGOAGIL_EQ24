@@ -15,6 +15,10 @@ namespace PagoAgilFrba.Models.BO
             return misClientes; //.FindAll(c => c.fecha_baja.ha);
         }
 
+        internal static Cliente getCliente(decimal dni)
+        {
+            return DAOCliente.getCliente(dni);
+        }
 
         public decimal dni { get; set; }
 

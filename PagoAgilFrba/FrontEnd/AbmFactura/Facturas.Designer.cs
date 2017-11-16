@@ -100,6 +100,7 @@
             this.factura_dgv_listado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.factura_dgv_listado.Location = new System.Drawing.Point(12, 200);
             this.factura_dgv_listado.Name = "factura_dgv_listado";
+            this.factura_dgv_listado.ReadOnly = true;
             this.factura_dgv_listado.Size = new System.Drawing.Size(543, 198);
             this.factura_dgv_listado.TabIndex = 56;
             // 

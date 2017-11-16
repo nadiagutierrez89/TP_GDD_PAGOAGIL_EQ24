@@ -90,6 +90,12 @@
     <Compile Include="FrontEnd\AbmFactura\ABMFactura.Designer.cs">
       <DependentUpon>ABMFactura.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrontEnd\AbmFactura\AltaItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrontEnd\AbmFactura\AltaItem.Designer.cs">
+      <DependentUpon>AltaItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrontEnd\AbmFactura\Facturas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -209,6 +215,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrontEnd\AbmFactura\ABMFactura.resx">
       <DependentUpon>ABMFactura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrontEnd\AbmFactura\AltaItem.resx">
+      <DependentUpon>AltaItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrontEnd\AbmFactura\DevolucionFacturas.resx">
       <DependentUpon>DevolucionFacturas.cs</DependentUpon>

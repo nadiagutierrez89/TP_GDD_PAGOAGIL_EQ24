@@ -111,6 +111,7 @@ namespace PagoAgilFrba.Models.DAO
                ",@nro_rendicion  ) ";
 
             }
+            
             return DBAcess.WriteInBase(noQuery, "T", ListaParametros);
         }
 
