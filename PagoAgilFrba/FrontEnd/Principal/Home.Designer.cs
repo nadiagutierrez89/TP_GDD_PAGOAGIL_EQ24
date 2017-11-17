@@ -60,7 +60,6 @@
             this.home_but_abmempresa.Text = "ABM de Empresa";
             this.home_but_abmempresa.UseVisualStyleBackColor = true;
             this.home_but_abmempresa.Click += new System.EventHandler(this.home_but_abmempresa_Click);
-
             // 
             // home_but_abmfactura
             // 
@@ -84,7 +83,7 @@
             // 
             // home_but_ambrol
             // 
-            this.home_but_ambrol.Location = new System.Drawing.Point(189, 284);
+            this.home_but_ambrol.Location = new System.Drawing.Point(51, 289);
             this.home_but_ambrol.Name = "home_but_ambrol";
             this.home_but_ambrol.Size = new System.Drawing.Size(108, 38);
             this.home_but_ambrol.TabIndex = 4;

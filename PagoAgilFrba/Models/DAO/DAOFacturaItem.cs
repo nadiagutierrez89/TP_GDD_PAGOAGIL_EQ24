@@ -51,7 +51,15 @@ namespace PagoAgilFrba.Models.DAO
             ListaParametros.Add(new SqlParameter("@cod_empresa", unafactura.cod_empresa));
 
             noQuery = "Delete MARGINADOS.FacturaItem WHERE nro_factura = @nro_factura and cod_empresa = @cod_empresa";
-            DBAcess.WriteInBase(noQuery, "T", ListaParametros);
+            try
+            {
+                intReturn = DBAcess.WriteInBase(noQuery, "T", ListaParametros);
+            }
+            catch
+            {
+                return 0;
+            }
+
 
             unafactura.facturaItems.ForEach(i => intReturn = insertar(i));
 
@@ -59,7 +67,7 @@ namespace PagoAgilFrba.Models.DAO
         }
 
         private static int insertar(FacturaItem i)
-        {                          
+        {
             List<SqlParameter> ListaParametros = new List<SqlParameter>();
             ListaParametros.Add(new SqlParameter("@cod_empresa", i.cod_empresa));
             ListaParametros.Add(new SqlParameter("@nro_factura", i.nro_factura));
@@ -79,8 +87,15 @@ namespace PagoAgilFrba.Models.DAO
                ",@nro_item " +
                ",@monto_item " +
                ",@cantidad_item ) ";
-            
-            return DBAcess.WriteInBase(noQuery, "T", ListaParametros);
+
+            try
+            {
+                return DBAcess.WriteInBase(noQuery, "T", ListaParametros);
+            }
+            catch
+            {
+                return 0;
+            }
         }
     }
 }

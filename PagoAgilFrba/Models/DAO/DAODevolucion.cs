@@ -38,7 +38,16 @@ namespace PagoAgilFrba.Models.DAO
                ",@cod_motivoDevolucion " +
                ",@fecha_devolucion ) ";
 
-            returnint = DBAcess.WriteInBase(noQuery, "T", ListaParametros);
+            try
+            {
+                returnint = DBAcess.WriteInBase(noQuery, "T", ListaParametros);
+            }
+            catch
+            {
+                return 0;
+            }
+
+
 
             unPago.importe_total_pago = unPago.importe_total_pago - unFactura.importe_total_fac; ;
             returnint = unPago.guardar();

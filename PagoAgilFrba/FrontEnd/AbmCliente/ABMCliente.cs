@@ -21,6 +21,7 @@ namespace PagoAgilFrba.FrontEnd.AbmCliente
             InitializeComponent();
             this.Text = "Alta Nuevo Cliente";
             this.dtp_fec_nac.Value = Convert.ToDateTime(ConfigurationManager.AppSettings["fecha"]);
+            this.abmcliente_chb_baja.Enabled = false;
         }
 
         public ABMCliente(Cliente unCliente) : this ()
@@ -40,6 +41,7 @@ namespace PagoAgilFrba.FrontEnd.AbmCliente
             this.abmcliente_tb_localidad.Text = unCliente.localidad;
             this.abmcliente_tb_cp.Text = unCliente.cod_postal;
             this.abmcliente_mtb_telefono.Text = unCliente.telefono;
+            this.abmcliente_chb_baja.Enabled = true;
 
             if (unCliente.fecha_baja == null)
             {

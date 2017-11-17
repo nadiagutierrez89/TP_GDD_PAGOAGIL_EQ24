@@ -25,17 +25,25 @@ namespace PagoAgilFrba.Models.DAO
         }
 
 
-        internal static void agregateA(Rol rol, Funcionalidad funcionalidad)
+        internal static int agregateA(Rol rol, Funcionalidad funcionalidad)
         {
             List<SqlParameter> ListaParametros = new List<SqlParameter>();
 
             ListaParametros.Add(new SqlParameter("@cod_rol", rol.cod_rol));
             ListaParametros.Add(new SqlParameter("@cod_funcionalidad", funcionalidad.cod_funcionalidad));
 
+            try
+            {
+                return
             DBAcess.WriteInBase("insert into MARGINADOS.RolFuncionalidad (COD_ROL, COD_FUNCIONALIDAD) VALUES(@cod_rol, @cod_funcionalidad)", "T", ListaParametros);
+            }
+            catch
+            {
+                return 0;
+            }
         }
 
-        internal static void eliminateDe(Rol rol, Funcionalidad funcionalidad)
+        internal static int eliminateDe(Rol rol, Funcionalidad funcionalidad)
         {
             List<SqlParameter> ListaParametros = new List<SqlParameter>();
 
@@ -43,7 +51,14 @@ namespace PagoAgilFrba.Models.DAO
 
             ListaParametros.Add(new SqlParameter("@cod_rol", rol.cod_rol));
 
-            DBAcess.WriteInBase("DELETE FROM MARGINADOS.RolFuncionalidad WHERE COD_ROL=@cod_rol AND COD_FUNCIONALIDAD=@cod_funcionalidad", "T", ListaParametros);
+            try
+            {
+                return DBAcess.WriteInBase("DELETE FROM MARGINADOS.RolFuncionalidad WHERE COD_ROL=@cod_rol AND COD_FUNCIONALIDAD=@cod_funcionalidad", "T", ListaParametros);
+            }
+            catch
+            {
+                return 0;
+            }
         }
 
         public static int deleteAllFunc(int cod_rol)
@@ -56,7 +71,10 @@ namespace PagoAgilFrba.Models.DAO
 
                 return DBAcess.WriteInBase("DELETE FROM MARGINADOS.RolFuncionalidad WHERE cod_rol=@cod_rol", "T", ListaParametros);
             }
-            catch { return 0; }
+            catch
+            {
+                return 0;
+            }
         }
 
         internal static int create(int cod_rol, Decimal cod_funcionalidad)

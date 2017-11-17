@@ -44,8 +44,13 @@ namespace PagoAgilFrba.FrontEnd.Principal
                         this.Hide();
                         SeleccionRolLogin elegRol = new SeleccionRolLogin(usuarioLogueado);
                         elegRol.ShowDialog();
-                        Home inicio = new Home(usuarioLogueado);
-                        inicio.ShowDialog();
+
+                        if (usuarioLogueado.socursalActual != null)
+                        {
+                            Home inicio = new Home(usuarioLogueado);
+                            inicio.ShowDialog();
+                        }
+
                         this.Show();
 
                     }

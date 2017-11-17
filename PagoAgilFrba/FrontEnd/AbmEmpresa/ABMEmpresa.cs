@@ -24,6 +24,7 @@ namespace PagoAgilFrba.FrontEnd.AbmEmpresa
             this.cod_rubro.DataSource = list;
             this.cod_rubro.ValueMember = "cod_rubro";
             this.cod_rubro.DisplayMember = "descripcion_rubro";
+            this.abmempresa_chb_habilitada.Checked = true;
         }
 
         public ABMEmpresa(Empresa unEmpresa)

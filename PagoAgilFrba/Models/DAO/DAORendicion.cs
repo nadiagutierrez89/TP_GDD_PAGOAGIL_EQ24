@@ -56,8 +56,14 @@ namespace PagoAgilFrba.Models.DAO
                    ",@importe_total_rendicion ) ";
             }
 
-
-            returnint = DBAcess.WriteInBase(noQuery, "T", ListaParametros);
+            try
+            {
+                returnint = DBAcess.WriteInBase(noQuery, "T", ListaParametros);
+            }
+            catch
+            {
+                return 0;
+            }
 
             if (rendicion.nro_rendicion == null)
             {

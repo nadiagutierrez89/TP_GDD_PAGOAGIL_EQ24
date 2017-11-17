@@ -16,15 +16,15 @@ namespace PagoAgilFrba.Models.DAO
             List<Sucursal> sucursalesDe = new List<Sucursal>();
             List<SqlParameter> paramList = new List<SqlParameter>();
             paramList.Add(new SqlParameter("@cod_user", cod_user));
-            string query = 
-"select s.codigo_postal_suc, " +
-	"s.direccion_suc, " +
-	"s.habilitado, " +
-    "s.nombre_suc " + 
-"from [MARGINADOS].[Sucursal] s " + 
-	"inner join [MARGINADOS].[UsuarioSucursal]  us " + 
-	"on s.codigo_postal_suc = us.codigo_postal_suc " +
-    "and us.cod_user = @cod_user ";
+            string query =
+                "select s.codigo_postal_suc, " +
+                    "s.direccion_suc, " +
+                    "s.habilitado, " +
+                    "s.nombre_suc " +
+                "from [MARGINADOS].[Sucursal] s " +
+                    "inner join [MARGINADOS].[UsuarioSucursal]  us " +
+                    "on s.codigo_postal_suc = us.codigo_postal_suc " +
+                    "and us.cod_user = @cod_user ";
 
             SqlDataReader lector = DBAcess.GetDataReader(query, "T", paramList);
 
@@ -35,7 +35,7 @@ namespace PagoAgilFrba.Models.DAO
                     Sucursal unaSocursal = new Sucursal();
                     unaSocursal.habilitado = (bool)lector["habilitado"];
                     unaSocursal.nombre_suc = (string)lector["nombre_suc"];
-                    unaSocursal.direccion_suc = (string)lector["direccion_suc"];                    
+                    unaSocursal.direccion_suc = (string)lector["direccion_suc"];
                     unaSocursal.codigo_postal_suc = (decimal)lector["codigo_postal_suc"];
                     sucursalesDe.Add(unaSocursal);
                 }
@@ -99,7 +99,17 @@ namespace PagoAgilFrba.Models.DAO
                ",@habilitado ) ";
 
             }
-            return DBAcess.WriteInBase(noQuery, "T", ListaParametros);
+
+            try
+            {
+                return DBAcess.WriteInBase(noQuery, "T", ListaParametros);
+            }
+            catch
+            {
+                return 0;
+            }
+
+
         }
 
         internal static bool existeSocursalSegun(string campo, string valor)

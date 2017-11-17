@@ -52,6 +52,9 @@ namespace PagoAgilFrba.Models.DAO
             ListaParametros.Add(new SqlParameter("@cuit_empresa", empresa.cuit_empresa));
             ListaParametros.Add(new SqlParameter("@cod_rubro", empresa.cod_rubro));
             ListaParametros.Add(new SqlParameter("@habilitado", empresa.habilitado));
+            ListaParametros.Add(new SqlParameter("@direccion_empresa", empresa.direccion_empresa));
+
+
 
             if (existeEmpresaSegun("cod_empresa", empresa.cod_empresa.ToString()))
             {
@@ -60,6 +63,7 @@ namespace PagoAgilFrba.Models.DAO
                           ",cuit_empresa = @cuit_empresa " +
                           ",cod_rubro = @cod_rubro " +
                           ",habilitado = @habilitado " +
+                          ",direccion_empresa = @direccion_empresa " +
                      "WHERE cod_empresa = @cod_empresa ";
             }
             else
@@ -68,15 +72,26 @@ namespace PagoAgilFrba.Models.DAO
                "(nombre_empresa " +
                ",cuit_empresa " +
                ",cod_rubro " +
+               ",direccion_empresa " +
                ",habilitado ) " +
          "VALUES " +
                "(@nombre_empresa " +
                ",@cuit_empresa " +
                ",@cod_rubro " +
+               ",@direccion_empresa " +
                ",@habilitado ) ";
 
             }
-            return DBAcess.WriteInBase(noQuery, "T", ListaParametros);
+
+            try
+            {
+                return DBAcess.WriteInBase(noQuery, "T", ListaParametros);
+            }
+            catch
+            {
+                return 0;
+            }
+
         }
 
         internal static List<Empresa> devolverTodas()

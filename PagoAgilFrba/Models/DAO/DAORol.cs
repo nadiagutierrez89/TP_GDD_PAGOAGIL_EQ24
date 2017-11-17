@@ -52,19 +52,34 @@ namespace PagoAgilFrba.Models.DAO
             return roles;
         }
 
-        public static void altaLogica(Rol rol)
+        public static int altaLogica(Rol rol)
         {
-            List<SqlParameter> paramList = new List<SqlParameter>();
-            paramList.Add(new SqlParameter("@cod_rol", rol.cod_rol));
-            DBAcess.WriteInBase("UPDATE MARGINADOS.Rol SET Rol.habilitado=1  WHERE Rol.cod_rol=@cod_rol", "T", paramList);
+            try
+            {
+                List<SqlParameter> paramList = new List<SqlParameter>();
+                paramList.Add(new SqlParameter("@cod_rol", rol.cod_rol));
+                return DBAcess.WriteInBase("UPDATE MARGINADOS.Rol SET Rol.habilitado=1  WHERE Rol.cod_rol=@cod_rol", "T", paramList);
+            }
+            catch
+            {
+                return 0;
+            }
 
         }
 
-        public static void bajaLogica(Rol rol)
+        public static int bajaLogica(Rol rol)
         {
-            List<SqlParameter> paramList = new List<SqlParameter>();
-            paramList.Add(new SqlParameter("@cod_rol", rol.cod_rol));
-            DBAcess.WriteInBase("UPDATE MARGINADOS.Rol SET Rol.habilitado=0  WHERE Rol.cod_rol=@cod_rol", "T", paramList);
+            try
+            {
+                List<SqlParameter> paramList = new List<SqlParameter>();
+                paramList.Add(new SqlParameter("@cod_rol", rol.cod_rol));
+                return DBAcess.WriteInBase("UPDATE MARGINADOS.Rol SET Rol.habilitado=0  WHERE Rol.cod_rol=@cod_rol", "T", paramList);
+            }
+            catch
+            {
+                return 0;
+            }
+
 
         }
 
@@ -73,8 +88,15 @@ namespace PagoAgilFrba.Models.DAO
             List<SqlParameter> parameterList = new List<SqlParameter>();
             parameterList.Add(new SqlParameter("@nombre_rol", r.nombre_rol));
 
-            DBAcess.WriteInBase("INSERT INTO MARGINADOS.Rol (Rol.nombre_rol,Rol.habilitado) " +
-                                                " VALUES (@nombre_rol,1)", "T", parameterList);
+            try
+            {
+                DBAcess.WriteInBase("INSERT INTO MARGINADOS.Rol (Rol.nombre_rol,Rol.habilitado) " +
+                                                    " VALUES (@nombre_rol,1)", "T", parameterList);
+            }
+            catch
+            {
+                return null;
+            }
 
             List<SqlParameter> param = new List<SqlParameter>();
             param.Add(new SqlParameter("@nombre_rol", r.nombre_rol));
@@ -137,12 +159,20 @@ namespace PagoAgilFrba.Models.DAO
             return func;
         }
 
-        internal static void cambiarNombre(Rol rol, string nombreViejoRol)
+        internal static int cambiarNombre(Rol rol, string nombreViejoRol)
         {
-            List<SqlParameter> paramList = new List<SqlParameter>();
-            paramList.Add(new SqlParameter("@nom_ant", nombreViejoRol));
-            paramList.Add(new SqlParameter("@nombre_rol", rol.nombre_rol));
-            DBAcess.WriteInBase("UPDATE MARGINADOS.Rol SET Rol.nombre_rol=@nombre_rol WHERE Rol.nombre_rol=@nom_ant", "T", paramList);
+            try
+            {
+                List<SqlParameter> paramList = new List<SqlParameter>();
+                paramList.Add(new SqlParameter("@nom_ant", nombreViejoRol));
+                paramList.Add(new SqlParameter("@nombre_rol", rol.nombre_rol));
+                return DBAcess.WriteInBase("UPDATE MARGINADOS.Rol SET Rol.nombre_rol=@nombre_rol WHERE Rol.nombre_rol=@nom_ant", "T", paramList);
+            }
+            catch
+            {
+                return 0;
+            }
+
 
         }
 

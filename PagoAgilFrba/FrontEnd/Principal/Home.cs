@@ -36,10 +36,10 @@ namespace PagoAgilFrba.FrontEnd.Principal
             {
                 if (boton is Button)
                 {
-                    boton.Enabled = false;
+                    boton.Visible = false;
                     if (usuarioLogueado.FuncionalidadValida(boton.Text))
                     {
-                        boton.Enabled = true;
+                        boton.Visible = true;
                     }
                 }
             }

@@ -55,8 +55,14 @@ namespace PagoAgilFrba.Models.DAO
                    ",@cod_user ) ";
             }
 
-
-            returnint = DBAcess.WriteInBase(noQuery, "T", ListaParametros);
+            try
+            {
+                returnint = DBAcess.WriteInBase(noQuery, "T", ListaParametros);
+            }
+            catch
+            {
+                return 0;
+            }
 
             if (pago.nro_pago == null)
             {

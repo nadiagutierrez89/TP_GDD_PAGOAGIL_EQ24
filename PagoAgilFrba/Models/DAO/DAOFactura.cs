@@ -74,7 +74,7 @@ namespace PagoAgilFrba.Models.DAO
             {
                 ListaParametros.Add(new SqlParameter("@nro_rendicion", DBNull.Value));
             }
-                
+
 
             if (Factura.yaExiste(unafactura))
             {
@@ -87,7 +87,7 @@ namespace PagoAgilFrba.Models.DAO
                           ",nro_pago = @nro_pago " +
                           ",nro_rendicion = @nro_rendicion " +
                      "WHERE nro_factura = @nro_factura and cod_empresa = @cod_empresa";
-                
+
             }
             else
             {
@@ -111,8 +111,16 @@ namespace PagoAgilFrba.Models.DAO
                ",@nro_rendicion  ) ";
 
             }
-            
-            return DBAcess.WriteInBase(noQuery, "T", ListaParametros);
+
+            try
+            {
+                return DBAcess.WriteInBase(noQuery, "T", ListaParametros);
+            }
+            catch
+            {
+                return 0;
+            }
+
         }
 
         internal static List<decimal> allYears()
@@ -131,8 +139,8 @@ namespace PagoAgilFrba.Models.DAO
                 while (lector.Read())
                 {
                     int anio = (int)lector["anio"];
-                    years.Add((decimal) anio);
-                    
+                    years.Add((decimal)anio);
+
                 }
             }
             return years;

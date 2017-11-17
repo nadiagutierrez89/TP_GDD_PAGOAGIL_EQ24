@@ -123,7 +123,16 @@ namespace PagoAgilFrba.Models.DAO
                ",@fecha_baja ) ";
 
             }
-            return DBAcess.WriteInBase(noQuery, "T", ListaParametros);
+
+            try
+            {
+                return DBAcess.WriteInBase(noQuery, "T", ListaParametros);
+            }
+            catch
+            {
+                return 0;
+            }
+
         }
 
         internal static bool existeClienteSegun(string campo, string valor)
