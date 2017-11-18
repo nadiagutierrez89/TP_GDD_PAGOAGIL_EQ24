@@ -177,5 +177,41 @@ namespace PagoAgilFrba.Models.DAO
             }
             return unCliente;
         }
+
+        internal static Cliente getClienteByEmail(string mail_clie)
+        {
+            List<SqlParameter> paramList = new List<SqlParameter>();
+            paramList.Add(new SqlParameter("@mail_clie", mail_clie));
+            Cliente unCliente = new Cliente();
+
+            SqlDataReader lector = DBAcess.GetDataReader("SELECT * FROM MARGINADOS.Cliente WHERE mail_clie = @mail_clie", "T", paramList);
+            if (lector.HasRows)
+            {
+                while (lector.Read())
+                {
+
+                    unCliente.dni = (decimal)lector["dni_clie"];
+                    unCliente.nombre = (string)lector["nombre_clie"];
+                    unCliente.apellido = (string)lector["apellido_clie"];
+                    unCliente.mail = (string)lector["mail_clie"];
+                    unCliente.telefono = (string)lector["telefeno_clie"];
+                    unCliente.calle = (string)lector["calle_clie"];
+                    unCliente.nro_piso = (string)lector["nro_piso_clie"];
+                    unCliente.depto = (string)lector["depto_clie"];
+                    unCliente.localidad = (string)lector["localidad_clie"];
+                    unCliente.cod_postal = (string)lector["cod_postal_clie"];
+                    unCliente.fecha_nac = (DateTime)lector["fecha_nac_clie"];
+                    if (lector["fecha_baja"] == DBNull.Value)
+                    {
+                        unCliente.fecha_baja = null;
+                    }
+                    else
+                    {
+                        unCliente.fecha_baja = (DateTime)lector["fecha_baja"];
+                    }
+                }
+            }
+            return unCliente;
+        }
     }
 }

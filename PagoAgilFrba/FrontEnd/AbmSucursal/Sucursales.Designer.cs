@@ -122,6 +122,7 @@
             this.sucursales_dgv_listado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.sucursales_dgv_listado.Location = new System.Drawing.Point(15, 65);
             this.sucursales_dgv_listado.Name = "sucursales_dgv_listado";
+            this.sucursales_dgv_listado.ReadOnly = true;
             this.sucursales_dgv_listado.Size = new System.Drawing.Size(468, 150);
             this.sucursales_dgv_listado.TabIndex = 44;
             // 

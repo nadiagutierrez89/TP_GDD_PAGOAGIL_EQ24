@@ -177,17 +177,17 @@ namespace PagoAgilFrba.Models.DAO
         }
 
 
-        internal static int getLastIdRol()
+        internal static Decimal getLastIdRol()
         {
             List<SqlParameter> paramList = new List<SqlParameter>();
-            int id = 0;
+            decimal id = 0;
 
             SqlDataReader lector = DBAcess.GetDataReader("select IDENT_CURRENT('MARGINADOS.Rol') as id", "T", paramList);
             if (lector.HasRows)
             {
                 while (lector.Read())
                 {
-                    id = (int)lector["id"];
+                    id = (decimal)lector["id"];
                 }
             }
 

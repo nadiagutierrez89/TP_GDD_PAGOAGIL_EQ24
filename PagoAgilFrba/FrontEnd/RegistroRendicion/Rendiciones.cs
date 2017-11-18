@@ -43,7 +43,16 @@ namespace PagoAgilFrba.FrontEnd.RegistroRendicion
             if (lista_empresas.Count > 0)
             {
                 this.empresaSelected = lista_empresas.ElementAt(0);
-                this.tbEmpresa.Text = this.empresaSelected.cod_empresa.ToString() + " - " + this.empresaSelected.nombre_empresa;
+                if (this.empresaSelected.habilitado)
+                {
+                    this.tbEmpresa.Text = this.empresaSelected.cod_empresa.ToString() + " - " + this.empresaSelected.nombre_empresa;
+                }
+                else
+                {
+                    this.empresaSelected = null;
+                    MessageBox.Show("No se puede rendir a empresas deshabilitadas", "Error!", MessageBoxButtons.OK);
+                }
+                
             }
             this.Show();
         }

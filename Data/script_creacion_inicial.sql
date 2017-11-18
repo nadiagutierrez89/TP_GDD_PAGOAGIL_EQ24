@@ -100,7 +100,7 @@ CREATE TABLE MARGINADOS.Funcionalidad (
 
 -- --> Rol <-- --
 CREATE TABLE MARGINADOS.Rol (
-  cod_rol numeric(3, 0) IDENTITY NOT NULL PRIMARY KEY,
+  cod_rol numeric(3, 0) IDENTITY (1, 1) NOT NULL PRIMARY KEY,
   nombre_rol nvarchar(50) NOT NULL,
   habilitado bit
 )

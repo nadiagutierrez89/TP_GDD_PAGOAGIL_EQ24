@@ -203,6 +203,13 @@ namespace PagoAgilFrba.FrontEnd.ABMFactura
         {
             if (this.ItemSelccionado(this.factura_dgv_listado))
             {
+                Factura unFactura = (Factura)this.factura_dgv_listado.CurrentRow.DataBoundItem;
+                Empresa unEmpresa = Empresa.getEmpresa(unFactura.cod_empresa);
+                if (this.modo == 2 && !unEmpresa.habilitado)
+                {
+                    MessageBox.Show("No se puede seleccionar facturas de empresas que estan deshabilitadas", "Error!", MessageBoxButtons.OK);
+                    return;
+                }
                 this.facturas_a_pagar.Add((Factura)this.factura_dgv_listado.CurrentRow.DataBoundItem);
                 this.Close();
             }

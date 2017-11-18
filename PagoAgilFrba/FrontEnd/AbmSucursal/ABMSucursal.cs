@@ -25,10 +25,10 @@ namespace PagoAgilFrba.FrontEnd.AbmSucursal
         {
             this.socursalSeleted = unaSocursal;
             
-            this.abmsucursal_tb_nombre.Text = unaSocursal.nombre_suc;
-            this.abmsucursal_tb_direccion.Text = unaSocursal.direccion_suc;
+            this.sucursal_nombre.Text = unaSocursal.nombre_suc;
+            this.sucursal_direccion.Text = unaSocursal.direccion_suc;
             this.habilitado.Checked = unaSocursal.habilitado;
-            this.abmsucursal_tb_cp.Text = unaSocursal.codigo_postal_suc.ToString();
+            this.sucursal_codigo_postal.Text = unaSocursal.codigo_postal_suc.ToString();
 
         }
 
@@ -37,17 +37,41 @@ namespace PagoAgilFrba.FrontEnd.AbmSucursal
 
         }
 
+        private bool textboxs_ok()
+        {
+            foreach (Control ctrl in this.Controls)
+            {
+                if (ctrl is TextBox && ctrl.Text.Equals(""))
+                {
+                    MessageBox.Show(ctrl.Name + " no puede ser vacio", ">:o(", MessageBoxButtons.OK);
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
         private void abmsucursal_but_aceptar_Click(object sender, EventArgs e)
         {
+            if (!textboxs_ok())
+                return;
+
             Sucursal sucursal_modificada = new Sucursal();
             decimal unDecimal;
 
-            sucursal_modificada.nombre_suc = this.abmsucursal_tb_nombre.Text;
-            sucursal_modificada.direccion_suc = this.abmsucursal_tb_direccion.Text;
+            sucursal_modificada.nombre_suc = this.sucursal_nombre.Text;
+            sucursal_modificada.direccion_suc = this.sucursal_direccion.Text;
             sucursal_modificada.habilitado = this.habilitado.Checked;
 
-            if (Decimal.TryParse(this.abmsucursal_tb_cp.Text, out unDecimal))
+            if (Decimal.TryParse(this.sucursal_codigo_postal.Text, out unDecimal))
+            {
                 sucursal_modificada.codigo_postal_suc = unDecimal;
+            }
+            else
+            {
+                MessageBox.Show("Codigo postal no es un numero valido", ">:o(", MessageBoxButtons.OK);
+                return; 
+            }
 
             if (this.socursalSeleted == null && Sucursal.existeSocursalSegun("codigo_postal_suc", sucursal_modificada.codigo_postal_suc.ToString()))
             {

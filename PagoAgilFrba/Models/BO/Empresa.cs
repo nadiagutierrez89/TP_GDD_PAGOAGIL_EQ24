@@ -42,5 +42,36 @@ namespace PagoAgilFrba.Models.BO
             return DAOEmpresa.devolverTodas();
         }
 
+        internal bool puedoDarmeDeBaja()
+        {
+            List<Factura> misFacturas = Factura.buscarSegun("cod_empresa = " + this.cod_empresa + " and (nro_pago is null or nro_rendicion is null)");
+            return misFacturas.Count == 0;
+        }
+
+        internal static Empresa getEmpresaByCuit(string p)
+        {
+            List<Empresa> empresas = DAOEmpresa.getEmpresasQueCumplenCon(" cuit_empresa = '" + p +"'");
+            if (empresas.Count != 0)
+            {
+                return empresas.ElementAt(0);
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        internal static Empresa getEmpresa(Decimal p)
+        {
+            List<Empresa> empresas = DAOEmpresa.getEmpresasQueCumplenCon(" cod_empresa = " + p );
+            if (empresas.Count != 0)
+            {
+                return empresas.ElementAt(0);
+            }
+            else
+            {
+                return null;
+            }
+        }
     }
 }

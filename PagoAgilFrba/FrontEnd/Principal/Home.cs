@@ -89,6 +89,11 @@ namespace PagoAgilFrba.FrontEnd.Principal
             this.Hide();
             Sucursales winformSucursal = new Sucursales(usuarioLogueado);
             winformSucursal.ShowDialog();
+
+            //valido que si se dio de baja la actual sucursal se salga del programa
+            if (! (Sucursal.buscarSucursales( "1 = 1" ).Any(s => s.codigo_postal_suc == usuarioLogueado.socursalActual.codigo_postal_suc && s.habilitado)))
+                this.Close();
+
             this.Show();
         }
 

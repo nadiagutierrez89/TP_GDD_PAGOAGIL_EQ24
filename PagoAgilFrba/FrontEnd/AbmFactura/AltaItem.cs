@@ -47,13 +47,29 @@ namespace PagoAgilFrba.FrontEnd.AbmFactura
             }
 
             FacturaItem unItem = new FacturaItem();
-            decimal unDecimal;
+            
+            int unInt;
+            if (Int32.TryParse(this.tbCantidad.Text, out unInt) && unInt >= 0)
+            {
+                unItem.cantidad_item = (decimal) unInt;
+            }
+            else
+            {
+                MessageBox.Show("Cantidad no es un numero valido", "Error!", MessageBoxButtons.OK);
+                return;
+            }
 
-            if (Decimal.TryParse(this.tbCantidad.Text, out unDecimal))
-                unItem.cantidad_item = unDecimal;
-
-            if (Decimal.TryParse(this.tbMonto.Text, out unDecimal))
+            Decimal unDecimal;
+            if (Decimal.TryParse(this.tbMonto.Text, out unDecimal) && unDecimal >= 0)
+            {
                 unItem.monto_item = unDecimal;
+            }
+            else
+            {
+                MessageBox.Show("Monto no es un numero valido", "Error!", MessageBoxButtons.OK);
+                return;
+            }
+
 
             if (list.Count == 0)
             {

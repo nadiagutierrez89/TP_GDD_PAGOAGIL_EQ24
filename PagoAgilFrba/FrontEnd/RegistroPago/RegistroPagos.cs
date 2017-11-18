@@ -112,6 +112,13 @@ namespace PagoAgilFrba.FrontEnd.RegistroPago
                 return;
             }
 
+            //valido que si se dio de baja la actual sucursal se salga del programa
+            if (!(Sucursal.buscarSucursales("1 = 1").Any(s => s.codigo_postal_suc == usuarioLogueado.socursalActual.codigo_postal_suc && s.habilitado)))
+            {
+                MessageBox.Show("La sucursal de dio de baja, favor salir del sistema y volver a ingresar con una sucursal activa", "Error!", MessageBoxButtons.OK);
+                return;
+            }
+
             Pago unPago = new Pago();
             unPago.facturas = this.factuasPagar;
             unPago.fecha_pago = hoy;

@@ -69,7 +69,6 @@ namespace PagoAgilFrba.FrontEnd.AbmSucursal
                 ABMSucursal altaModifClie = new ABMSucursal(unaSocursal);
                 altaModifClie.ShowDialog();
                 this.sucursal_but_buscar.PerformClick();
-
             }
             else
             {

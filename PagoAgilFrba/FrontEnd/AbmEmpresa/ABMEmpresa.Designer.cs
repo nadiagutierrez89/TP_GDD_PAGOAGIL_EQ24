@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.abmEmpresa_tb_nombre = new System.Windows.Forms.TextBox();
-            this.abmempresa_tb_direccion = new System.Windows.Forms.TextBox();
+            this.empresa_nombre = new System.Windows.Forms.TextBox();
+            this.empresa_direccion = new System.Windows.Forms.TextBox();
             this.abmempresa_mtb_cuit = new System.Windows.Forms.MaskedTextBox();
             this.abmempresa_lab_nombre = new System.Windows.Forms.Label();
             this.abmempresa_lab_cuit = new System.Windows.Forms.Label();
@@ -40,19 +40,19 @@
             this.abmempresa_but_aceptar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // abmEmpresa_tb_nombre
+            // empresa_nombre
             // 
-            this.abmEmpresa_tb_nombre.Location = new System.Drawing.Point(13, 39);
-            this.abmEmpresa_tb_nombre.Name = "abmEmpresa_tb_nombre";
-            this.abmEmpresa_tb_nombre.Size = new System.Drawing.Size(259, 20);
-            this.abmEmpresa_tb_nombre.TabIndex = 0;
+            this.empresa_nombre.Location = new System.Drawing.Point(13, 39);
+            this.empresa_nombre.Name = "empresa_nombre";
+            this.empresa_nombre.Size = new System.Drawing.Size(259, 20);
+            this.empresa_nombre.TabIndex = 0;
             // 
-            // abmempresa_tb_direccion
+            // empresa_direccion
             // 
-            this.abmempresa_tb_direccion.Location = new System.Drawing.Point(13, 130);
-            this.abmempresa_tb_direccion.Name = "abmempresa_tb_direccion";
-            this.abmempresa_tb_direccion.Size = new System.Drawing.Size(259, 20);
-            this.abmempresa_tb_direccion.TabIndex = 1;
+            this.empresa_direccion.Location = new System.Drawing.Point(13, 130);
+            this.empresa_direccion.Name = "empresa_direccion";
+            this.empresa_direccion.Size = new System.Drawing.Size(259, 20);
+            this.empresa_direccion.TabIndex = 1;
             // 
             // abmempresa_mtb_cuit
             // 
@@ -144,8 +144,8 @@
             this.Controls.Add(this.abmempresa_lab_cuit);
             this.Controls.Add(this.abmempresa_lab_nombre);
             this.Controls.Add(this.abmempresa_mtb_cuit);
-            this.Controls.Add(this.abmempresa_tb_direccion);
-            this.Controls.Add(this.abmEmpresa_tb_nombre);
+            this.Controls.Add(this.empresa_direccion);
+            this.Controls.Add(this.empresa_nombre);
             this.Name = "ABMEmpresa";
             this.Text = "ABM Empresa";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -156,8 +156,8 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox abmEmpresa_tb_nombre;
-        private System.Windows.Forms.TextBox abmempresa_tb_direccion;
+        private System.Windows.Forms.TextBox empresa_nombre;
+        private System.Windows.Forms.TextBox empresa_direccion;
         private System.Windows.Forms.MaskedTextBox abmempresa_mtb_cuit;
         private System.Windows.Forms.Label abmempresa_lab_nombre;
         private System.Windows.Forms.Label abmempresa_lab_cuit;

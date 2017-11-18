@@ -77,7 +77,7 @@ namespace PagoAgilFrba.Models.DAO
             }
         }
 
-        internal static int create(int cod_rol, Decimal cod_funcionalidad)
+        internal static int create(decimal cod_rol, Decimal cod_funcionalidad)
         {
             try
             {

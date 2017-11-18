@@ -111,7 +111,7 @@ namespace PagoAgilFrba.FrontEnd.AbmRol
             this.Hide();
         }
 
-        private void saveRolFunc(int id_rol)
+        private void saveRolFunc(decimal id_rol)
         {
             foreach (DataGridViewRow row in dgvFuncionalidades.Rows)
             {

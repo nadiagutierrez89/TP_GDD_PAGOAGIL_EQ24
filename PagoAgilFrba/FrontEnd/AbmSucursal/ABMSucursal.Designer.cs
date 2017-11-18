@@ -31,9 +31,9 @@
             this.abmsucursal_lab_nombre = new System.Windows.Forms.Label();
             this.ambsucursal_lab_direccion = new System.Windows.Forms.Label();
             this.abmsucursal_lab_cp = new System.Windows.Forms.Label();
-            this.abmsucursal_tb_nombre = new System.Windows.Forms.TextBox();
-            this.abmsucursal_tb_direccion = new System.Windows.Forms.TextBox();
-            this.abmsucursal_tb_cp = new System.Windows.Forms.TextBox();
+            this.sucursal_nombre = new System.Windows.Forms.TextBox();
+            this.sucursal_direccion = new System.Windows.Forms.TextBox();
+            this.sucursal_codigo_postal = new System.Windows.Forms.TextBox();
             this.habilitado = new System.Windows.Forms.CheckBox();
             this.abmsucursal_but_aceptar = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -66,26 +66,26 @@
             this.abmsucursal_lab_cp.TabIndex = 2;
             this.abmsucursal_lab_cp.Text = "Código Postal:";
             // 
-            // abmsucursal_tb_nombre
+            // sucursal_nombre
             // 
-            this.abmsucursal_tb_nombre.Location = new System.Drawing.Point(25, 43);
-            this.abmsucursal_tb_nombre.Name = "abmsucursal_tb_nombre";
-            this.abmsucursal_tb_nombre.Size = new System.Drawing.Size(247, 20);
-            this.abmsucursal_tb_nombre.TabIndex = 3;
+            this.sucursal_nombre.Location = new System.Drawing.Point(25, 43);
+            this.sucursal_nombre.Name = "sucursal_nombre";
+            this.sucursal_nombre.Size = new System.Drawing.Size(247, 20);
+            this.sucursal_nombre.TabIndex = 3;
             // 
-            // abmsucursal_tb_direccion
+            // sucursal_direccion
             // 
-            this.abmsucursal_tb_direccion.Location = new System.Drawing.Point(25, 92);
-            this.abmsucursal_tb_direccion.Name = "abmsucursal_tb_direccion";
-            this.abmsucursal_tb_direccion.Size = new System.Drawing.Size(247, 20);
-            this.abmsucursal_tb_direccion.TabIndex = 4;
+            this.sucursal_direccion.Location = new System.Drawing.Point(25, 92);
+            this.sucursal_direccion.Name = "sucursal_direccion";
+            this.sucursal_direccion.Size = new System.Drawing.Size(247, 20);
+            this.sucursal_direccion.TabIndex = 4;
             // 
-            // abmsucursal_tb_cp
+            // sucursal_codigo_postal
             // 
-            this.abmsucursal_tb_cp.Location = new System.Drawing.Point(25, 148);
-            this.abmsucursal_tb_cp.Name = "abmsucursal_tb_cp";
-            this.abmsucursal_tb_cp.Size = new System.Drawing.Size(100, 20);
-            this.abmsucursal_tb_cp.TabIndex = 5;
+            this.sucursal_codigo_postal.Location = new System.Drawing.Point(25, 148);
+            this.sucursal_codigo_postal.Name = "sucursal_codigo_postal";
+            this.sucursal_codigo_postal.Size = new System.Drawing.Size(100, 20);
+            this.sucursal_codigo_postal.TabIndex = 5;
             // 
             // habilitado
             // 
@@ -116,9 +116,9 @@
             this.ClientSize = new System.Drawing.Size(284, 261);
             this.Controls.Add(this.abmsucursal_but_aceptar);
             this.Controls.Add(this.habilitado);
-            this.Controls.Add(this.abmsucursal_tb_cp);
-            this.Controls.Add(this.abmsucursal_tb_direccion);
-            this.Controls.Add(this.abmsucursal_tb_nombre);
+            this.Controls.Add(this.sucursal_codigo_postal);
+            this.Controls.Add(this.sucursal_direccion);
+            this.Controls.Add(this.sucursal_nombre);
             this.Controls.Add(this.abmsucursal_lab_cp);
             this.Controls.Add(this.ambsucursal_lab_direccion);
             this.Controls.Add(this.abmsucursal_lab_nombre);
@@ -135,9 +135,9 @@
         private System.Windows.Forms.Label abmsucursal_lab_nombre;
         private System.Windows.Forms.Label ambsucursal_lab_direccion;
         private System.Windows.Forms.Label abmsucursal_lab_cp;
-        private System.Windows.Forms.TextBox abmsucursal_tb_nombre;
-        private System.Windows.Forms.TextBox abmsucursal_tb_direccion;
-        private System.Windows.Forms.TextBox abmsucursal_tb_cp;
+        private System.Windows.Forms.TextBox sucursal_nombre;
+        private System.Windows.Forms.TextBox sucursal_direccion;
+        private System.Windows.Forms.TextBox sucursal_codigo_postal;
         private System.Windows.Forms.CheckBox habilitado;
         private System.Windows.Forms.Button abmsucursal_but_aceptar;
     }

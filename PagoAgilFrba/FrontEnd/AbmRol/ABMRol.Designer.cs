@@ -49,13 +49,14 @@
             this.dataGridViewRol.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewRol.Location = new System.Drawing.Point(12, 48);
             this.dataGridViewRol.Name = "dataGridViewRol";
-            this.dataGridViewRol.Size = new System.Drawing.Size(421, 213);
+            this.dataGridViewRol.ReadOnly = true;
+            this.dataGridViewRol.Size = new System.Drawing.Size(370, 213);
             this.dataGridViewRol.TabIndex = 6;
             this.dataGridViewRol.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewRol_CellContentClick);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(358, 267);
+            this.button1.Location = new System.Drawing.Point(307, 264);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 9;
@@ -67,7 +68,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(445, 299);
+            this.ClientSize = new System.Drawing.Size(397, 299);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridViewRol);

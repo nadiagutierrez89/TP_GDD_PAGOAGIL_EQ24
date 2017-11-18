@@ -98,18 +98,32 @@ namespace PagoAgilFrba.FrontEnd.ABMFactura
 
         private void abmfactura_but_aceptar_Click(object sender, EventArgs e)
         {
+            int unInt;
+            Decimal unDecimal;
+            Factura facturaNueva = new Factura();
+            facturaNueva.cod_empresa = (decimal)this.cod_empresa.SelectedValue;
+
             if (this.nro_factura.Text == "")
             {
                 MessageBox.Show("Falta cargar numero de factura", ":o|", MessageBoxButtons.OK);
                 return;
             }
 
-            Factura facturaNueva = new Factura();
-            decimal unDecimal;
+            if (this.clientePagador == null)
+            {
+                MessageBox.Show("Seleccione algun cliente", ":o|", MessageBoxButtons.OK);
+                return;
+            }            
 
-            facturaNueva.cod_empresa = (decimal)this.cod_empresa.SelectedValue;
-            if (Decimal.TryParse(this.nro_factura.Text, out unDecimal))
-                facturaNueva.nro_factura = unDecimal;
+            if (Int32.TryParse(this.nro_factura.Text, out unInt) && unInt > 0)
+            {
+                facturaNueva.nro_factura =  (decimal)unInt;
+            }
+            else
+            {
+                MessageBox.Show("Numero de factura no es un numero valido", "Error!", MessageBoxButtons.OK);
+                return;
+            }
 
             if (this.modo == 1) // modo alta de factura
             {
@@ -118,12 +132,6 @@ namespace PagoAgilFrba.FrontEnd.ABMFactura
                     MessageBox.Show("Ya existe una factura nro: " + facturaNueva.nro_factura + " de la empresa (cod): " + facturaNueva.cod_empresa, ":o|", MessageBoxButtons.OK);
                     return;
                 }
-            }
-
-            if (this.clientePagador == null)
-            {
-                MessageBox.Show("Seleccione algun cliente", ":o|", MessageBoxButtons.OK);
-                return;
             }
 
             if (this.factura_a_modificar.facturaItems == null || this.factura_a_modificar.facturaItems.Count < 1)

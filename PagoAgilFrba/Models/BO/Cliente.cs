@@ -53,5 +53,10 @@ namespace PagoAgilFrba.Models.BO
         {
             return DAOCliente.existeClienteSegun(p1,p2);
         }
+
+        internal static Cliente getClienteByEmail(string mail)
+        {
+            return DAOCliente.getClienteByEmail(mail);
+        }
     }
 }

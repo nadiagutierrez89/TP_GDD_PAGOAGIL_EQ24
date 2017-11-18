@@ -102,12 +102,12 @@ namespace PagoAgilFrba.Models.BO
             DAORol.crearRol(rol);
         }
 
-        internal static int getLastIdRol()
+        internal static decimal getLastIdRol()
         {
             return DAORol.getLastIdRol();
         }
 
-        internal static void createRolFuncionalidad(int cod_rol, Decimal cod_funcionalidad)
+        internal static void createRolFuncionalidad(decimal cod_rol, Decimal cod_funcionalidad)
         {
             DAORolFuncionalidad.create(cod_rol, cod_funcionalidad);
         }

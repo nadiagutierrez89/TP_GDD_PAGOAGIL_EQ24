@@ -25,18 +25,20 @@ namespace PagoAgilFrba.FrontEnd.AbmEmpresa
             List<Rubro> list = new List<Rubro>();
             list.Add(rubroNull);
             list.AddRange(Rubro.todos());
-            
+
             this.cod_rubro.DataSource = list;
             this.cod_rubro.ValueMember = "cod_rubro";
             this.cod_rubro.DisplayMember = "descripcion_rubro";
         }
 
-        public Empresas(Models.BO.Usuario usuarioLogueado) : this()
+        public Empresas(Models.BO.Usuario usuarioLogueado)
+            : this()
         {
             this.usuarioLogueado = usuarioLogueado;
         }
 
-        public Empresas(List<Empresa> lista_empresas, int unModo) : this()
+        public Empresas(List<Empresa> lista_empresas, int unModo)
+            : this()
         {
             // TODO: Complete member initialization
             this.lista_empresas = lista_empresas;
@@ -65,10 +67,12 @@ namespace PagoAgilFrba.FrontEnd.AbmEmpresa
                 }
             }
 
+            filtro = filtro + " and cuit_empresa like '%" + this.cuit_empresa.Text.Replace(" ", "_") + "%'"; 
+
             Rubro rubroSelected = (Rubro)this.cod_rubro.SelectedItem;
             if (rubroSelected.cod_rubro != 0)
                 filtro = filtro + " and cod_rubro = " + rubroSelected.cod_rubro;
-            
+
             filtro = filtro + completarFiltroSegunModo();
 
             return filtro;

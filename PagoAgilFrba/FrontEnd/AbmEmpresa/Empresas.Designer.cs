@@ -128,6 +128,7 @@
             this.empresa_dgv_listado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.empresa_dgv_listado.Location = new System.Drawing.Point(11, 61);
             this.empresa_dgv_listado.Name = "empresa_dgv_listado";
+            this.empresa_dgv_listado.ReadOnly = true;
             this.empresa_dgv_listado.Size = new System.Drawing.Size(629, 200);
             this.empresa_dgv_listado.TabIndex = 41;
             // 
