@@ -70,7 +70,7 @@ namespace PagoAgilFrba.FrontEnd.AbmEmpresa
             filtro = filtro + " and cuit_empresa like '%" + this.cuit_empresa.Text.Replace(" ", "_") + "%'"; 
 
             Rubro rubroSelected = (Rubro)this.cod_rubro.SelectedItem;
-            if (rubroSelected.cod_rubro != 0)
+            if (rubroSelected != null && rubroSelected.cod_rubro != 0)
                 filtro = filtro + " and cod_rubro = " + rubroSelected.cod_rubro;
 
             filtro = filtro + completarFiltroSegunModo();
