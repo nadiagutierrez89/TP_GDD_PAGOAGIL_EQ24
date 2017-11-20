@@ -19,19 +19,33 @@ namespace PagoAgilFRBA.Models.DAO
             paramList.Add(new SqlParameter("@trim", trim));
             paramList.Add(new SqlParameter("@anio", anio));
 
-            string query = @"SELECT TOP 5 E.cod_empresa, E.nombre_empresa, isnull(P.porcen,0) as porcentaje
+            string query = @"SELECT TOP 5 
+                E.cod_empresa, 
+                E.nombre_empresa,
+                P.cant_pagos,
+                P.pagos_totales,
+                CASE WHEN P.cant_pagos = 0 THEN 0 ELSE (P.cant_pagos + 0.0)/P.pagos_totales  END as porcentaje
                 FROM GD2C2017.MARGINADOS.Empresa E 
                 LEFT JOIN 
-                (SELECT cod_empresa, (COUNT(nro_pago) + 0.0) / COUNT(cod_empresa) AS porcen
-		                FROM GD2C2017.MARGINADOS.Factura F
-			                WHERE @anio = YEAR(F.fecha_alta_fac) AND 
-							((@trim = 1 AND MONTH(F.fecha_alta_fac) IN (1, 2, 3))
-				                OR (@trim = 2 AND MONTH(F.fecha_alta_fac) IN (4, 5, 6))
-				                OR (@trim = 3 AND MONTH(F.fecha_alta_fac) IN (7, 8, 9))
-				                OR (@trim = 4 AND MONTH(F.fecha_alta_fac) IN (10, 11, 12)))
-			                GROUP BY F.cod_empresa ) AS P
-                 ON E.cod_empresa = P.cod_empresa
-                 ORDER BY porcentaje DESC";
+                (SELECT cod_empresa, COUNT(nro_pago) as cant_pagos, (SELECT COUNT (*)FROM GD2C2017.MARGINADOS.Factura F2 
+														                WHERE F2.nro_pago is not null 
+															                AND @anio = YEAR(F2.fecha_alta_fac)  
+															                AND ( (@trim = 1 and MONTH(F2.fecha_alta_fac) IN (1,2,3)) 
+																                or (@trim = 2 and MONTH(F2.fecha_alta_fac) IN (4,5,6)) 
+																                or (@trim = 3 and MONTH(F2.fecha_alta_fac) IN (7,8,9)) 
+																                or (@trim = 4 and MONTH(F2.fecha_alta_fac) IN (10,11,12)) )
+
+							                  ) AS pagos_totales
+	                FROM GD2C2017.MARGINADOS.Factura F
+	                WHERE F.nro_pago is not null
+		                AND @anio = YEAR(F.fecha_alta_fac) 
+		                AND ((@trim = 1 AND MONTH(F.fecha_alta_fac) IN (1, 2, 3))
+			                OR (@trim = 2 AND MONTH(F.fecha_alta_fac) IN (4, 5, 6))
+			                OR (@trim = 3 AND MONTH(F.fecha_alta_fac) IN (7, 8, 9))
+			                OR (@trim = 4 AND MONTH(F.fecha_alta_fac) IN (10, 11, 12)))
+	                GROUP BY F.cod_empresa ) AS P
+                ON E.cod_empresa = P.cod_empresa
+                ORDER BY porcentaje DESC";
 
             SqlDataReader lector = DBAcess.GetDataReader(query, "T", paramList);
             DataTable dt = new DataTable("listado");
