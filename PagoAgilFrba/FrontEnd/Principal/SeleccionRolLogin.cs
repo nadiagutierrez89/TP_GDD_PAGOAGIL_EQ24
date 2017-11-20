@@ -24,8 +24,14 @@ namespace PagoAgilFrba.FrontEnd.Principal
         {
 
             this.usuarioLogueado = usuarioLogueado;
+            llenarComponentes(usuarioLogueado);
+
+        }
+
+        private void llenarComponentes(Models.BO.Usuario usuarioLogueado)
+        {
             this.lbl_bienvenido.Text = this.lbl_bienvenido.Text + usuarioLogueado.username + "!!!";
-            List<Rol> list = usuarioLogueado.roles;
+            List<Rol> list = Rol.rolesDe(usuarioLogueado.cod_user);
             this.seleccionRol_cb_roles.DataSource = list;
             this.seleccionRol_cb_roles.ValueMember = "cod_rol";
             this.seleccionRol_cb_roles.DisplayMember = "nombre_rol";
@@ -34,7 +40,6 @@ namespace PagoAgilFrba.FrontEnd.Principal
             this.cb_sucursal.DataSource = misSucursales;
             this.cb_sucursal.ValueMember = "codigo_postal_suc";
             this.cb_sucursal.DisplayMember = "nombre_suc";
-
         }
 
         private void seleccionRol_lab_roles_Click(object sender, EventArgs e)
@@ -48,6 +53,7 @@ namespace PagoAgilFrba.FrontEnd.Principal
             usuarioLogueado.rolActual.cargarFuncionalidades();
 
             usuarioLogueado.socursalActual = (Sucursal) this.cb_sucursal.SelectedItem;
+            llenarComponentes(this.usuarioLogueado);
             this.Close();
 
         }

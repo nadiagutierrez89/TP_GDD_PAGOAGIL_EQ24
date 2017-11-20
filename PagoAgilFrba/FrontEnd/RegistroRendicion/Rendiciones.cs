@@ -39,12 +39,14 @@ namespace PagoAgilFrba.FrontEnd.RegistroRendicion
             List<Empresa> lista_empresas = new List<Empresa>();
             Empresas winform = new Empresas(lista_empresas, 2);
             winform.ShowDialog();
-
+                        
             if (lista_empresas.Count > 0)
             {
                 this.empresaSelected = lista_empresas.ElementAt(0);
                 if (this.empresaSelected.habilitado)
                 {
+                    if (this.tbEmpresa.Text != this.empresaSelected.cod_empresa.ToString() + " - " + this.empresaSelected.nombre_empresa)
+                        this.dgvFacturasPagadas.DataSource = null; // si se selecciono otra empresa, reseteo en null las facturas lo que obliga a ir a buscar las de nuevo
                     this.tbEmpresa.Text = this.empresaSelected.cod_empresa.ToString() + " - " + this.empresaSelected.nombre_empresa;
                 }
                 else
