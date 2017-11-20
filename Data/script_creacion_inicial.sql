@@ -506,7 +506,7 @@ GO
 CREATE PROCEDURE MARGINADOS.sp_rolesDe (@cod_user numeric(18, 0))
 AS
 BEGIN 
-	SELECT ru.cod_user, r.cod_rol, r.nombre_rol
+	SELECT ru.cod_user, r.cod_rol, r.nombre_rol, r.habilitado
 	  FROM MARGINADOS.RolUsuario ru 
 	  inner join MARGINADOS.Rol r
 	  on r.cod_rol = ru.cod_rol
@@ -554,3 +554,35 @@ AS
         END 
   END
   GO
+
+--- --- ---
+IF OBJECT_ID('MARGINADOS.rol_update') IS NOT NULL
+  DROP TRIGGER MARGINADOS.rol_update;
+GO
+CREATE TRIGGER MARGINADOS.rol_update ON MARGINADOS.Rol
+    FOR UPDATE
+    AS
+    BEGIN
+
+		DELETE ru
+		FROM MARGINADOS.RolUsuario ru inner join inserted i
+			on ru.cod_rol = i.[cod_rol] 			
+			WHERE i.habilitado = 0
+
+ END
+
+--- --- ---
+ IF OBJECT_ID('MARGINADOS.sucursal_update') IS NOT NULL
+  DROP TRIGGER MARGINADOS.sucursal_update;
+GO
+CREATE TRIGGER MARGINADOS.sucursal_update ON MARGINADOS.Sucursal
+    FOR UPDATE
+    AS
+    BEGIN
+
+		DELETE su
+		FROM MARGINADOS.UsuarioSucursal su inner join inserted i
+			on su.codigo_postal_suc = i.codigo_postal_suc			
+			WHERE i.habilitado = 0
+
+ END

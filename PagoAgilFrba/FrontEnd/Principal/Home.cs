@@ -32,6 +32,12 @@ namespace PagoAgilFrba.FrontEnd.Principal
             this.lbl_rol.Text = this.usuarioLogueado.rolActual.nombre_rol;
 
             this.usuarioLogueado = usuarioLogueado;
+            activarBotonesSegunFuncionalidades(usuarioLogueado);
+
+        }
+
+        private void activarBotonesSegunFuncionalidades(Usuario usuarioLogueado)
+        {
             foreach (Control boton in this.Controls)
             {
                 if (boton is Button)
@@ -43,7 +49,6 @@ namespace PagoAgilFrba.FrontEnd.Principal
                     }
                 }
             }
-
         }
 
         private void home_but_abmfactura_Click(object sender, EventArgs e)
@@ -67,6 +72,13 @@ namespace PagoAgilFrba.FrontEnd.Principal
             this.Hide();
             ABMRol abmRol = new ABMRol();
             abmRol.ShowDialog();
+
+            //valido que si se dio de baja el actual rol se salga del programa
+            if (!(Rol.rolesDe(usuarioLogueado.cod_user).Any(r => r.cod_rol == usuarioLogueado.rolActual.cod_rol && r.habilitado)))
+                this.Close();
+
+            usuarioLogueado.rolActual.cargarFuncionalidades();
+            activarBotonesSegunFuncionalidades(usuarioLogueado);
             this.Show();
         }
 
@@ -93,6 +105,8 @@ namespace PagoAgilFrba.FrontEnd.Principal
             //valido que si se dio de baja la actual sucursal se salga del programa
             if (! (Sucursal.buscarSucursales( "1 = 1" ).Any(s => s.codigo_postal_suc == usuarioLogueado.socursalActual.codigo_postal_suc && s.habilitado)))
                 this.Close();
+
+            usuarioLogueado.rolActual.cargarFuncionalidades();
 
             this.Show();
         }

@@ -26,6 +26,7 @@ namespace PagoAgilFrba.Models.DAO
                     Rol unRol = new Rol();
                     unRol.nombre_rol = (string)lector["nombre_rol"];
                     unRol.cod_rol = (decimal)lector["cod_rol"];
+                    unRol.habilitado = (bool)lector["habilitado"];
                     rolesDe.Add(unRol);
                 }
                 lector.Close();
