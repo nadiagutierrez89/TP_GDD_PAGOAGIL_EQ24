@@ -19,23 +19,18 @@ namespace PagoAgilFRBA.Models.DAO
             paramList.Add(new SqlParameter("@trim", trim));
             paramList.Add(new SqlParameter("@anio", anio));
 
-            string query = @" SELECT top 5 e.nombre_empresa, t.cod_empresa, 100 *(TotalEmpresa / TotalSistema) As Porcentaje
-				FROM
-				(SELECT  f.cod_empresa, count(*) AS TotalEmpresa,
-					(SELECT count(*) FROM [GD2C2017].[MARGINADOS].[Factura] F where 
-						(@trim = 1 and month(F.fecha_alta_fac) in (1,2,3) and @anio = year(F.fecha_alta_fac))
-						or (@trim = 2 and month(F.fecha_alta_fac) in (4,5,6) and @anio = year(F.fecha_alta_fac))
-						or (@trim = 3 and month(F.fecha_alta_fac) in (7,8,9) and @anio = year(F.fecha_alta_fac))  
-						or (@trim = 4 and month(F.fecha_alta_fac) in (10,11,12) and @anio = year(F.fecha_alta_fac))
-						) AS TotalSistema
-				FROM [GD2C2017].[MARGINADOS].[Factura] F
-				where  (@trim = 1 and month(F.fecha_alta_fac) in (1,2,3) and @anio = year(F.fecha_alta_fac))
-					or (@trim = 2 and month(F.fecha_alta_fac) in (4,5,6) and @anio = year(F.fecha_alta_fac))
-					or (@trim = 3 and month(F.fecha_alta_fac) in (7,8,9) and @anio = year(F.fecha_alta_fac))  
-					or (@trim = 4 and month(F.fecha_alta_fac) in (10,11,12) and @anio = year(F.fecha_alta_fac))
-				GROUP BY f.cod_empresa ) AS t
-			INNER JOIN [GD2C2017].[MARGINADOS].[Empresa] e ON e.cod_empresa = t.cod_empresa
-			ORDER BY (TotalEmpresa / TotalSistema) DESC";
+            string query = @"SELECT TOP 5 E.cod_empresa, E.nombre_empresa, isnull(P.porcen,0) as porcentaje
+                FROM GD2C2017.MARGINADOS.Empresa E 
+                LEFT JOIN 
+                (SELECT cod_empresa, (COUNT(nro_pago) + 0.0) / COUNT(cod_empresa) AS porcen
+		                FROM GD2C2017.MARGINADOS.Factura F
+			                WHERE (@trim = 1 AND MONTH(F.fecha_alta_fac) IN (1, 2, 3) AND @anio = YEAR(F.fecha_alta_fac))
+				                OR (@trim = 2 AND MONTH(F.fecha_alta_fac) IN (4, 5, 6) AND @anio = YEAR(F.fecha_alta_fac))
+				                OR (@trim = 3 AND MONTH(F.fecha_alta_fac) IN (7, 8, 9) AND @anio = YEAR(F.fecha_alta_fac))
+				                OR (@trim = 4 AND MONTH(F.fecha_alta_fac) IN (10, 11, 12) AND @anio = YEAR(F.fecha_alta_fac))
+			                GROUP BY F.cod_empresa ) AS P
+                 ON E.cod_empresa = P.cod_empresa
+                 ORDER BY porcentaje DESC";
 
             SqlDataReader lector = DBAcess.GetDataReader(query, "T", paramList);
             DataTable dt = new DataTable("listado");
@@ -51,16 +46,18 @@ namespace PagoAgilFRBA.Models.DAO
             paramList.Add(new SqlParameter("@trim", trim));
             paramList.Add(new SqlParameter("@anio", anio));
 
-            string query = @" select top 5 R.[cod_empresa], e.nombre_empresa, sum(R.importe_total_rendicion)  As monto 
-			from [GD2C2017].[MARGINADOS].[Rendicion] R
-			INNER JOIN [GD2C2017].[MARGINADOS].[Empresa] e ON e.cod_empresa = R.cod_empresa
-			where (@trim = 1 and month(R.fecha_rendicion) in (1,2,3) and @anio = year(R.fecha_rendicion))
-				or (@trim = 2 and month(R.fecha_rendicion) in (4,5,6) and @anio = year(R.fecha_rendicion))
-				or (@trim = 3 and month(R.fecha_rendicion) in (7,8,9) and @anio = year(R.fecha_rendicion))  
-				or (@trim = 4 and month(R.fecha_rendicion) in (10,11,12) and @anio = year(R.fecha_rendicion))
-			group by R.cod_empresa, e.nombre_empresa
-			order by sum(R.importe_total_rendicion)
-			";
+            string query = @"SELECT TOP 5 E.cod_empresa, E.nombre_empresa, isnull(P.monto,0) as monto_rendido
+                FROM GD2C2017.MARGINADOS.Empresa E 
+                LEFT JOIN 
+                (SELECT R.cod_empresa, SUM(r.importe_total_rendicion) as monto
+		                FROM GD2C2017.MARGINADOS.Rendicion R
+			                WHERE (@trim = 1 AND MONTH(R.fecha_rendicion) IN (1, 2, 3) AND @anio = YEAR(R.fecha_rendicion))
+				                OR (@trim = 2 AND MONTH(R.fecha_rendicion) IN (4, 5, 6) AND @anio = YEAR(R.fecha_rendicion))
+				                OR (@trim = 3 AND MONTH(R.fecha_rendicion) IN (7, 8, 9) AND @anio = YEAR(R.fecha_rendicion))
+				                OR (@trim = 4 AND MONTH(R.fecha_rendicion) IN (10, 11, 12) AND @anio = YEAR(R.fecha_rendicion))
+			                GROUP BY R.cod_empresa ) AS P
+                 ON E.cod_empresa = P.cod_empresa
+                 ORDER BY monto_rendido DESC";
 
             SqlDataReader lector = DBAcess.GetDataReader(query, "T", paramList);
             DataTable dt = new DataTable("listado");
@@ -74,15 +71,18 @@ namespace PagoAgilFRBA.Models.DAO
             paramList.Add(new SqlParameter("@trim", trim));
             paramList.Add(new SqlParameter("@anio", anio));
 
-            string query = @" select top 5 P.dni_cliente, C.nombre_clie, C.apellido_clie, count(*)  As cantidadPagos 
-			from [GD2C2017].[MARGINADOS].[Pago] P
-			INNER JOIN [GD2C2017].[MARGINADOS].[Cliente] C ON C.dni_clie = P.dni_cliente
-			where (@trim = 1 and month(P.fecha_pago) in (1,2,3) and @anio = year(P.fecha_pago))
-				or (@trim = 2 and month(P.fecha_pago) in (4,5,6) and @anio = year(P.fecha_pago))
-				or (@trim = 3 and month(P.fecha_pago) in (7,8,9) and @anio = year(P.fecha_pago))  
-				or (@trim = 4 and month(P.fecha_pago) in (10,11,12) and @anio = year(P.fecha_pago))
-			group by P.dni_cliente, C.nombre_clie,C.apellido_clie
-			order by count(*)  desc ";
+            string query = @"SELECT TOP 5 C.nombre_clie, C.apellido_clie, C.dni_clie, isnull(P.cant, 0) as cantidad_pagos
+                FROM GD2C2017.MARGINADOS.Cliente C
+                LEFT JOIN 
+                (SELECT dni_cliente, COUNT(nro_pago) AS cant
+		                                FROM GD2C2017.MARGINADOS.Pago Pa
+			                               WHERE (@trim = 1 AND MONTH(Pa.fecha_pago) IN (1, 2, 3) AND @anio = YEAR(Pa.fecha_pago))
+				                                OR (@trim = 2 AND MONTH(Pa.fecha_pago) IN (4, 5, 6) AND @anio = YEAR(Pa.fecha_pago))
+				                                OR (@trim = 3 AND MONTH(Pa.fecha_pago) IN (7, 8, 9) AND @anio = YEAR(Pa.fecha_pago))
+				                                OR (@trim = 4 AND MONTH(Pa.fecha_pago) IN (10, 11, 12) AND @anio = YEAR(Pa.fecha_pago))
+			                                GROUP BY dni_cliente ) AS P
+                 ON C.dni_clie = P.dni_cliente
+                 ORDER BY cantidad_pagos DESC";
 
             SqlDataReader lector = DBAcess.GetDataReader(query, "T", paramList);
             DataTable dt = new DataTable("listado");
@@ -97,38 +97,18 @@ namespace PagoAgilFRBA.Models.DAO
             paramList.Add(new SqlParameter("@trim", trim));
             paramList.Add(new SqlParameter("@anio", anio));
 
-            /*string query = @"SELECT top 5 C.nombre_clie, C.apellido_clie, t.dni_cliente,   
-							100 * ((Totalcliente + 0.00) / TotalSistema) As Porcentaje
-			FROM (SELECT f.dni_cliente, count(*) AS TotalCliente,
-					(SELECT count(*) FROM [GD2C2017].[MARGINADOS].[Factura] F where 
-						(@trim = 1 and month(F.fecha_alta_fac) in (1,2,3) and @anio = year(F.fecha_alta_fac))
-						or (@trim = 2 and month(F.fecha_alta_fac) in (4,5,6) and @anio = year(F.fecha_alta_fac))
-						or (@trim = 3 and month(F.fecha_alta_fac) in (7,8,9) and @anio = year(F.fecha_alta_fac))  
-						or (@trim = 4 and month(F.fecha_alta_fac) in (10,11,12) and @anio = year(F.fecha_alta_fac))
-						and F.nro_pago is not null) AS TotalSistema
-				FROM [GD2C2017].[MARGINADOS].[Factura] F
-				where  (@trim = 1 and month(F.fecha_alta_fac) in (1,2,3) and @anio = year(F.fecha_alta_fac))
-						or (@trim = 2 and month(F.fecha_alta_fac) in (4,5,6) and @anio = year(F.fecha_alta_fac))
-						or (@trim = 3 and month(F.fecha_alta_fac) in (7,8,9) and @anio = year(F.fecha_alta_fac))  
-						or (@trim = 4 and month(F.fecha_alta_fac) in (10,11,12) and @anio = year(F.fecha_alta_fac))
-						and F.nro_pago is not null
-				GROUP BY f.dni_cliente ) AS t
-			INNER JOIN [GD2C2017].[MARGINADOS].[Cliente] C ON C.dni_clie = t.dni_cliente
-			ORDER BY (TotalCliente / TotalSistema) DESC	";*/
-
-
-            string query = @"SELECT C.nombre_clie, C.apellido_clie, P.dni_cliente, P.porcentaje
-                FROM (SELECT TOP 5 dni_cliente, (COUNT(nro_pago) + 0.0) / COUNT(dni_cliente) AS porcentaje
-		                FROM GD2C2017.MARGINADOS.Factura F
-			                WHERE (@trim = 1 AND MONTH(F.fecha_alta_fac) IN (1, 2, 3) AND @anio = YEAR(F.fecha_alta_fac))
-				                OR (@trim = 2 AND MONTH(F.fecha_alta_fac) IN (4, 5, 6) AND @anio = YEAR(F.fecha_alta_fac))
-				                OR (@trim = 3 AND MONTH(F.fecha_alta_fac) IN (7, 8, 9) AND @anio = YEAR(F.fecha_alta_fac))
-				                OR (@trim = 4 AND MONTH(F.fecha_alta_fac) IN (10, 11, 12) AND @anio = YEAR(F.fecha_alta_fac))
-			                GROUP BY dni_cliente
-			                ORDER BY (COUNT(nro_pago) + 0.0) / COUNT(dni_cliente) DESC) AS P
-                INNER JOIN GD2C2017.MARGINADOS.Cliente C
-                  ON C.dni_clie = P.dni_cliente
-                ORDER BY P.porcentaje DESC";
+            string query = @"SELECT TOP 5 C.nombre_clie, C.apellido_clie, C.dni_clie, isnull(P.porcen, 0) as porcentaje
+                FROM GD2C2017.MARGINADOS.Cliente C
+                LEFT JOIN 
+                (SELECT dni_cliente, (COUNT(nro_pago) + 0.0) / COUNT(dni_cliente) AS porcen
+		                                FROM GD2C2017.MARGINADOS.Factura F
+			                                WHERE (@trim = 1 AND MONTH(F.fecha_alta_fac) IN (1, 2, 3) AND @anio = YEAR(F.fecha_alta_fac))
+				                                OR (@trim = 2 AND MONTH(F.fecha_alta_fac) IN (4, 5, 6) AND @anio = YEAR(F.fecha_alta_fac))
+				                                OR (@trim = 3 AND MONTH(F.fecha_alta_fac) IN (7, 8, 9) AND @anio = YEAR(F.fecha_alta_fac))
+				                                OR (@trim = 4 AND MONTH(F.fecha_alta_fac) IN (10, 11, 12) AND @anio = YEAR(F.fecha_alta_fac))
+			                                GROUP BY dni_cliente ) AS P
+                 ON C.dni_clie = P.dni_cliente
+                 ORDER BY porcentaje DESC";
 
             SqlDataReader lector = DBAcess.GetDataReader(query, "T", paramList);
             DataTable dt = new DataTable("listado");
