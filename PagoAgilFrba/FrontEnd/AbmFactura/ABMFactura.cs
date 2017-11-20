@@ -32,7 +32,7 @@ namespace PagoAgilFrba.FrontEnd.ABMFactura
             this.fecha_alta_fac.Value = fecha_hoy;
             this.fecha_vto_fac.Value = fecha_hoy.AddDays(10);
 
-            List<Empresa> list = Empresa.todas();
+            List<Empresa> list = Empresa.todas().FindAll(f => f.habilitado);
             this.cod_empresa.DataSource = list;
             this.cod_empresa.ValueMember = "cod_empresa";
             this.cod_empresa.DisplayMember = "nombre_empresa";
