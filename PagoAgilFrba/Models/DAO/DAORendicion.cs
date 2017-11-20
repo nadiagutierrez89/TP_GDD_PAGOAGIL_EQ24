@@ -90,5 +90,19 @@ namespace PagoAgilFrba.Models.DAO
 
             return id;
         }
+
+        internal static bool existeOtraRendicionEnElMes(Rendicion rendicion)
+        {
+            List<Empresa> misEmpresas = new List<Empresa>();
+            List<SqlParameter> paramList = new List<SqlParameter>();
+            paramList.Add(new SqlParameter("@fecha", rendicion.fecha_rendicion));
+
+            SqlDataReader lector = DBAcess.GetDataReader("SELECT * FROM MARGINADOS.Rendicion WHERE YEAR(fecha_rendicion) = YEAR(@fecha) and MONTH(fecha_rendicion) = MONTH(@fecha)" , "T", paramList);
+            if (lector.HasRows)
+            {
+                return true;
+            }
+            return false;
+        }
     }
 }

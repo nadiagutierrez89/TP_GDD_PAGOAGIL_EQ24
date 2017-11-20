@@ -30,5 +30,10 @@ namespace PagoAgilFrba.Models.BO
         {
             return DAORendicion.guardar(this);
         }
+
+        internal bool existeOtraRendicionEnElMes()
+        {
+            return DAORendicion.existeOtraRendicionEnElMes(this);
+        }
     }
 }

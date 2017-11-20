@@ -82,7 +82,7 @@ namespace PagoAgilFrba.FrontEnd.RegistroRendicion
                 Cero -> t1 es igual que t2.
                 Mayor que cero -> t1 es posterior a t2.
              */
-            unRendicion.facturas = unRendicion.facturas.FindAll(f => DateTime.Compare(f.fecha_alta_fac, hoy.AddDays(1)) < 0);
+            unRendicion.facturas = unRendicion.facturas.FindAll(f => DateTime.Compare(f.fecha_alta_fac, hoy.AddDays(1)) <= 0);
             unRendicion.cant_facturas_rendidas = unRendicion.facturas.Count();
             unRendicion.importe_total_rendicion = unRendicion.facturas.Sum(f => f.importe_total_fac);
             unRendicion.importe_comision = ((unRendicion.porcentaje_comision * unRendicion.importe_total_rendicion) / 100);
@@ -106,6 +106,12 @@ namespace PagoAgilFrba.FrontEnd.RegistroRendicion
             if (this.rendicionSelect.cant_facturas_rendidas < 1)
             {
                 MessageBox.Show("No hay facturas que rendir", "Error!", MessageBoxButtons.OK);
+                return;
+            }
+
+            if (this.rendicionSelect.existeOtraRendicionEnElMes())
+            {
+                MessageBox.Show("Solo esta permitido hacer una rendicion por mes", "Error!", MessageBoxButtons.OK);
                 return;
             }
 

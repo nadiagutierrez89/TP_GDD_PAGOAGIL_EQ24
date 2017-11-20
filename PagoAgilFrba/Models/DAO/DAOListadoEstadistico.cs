@@ -24,7 +24,7 @@ namespace PagoAgilFRBA.Models.DAO
                 E.nombre_empresa,
                 P.cant_pagos,
                 P.pagos_totales,
-                CASE WHEN P.cant_pagos = 0 THEN 0 ELSE (P.cant_pagos + 0.0)/P.pagos_totales  END as porcentaje
+                CASE WHEN P.cant_pagos = 0 THEN 0 ELSE ROUND(((P.cant_pagos + 0.0)/P.pagos_totales) * 100, 6)  END as porcentaje
                 FROM GD2C2017.MARGINADOS.Empresa E 
                 LEFT JOIN 
                 (SELECT cod_empresa, COUNT(nro_pago) as cant_pagos, (SELECT COUNT (*)FROM GD2C2017.MARGINADOS.Factura F2 
@@ -122,7 +122,7 @@ C.apellido_clie,
 C.dni_clie, 
 P.cant, 
 P.cant_total, 
-CASE WHEN P.cant_total = 0 THEN 0 ELSE (P.cant + 0.0)/P.cant_total  END as porcentaje
+CASE WHEN P.cant_total = 0 THEN 0 ELSE ROUND(((P.cant + 0.0)/P.cant_total) * 100, 6)  END as porcentaje
 FROM GD2C2017.MARGINADOS.Cliente C
 LEFT JOIN 
                 (SELECT F.dni_cliente, 
