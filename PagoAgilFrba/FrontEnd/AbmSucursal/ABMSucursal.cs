@@ -29,6 +29,7 @@ namespace PagoAgilFrba.FrontEnd.AbmSucursal
             this.sucursal_direccion.Text = unaSocursal.direccion_suc;
             this.habilitado.Checked = unaSocursal.habilitado;
             this.sucursal_codigo_postal.Text = unaSocursal.codigo_postal_suc.ToString();
+            this.sucursal_codigo_postal.Enabled = false;
 
         }
 

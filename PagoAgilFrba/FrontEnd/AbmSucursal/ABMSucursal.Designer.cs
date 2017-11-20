@@ -41,7 +41,7 @@
             // abmsucursal_lab_nombre
             // 
             this.abmsucursal_lab_nombre.AutoSize = true;
-            this.abmsucursal_lab_nombre.Location = new System.Drawing.Point(22, 26);
+            this.abmsucursal_lab_nombre.Location = new System.Drawing.Point(22, 72);
             this.abmsucursal_lab_nombre.Name = "abmsucursal_lab_nombre";
             this.abmsucursal_lab_nombre.Size = new System.Drawing.Size(91, 13);
             this.abmsucursal_lab_nombre.TabIndex = 0;
@@ -50,7 +50,7 @@
             // ambsucursal_lab_direccion
             // 
             this.ambsucursal_lab_direccion.AutoSize = true;
-            this.ambsucursal_lab_direccion.Location = new System.Drawing.Point(22, 73);
+            this.ambsucursal_lab_direccion.Location = new System.Drawing.Point(22, 119);
             this.ambsucursal_lab_direccion.Name = "ambsucursal_lab_direccion";
             this.ambsucursal_lab_direccion.Size = new System.Drawing.Size(55, 13);
             this.ambsucursal_lab_direccion.TabIndex = 1;
@@ -60,7 +60,7 @@
             // abmsucursal_lab_cp
             // 
             this.abmsucursal_lab_cp.AutoSize = true;
-            this.abmsucursal_lab_cp.Location = new System.Drawing.Point(22, 131);
+            this.abmsucursal_lab_cp.Location = new System.Drawing.Point(22, 21);
             this.abmsucursal_lab_cp.Name = "abmsucursal_lab_cp";
             this.abmsucursal_lab_cp.Size = new System.Drawing.Size(75, 13);
             this.abmsucursal_lab_cp.TabIndex = 2;
@@ -68,21 +68,21 @@
             // 
             // sucursal_nombre
             // 
-            this.sucursal_nombre.Location = new System.Drawing.Point(25, 43);
+            this.sucursal_nombre.Location = new System.Drawing.Point(25, 89);
             this.sucursal_nombre.Name = "sucursal_nombre";
             this.sucursal_nombre.Size = new System.Drawing.Size(247, 20);
             this.sucursal_nombre.TabIndex = 3;
             // 
             // sucursal_direccion
             // 
-            this.sucursal_direccion.Location = new System.Drawing.Point(25, 92);
+            this.sucursal_direccion.Location = new System.Drawing.Point(25, 138);
             this.sucursal_direccion.Name = "sucursal_direccion";
             this.sucursal_direccion.Size = new System.Drawing.Size(247, 20);
             this.sucursal_direccion.TabIndex = 4;
             // 
             // sucursal_codigo_postal
             // 
-            this.sucursal_codigo_postal.Location = new System.Drawing.Point(25, 148);
+            this.sucursal_codigo_postal.Location = new System.Drawing.Point(25, 37);
             this.sucursal_codigo_postal.Name = "sucursal_codigo_postal";
             this.sucursal_codigo_postal.Size = new System.Drawing.Size(100, 20);
             this.sucursal_codigo_postal.TabIndex = 5;
